@@ -1,0 +1,24 @@
+.socialNetworksResponsiveSmall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: black;
+}
+.containerIcon {
+  margin: 10px;
+}
+.socialNetworksResponsiveLarge {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .socialNetworksResponsiveSmall {
+    display: none;
+  }
+
+  .socialNetworksResponsiveLarge {
+    display: flex;
+    justify-content: center;
+  }
+}

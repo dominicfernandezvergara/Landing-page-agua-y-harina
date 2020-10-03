@@ -1,0 +1,18 @@
+.containerOnlyText {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  align-items: center;
+}
+.text {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  font-size: 38px;
+  font-family: monospace;
+}
+.starsImage {
+  margin-bottom: 10px;
+}

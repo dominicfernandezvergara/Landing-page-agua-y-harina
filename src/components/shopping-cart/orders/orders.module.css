@@ -1,0 +1,95 @@
+.responsiveSmall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerHeaderOrders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25%;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.subTitle {
+  color: grey;
+  font-size: 20px;
+  width: 60%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.amount {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.containerOrders {
+  display: flex;
+  align-items: center;
+  height: 140px;
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+.containerQuantityChange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.butttonChange {
+  width: 35px;
+  height: 35px;
+  background: #cfcccc;
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+.quantityInput {
+  height: 90%;
+  border: none;
+  text-align: center;
+  font-size: 24px;
+  width: 40px;
+}
+.containerDataOrder {
+  display: flex;
+  align-items: center;
+}
+.orderImage {
+  height: 80px;
+  width: 90px;
+  margin: 10px;
+}
+.wraperData {
+  display: flex;
+  flex-direction: column;
+}
+.orderName {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+.orderPrice {
+  font-size: 20px;
+  margin: 10px;
+  color: grey;
+}
+.buttonOrders {
+  margin-top: 30px;
+  height: 80px;
+  width: 200px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border: none;
+  background-color: black;
+  color: white;
+}

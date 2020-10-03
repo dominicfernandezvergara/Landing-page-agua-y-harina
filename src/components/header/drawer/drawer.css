@@ -1,0 +1,8 @@
+.reorder {
+  font-size: 32px;
+  color: black;
+}
+
+.MuiButtonBase-root.responsive-button {
+  align-items: unset;
+}

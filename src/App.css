@@ -1,0 +1,32 @@
+.App {
+  height: 100%;
+}
+
+.switch-wrapper {
+  height: 100%;
+}
+
+.dark-primary-color {
+  background: #c2185b;
+}
+.default-primary-color {
+  background: #e91e63;
+}
+.light-primary-color {
+  background: #f8bbd0;
+}
+.text-primary-color {
+  color: #ffffff;
+}
+.accent-color {
+  background: #ff5252;
+}
+.primary-text-color {
+  color: #212121;
+}
+.secondary-text-color {
+  color: #757575;
+}
+.divider-color {
+  border-color: #bdbdbd;
+}

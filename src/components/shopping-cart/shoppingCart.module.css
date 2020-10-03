@@ -1,0 +1,36 @@
+.shadowShoppingCart {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+}
+.containerShoppingCart {
+  background-color: white;
+  padding: 50px 10px;
+  position: fixed;
+  top: 40px;
+  left: 50px;
+  right: 0px;
+  /* position: relative;
+  background-color: white;
+  width: 85%;
+  height: 60%;
+  padding: 50px 10px;
+  border: 1px solid #dfdfdf;
+  position: fixed;
+  top: 100px;
+  left: 15px;
+  right: 15px; */
+}
+.closeShoppingCartButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+}
