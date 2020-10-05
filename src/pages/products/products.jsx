@@ -1,12 +1,11 @@
-import React, { Fragment, useState } from "react";
-import styles from "./Products.module.css";
+import React, { useState } from "react";
 import useSWR from "swr";
-import ModalNewOrder from "../../components/modal-new-order/modal-new-order";
-import Modal from "../../components/modal/modal";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
-import { green } from "@material-ui/core/colors";
 
-//API SWR: https://swr.vercel.app/
+import styles from "./Products.module.css";
+import Modal from "../../components/modal/modal";
+import ModalNewOrder from "../../components/modal/modal-new-order";
+
+// API SWR: https://swr.vercel.app/
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -15,7 +14,8 @@ function Products() {
   const [currentItem, setCurrentItem] = useState("");
 
   const { data, error } = useSWR(
-    "https://warm-citadel-13428.herokuapp.com/api/v1/breads",
+    "https://breads-api.herokuapp.com/api/v1/breads",
+    // "https://warm-citadel-13428.herokuapp.com/api/v1/breads",
     fetcher
   );
   if (error) return <div>failed to load</div>;
@@ -35,15 +35,16 @@ function Products() {
     setCurrentItem(item);
   };
 
-  const productsList = data.data.map((item, index) => {
+  const productsList = data.data.map((item) => {
     return (
-      <li key={index} className={styles.containerProduct}>
-        <img className={styles.productImage} src={item.image} alt=""></img>
+      <li key={item.id} className={styles.containerProduct}>
+        <img className={styles.productImage} src={item.image} alt="" />
         <p className={styles.productName}>{item.title}</p>
         <p className={styles.productDescription}>{item.description}</p>
         <p className={styles.productPrice}>${item.price}</p>
 
         <button
+          type="button"
           className={styles.productButton}
           onClick={() => onClickOpenModalNewOrder(item)}
         >
@@ -51,13 +52,13 @@ function Products() {
             className={styles.iconImageProductButton}
             src="https://www.factorynine.cl/images/order-icon.svg"
             alt=""
-          ></img>
+          />
         </button>
       </li>
     );
   });
   return (
-    <Fragment>
+    <>
       <div className={styles.containerProductsResponsiveSmall}>
         <p className={styles.productTitle}>PRODUCTOS</p>
         <ul className={styles.containerProductsList}>{productsList}</ul>
@@ -73,7 +74,7 @@ function Products() {
           />
         </Modal>
       </div>
-    </Fragment>
+    </>
   );
 }
 

@@ -10,9 +10,11 @@
   height: 25%;
   border-bottom: 1px solid black;
   width: 100%;
+  margin-top: 20px;
+  padding-bottom: 10px;
 }
 .title {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
@@ -24,23 +26,38 @@
   text-align: center;
 }
 .amount {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.containerOrders {
+.containerOrdersData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.containerAllOrders {
+  display: flex;
+  height: 460px;
+  overflow-y: scroll;
+  flex-direction: column;
+  align-items: center;
+}
+.containerOrder {
   display: flex;
   align-items: center;
   height: 140px;
-  width: 100%;
+  width: 90%;
   border-bottom: 1px solid grey;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .containerQuantityChange {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 40px;
 }
-.butttonChange {
+.buttonChange {
   width: 35px;
   height: 35px;
   background: #cfcccc;
@@ -50,36 +67,52 @@
   border-radius: 50%;
   border: 1px solid grey;
 }
-
+.quantityFormInput {
+  display: flex;
+  width: 22px;
+}
+.preffix {
+  /* height: 90%; */
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  /* width: 40px; */
+  font-weight: bold;
+}
 .quantityInput {
   height: 90%;
   border: none;
-  text-align: center;
-  font-size: 24px;
-  width: 40px;
+  /* text-align: center; */
+  font-size: 18px;
+  /* width: 10px; */
+  font-weight: bold;
 }
 .containerDataOrder {
   display: flex;
   align-items: center;
+  width: 250px;
 }
 .orderImage {
   height: 80px;
   width: 90px;
-  margin: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .wraperData {
   display: flex;
   flex-direction: column;
 }
 .orderName {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  margin: 10px;
 }
 .orderPrice {
-  font-size: 20px;
-  margin: 10px;
+  font-size: 18px;
   color: grey;
+}
+.buttonRemoveOrder {
+  border: none;
+  background-color: transparent;
 }
 .buttonOrders {
   margin-top: 30px;
@@ -92,4 +125,14 @@
   border: none;
   background-color: black;
   color: white;
+}
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 180px;
+  font-size: 20px;
+  color: grey;
+  font-weight: 500;
+  margin-top: 50%;
 }

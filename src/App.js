@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -8,11 +8,11 @@ import Product from "./pages/product";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Products from "./pages/products";
-import Modal from "./components/modal/modal";
+import Order from "./pages/order";
 
 function App() {
   return (
-    <React.Fragment>
+    <Fragment>
       <Router>
         <Header />
         <Switch>
@@ -25,13 +25,13 @@ function App() {
           <Route path="/product/:id">
             <Product />
           </Route>
-          <Route path="/modal">
-            <Modal />
+          <Route path="/order">
+            <Order />
           </Route>
         </Switch>
         <Footer />
       </Router>
-    </React.Fragment>
+    </Fragment>
   );
 }
 

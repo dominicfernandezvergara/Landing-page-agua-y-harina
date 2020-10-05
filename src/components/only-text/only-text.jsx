@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./only-text.module.css";
 import PropTypes from "prop-types";
+import styles from "./only-text.module.css";
 
 function OnlyText({ text }) {
   return (
@@ -15,7 +15,7 @@ function OnlyText({ text }) {
   );
 }
 
-OnlyText.propType = {
-  image: PropTypes.string.isRequired,
+OnlyText.propTypes = {
+  text: PropTypes.string.isRequired,
 };
 export default OnlyText;
