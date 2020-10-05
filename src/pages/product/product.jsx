@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
-import styles from "./product.module.css";
 import { useParams, useLocation } from "react-router-dom";
 
+import styles from "./product.module.css";
+
 function Product() {
-  let { id } = useParams();
-  let { state } = useLocation();
+  const { id } = useParams();
+  const { state } = useLocation();
   console.log("item", state.item);
   console.log("id", id);
 
@@ -17,7 +18,7 @@ function Product() {
           // height="150px"
           // width="300px"
           alt=""
-        ></img>
+        />
         <h1 className={styles.productTitle}>{state.item.title}</h1>
         <div className={styles.productInfo}>
           <p className={styles.productSubTitle}>DESCRIPCIÓN</p>

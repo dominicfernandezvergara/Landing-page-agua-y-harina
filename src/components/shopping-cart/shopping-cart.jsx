@@ -1,7 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import styles from "./shoppingCart.module.css";
 
-function ShoppingCart({ open, children, close = null }) {
+const NOOP = () => {};
+
+function ShoppingCart({ open, children, close = NOOP }) {
   if (!open) {
     return null;
   }
@@ -10,12 +14,25 @@ function ShoppingCart({ open, children, close = null }) {
   }
 
   return (
-    <div className={styles.shadowShoppingCart} onClick={handleClose}>
+    <div
+      role="button"
+      tabIndex={0}
+      aria-hidden="true"
+      className={styles.shadowShoppingCart}
+      onClick={handleClose}
+    >
       <div
+        role="button"
+        tabIndex={0}
+        aria-hidden="true"
         className={styles.containerShoppingCart}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className={styles.closeShoppingCartButton} onClick={close}>
+        <button
+          type="button"
+          className={styles.closeShoppingCartButton}
+          onClick={close}
+        >
           X
         </button>
         {children}
@@ -23,5 +40,10 @@ function ShoppingCart({ open, children, close = null }) {
     </div>
   );
 }
+ShoppingCart.propTypes = {
+  open: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+  close: PropTypes.func.isRequired,
+};
 
 export default ShoppingCart;

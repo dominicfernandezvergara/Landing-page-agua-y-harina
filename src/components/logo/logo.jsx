@@ -2,8 +2,8 @@ import React from "react";
 import "./logo.css";
 import cn from "classnames";
 
-//Github : https://github.com/akiran/react-slick
-//Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
+// Github : https://github.com/akiran/react-slick
+// Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
 
 function Logo() {
   return (

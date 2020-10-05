@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import styles from "./modalNewOrder.module.css";
-import { addNewProductShopCar } from "../../redux/shopping-cart-store";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
+
+import styles from "./modalNewOrder.module.css";
+import { addNewProductShopCar } from "../../../redux/shopping-cart-store";
 
 function ModalNewOrder({ data, close }) {
   console.log("data", data);
@@ -15,9 +17,9 @@ function ModalNewOrder({ data, close }) {
       id: data.id,
       name: data.title,
       data: "",
-      quantity: quantity,
+      quantity,
       image: data.image,
-      totalAmount: totalAmount,
+      totalAmount,
       price: data.price,
       type: data.type,
     };
@@ -39,7 +41,8 @@ function ModalNewOrder({ data, close }) {
       </div>
       <div className={styles.containerQuantityChange}>
         <button
-          className={styles.butttonChange}
+          type="button"
+          className={styles.buttonChange}
           onClick={() => setQuantity(quantity - 1)}
         >
           -
@@ -53,13 +56,15 @@ function ModalNewOrder({ data, close }) {
           />
         </form>
         <button
-          className={styles.butttonChange}
+          type="button"
+          className={styles.buttonChange}
           onClick={() => setQuantity(quantity + 1)}
         >
           +
         </button>
       </div>
       <button
+        type="button"
         className={styles.addProductButton}
         onClick={() => onClickAddProductShopCar()}
       >
@@ -68,5 +73,8 @@ function ModalNewOrder({ data, close }) {
     </div>
   );
 }
-
+ModalNewOrder.propTypes = {
+  data: PropTypes.string.isRequired,
+  close: PropTypes.func.isRequired,
+};
 export default ModalNewOrder;

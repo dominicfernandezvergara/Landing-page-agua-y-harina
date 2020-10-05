@@ -5,6 +5,9 @@
 .switch-wrapper {
   height: 100%;
 }
+button {
+  outline: none;
+}
 
 .dark-primary-color {
   background: #c2185b;

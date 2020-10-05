@@ -26,13 +26,12 @@
   height: 50px;
   border: 1px solid black;
 }
-.butttonChange {
+.buttonChange {
   height: 100%;
   width: 40px;
   border: none;
   background-color: white;
   font-size: 30px;
-  outline: none;
 }
 .quantityFormInput {
   height: 100%;

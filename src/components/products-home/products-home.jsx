@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "./productsHome.module.css";
 import { useHistory } from "react-router-dom";
+
+import styles from "./productsHome.module.css";
 
 function ProductsHome() {
   const history = useHistory();
@@ -13,6 +14,7 @@ function ProductsHome() {
         Conoce nuestros productos haciendo click aquí
       </h1>
       <button
+        type="button"
         className={styles.buttonProductsHome}
         onClick={onClickButtonProductsHome}
       >

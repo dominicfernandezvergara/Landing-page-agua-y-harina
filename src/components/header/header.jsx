@@ -1,15 +1,15 @@
 import React, { Fragment, useState } from "react";
 import "./header.css";
 import cn from "classnames";
+import { useHistory } from "react-router-dom";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Logo from "../logo/logo";
 import Drawer from "./drawer";
-import { useHistory } from "react-router-dom";
 import ShoppingCart from "../shopping-cart";
-import Orders from "../shopping-cart/orders";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import ContentShoppingCart from "../shopping-cart/content-shopping-cart";
 
-//Github : https://github.com/akiran/react-slick
-//Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
+// Github : https://github.com/akiran/react-slick
+// Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
 
 export const dataButtonsList = [
   {
@@ -28,7 +28,7 @@ export const dataButtonsList = [
   },
   {
     name: "PRODUCTOS",
-    path: "/productos",
+    path: "/products",
     data: ["Pan de molde", "Pan Pita"],
     active: false,
     id: 3,
@@ -56,7 +56,7 @@ function Header() {
   const onClickHeaderButton = (itemSelected) => {
     const newHeaderData = buttonHeaderData.map((item) => ({
       ...item,
-      active: item.id === itemSelected.id ? true : false,
+      active: item.id === itemSelected.id,
     }));
 
     setButtonHeaderData(newHeaderData);
@@ -71,10 +71,11 @@ function Header() {
       <header className="header-responsive-small">
         <div className="header-title">PANADERIA AGUA Y HARINA</div>
         <button
+          type="button"
           className="shoppingCartButton"
           onClick={onClickOpenShoppingCart}
         >
-          <ShoppingCartIcon style={{ fontSize: 40 }} />
+          <ShoppingCartIcon style={{ fontSize: 30 }} />
         </button>
 
         <Drawer />
@@ -84,21 +85,22 @@ function Header() {
           footer={false}
           header={false}
         >
-          <Orders />
+          <ContentShoppingCart />
         </ShoppingCart>
       </header>
 
       <header className="header-responsive-large">
         <Logo />
         <div className="container-header-buttons">
-          {buttonHeaderData.map((item, index) => {
+          {buttonHeaderData.map((item) => {
             return (
               <button
+                type="button"
                 className={cn(
                   "header-buttons",
                   item.active === true ? "active" : null
                 )}
-                key={index}
+                key={item.id}
                 onClick={() => onClickHeaderButton(item)}
               >
                 {item.name}

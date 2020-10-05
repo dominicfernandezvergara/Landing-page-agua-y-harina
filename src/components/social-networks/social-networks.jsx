@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
-import styles from "./socialNetworks.module.css";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import EmailIcon from "@material-ui/icons/Email";
 import {} from "@material-ui/core/colors";
+
+import styles from "./socialNetworks.module.css";
 
 function SocialNetworks() {
   return (
