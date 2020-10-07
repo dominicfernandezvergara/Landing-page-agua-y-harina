@@ -1,6 +1,7 @@
 .orderSummaryResponsiveSmall {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .titleOrderSummary {
   font-size: 18px;
@@ -14,16 +15,55 @@
 }
 .wrapperOrdenSummaryProductList {
   border: 1px solid grey;
+  margin-bottom: 20px;
 }
 .productOrder {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 10px;
 }
 .productImage {
+  height: 100%;
+  width: 50px;
 }
 .productName {
-}
-.productQuantity {
+  font-size: 16px;
+  font-weight: bold;
+  width: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .productPrice {
+  font-size: 16px;
+  width: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.productQuantity {
+  font-size: 16px;
+  width: 80px;
 }
 .productTotalAmount {
+  font-size: 16px;
+  font-weight: bold;
+}
+.containerPaymentDetail {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid grey;
+  margin-bottom: 20px;
+}
+.text {
+  font-size: 16px;
+  font-weight: bold;
+  align-self: flex-end;
+}
+.totalAmount {
+  font-size: 16px;
+  font-weight: bold;
+  align-self: flex-end;
 }

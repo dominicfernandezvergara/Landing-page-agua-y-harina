@@ -6,7 +6,6 @@ import styles from "./modalNewOrder.module.css";
 import { addNewProductShopCar } from "../../../redux/shopping-cart-store";
 
 function ModalNewOrder({ data, close }) {
-  console.log("data", data);
   const dispatch = useDispatch();
 
   const [quantity, setQuantity] = useState(0);
@@ -23,7 +22,6 @@ function ModalNewOrder({ data, close }) {
       price: data.price,
       type: data.type,
     };
-    console.log("newProduct", newProduct);
     dispatch(addNewProductShopCar(newProduct));
     close();
   };

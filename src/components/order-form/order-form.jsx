@@ -1,14 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import styles from "./orderForm.module.css";
 
 import OrderSummary from "../order-summary/order-summary";
 
 function OrderForm() {
+  const history = useHistory();
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log("data", data);
-  console.log(watch("name"));
+  const [commentary, setCommentary] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const dataOrders = useSelector(
+    (state) => state.shoppingCart.shoppingCartProducts
+  );
+  console.log("dataOrders", dataOrders);
+  const totalAmount = useSelector((state) => state.shoppingCart.amount);
+
+  const handleChangeCommentary = (e) => {
+    setCommentary(e.target.value);
+  };
+  const productsArray = dataOrders.map((item) => {
+    return {
+      id: item.id,
+      quantity: item.quantity,
+      name: item.name,
+      totalAmount: item.totalAmount,
+    };
+  });
+  const onSubmit = async (data) => {
+    setLoading(true);
+    console.log("data", data);
+    const dataPostBackend = {
+      clientName: `Nombre: ${data.name} ${data.lastName} `,
+      email: data.email,
+      phone: `Telefono: ${data.telephone} `,
+      address: `Direccion: ${data.address} `,
+      deliveryDate: data.date,
+      amount: totalAmount,
+      description: commentary,
+      paymentType: "Transferencia",
+      deliveryCost: 0,
+      products: productsArray,
+    };
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataPostBackend),
+    };
+    // fetch("https://breads-api.herokuapp.com/api/v1/purchases", requestOptions)
+    //   .then((response) => response.json())
+    //   .then((res) => {
+    //     setLoading(false);
+    //     if (res.status === "success") {
+    //       history.push("/success-order");
+    //     } else if (res.status === "error") {
+    //       console.log("err SOSOSI");
+    //     }
+    //   })
+    //   .catch((e) => {
+    //     console.log("err", e);
+    //     setLoading(false);
+    //   });
+
+    try {
+      const purchaseResponse = await fetch(
+        "https://breads-api.herokuapp.com/api/v1/purchases",
+        requestOptions
+      );
+      setLoading(false);
+      if (purchaseResponse.status === "success") {
+        history.push("/success-order");
+      }
+    } catch (e) {
+      console.log("err", e);
+      setLoading(false);
+    }
+  };
+
+  // console.log(watch("name"));
 
   return (
     <div className={styles.formOrderResposiveSmall}>
@@ -67,11 +139,11 @@ function OrderForm() {
           <input
             className={styles.input}
             type="text"
-            name="adresse"
+            name="address"
             placeholder="Direccion"
             ref={register({ required: true })}
           />
-          {errors.adresse && (
+          {errors.address && (
             <span className={styles.errorInput}>
               Direccion requerido para continuar
             </span>
@@ -90,7 +162,15 @@ function OrderForm() {
           )}
         </div>
         <OrderSummary />
-        <input type="submit" />
+        <p className={styles.textCommentary}>Comentario:</p>
+        <textarea
+          id="commentary"
+          className={styles.commentary}
+          name="commentary"
+          value={commentary}
+          onChange={(e) => handleChangeCommentary(e)}
+        />
+        <input className={styles.submitButton} type="submit" />
       </form>
     </div>
   );

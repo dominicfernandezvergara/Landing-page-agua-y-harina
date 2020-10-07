@@ -69,7 +69,7 @@ function Header() {
   return (
     <Fragment>
       <header className="header-responsive-small">
-        <div className="header-title">PANADERIA AGUA Y HARINA</div>
+        <h1 className="header-title">PANADERIA AGUA Y HARINA</h1>
         <button
           type="button"
           className="shoppingCartButton"
@@ -85,7 +85,7 @@ function Header() {
           footer={false}
           header={false}
         >
-          <ContentShoppingCart />
+          <ContentShoppingCart close={() => setShoppingCartState(false)} />
         </ShoppingCart>
       </header>
 
