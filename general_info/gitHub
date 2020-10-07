@@ -2,10 +2,18 @@ How to Update gitHub
 
 gd (too see changes before commit)
 
+1.- git status
 gst   (to see status app)
-git add .
-git commit -m "feat: updated the header and footer"
-git push
+2.- git add .
+ga .(shortcut)
+3.- git commit -m "feat: updated the header and footer"
+gcmsg "feat: updated the header and footer" (shortcut)
+4.- git push
+5.- Create a pull request
+click on command(teclado) and then on the link they give us after doing git push
+6.- git pull in Dev para actualizar dev, since the changes were made on the internet and not on the computer.
+7.- create a new branch and continue working
+
 
 two ways to view commit detail
 glog (to see commit detail )
@@ -45,4 +53,14 @@ How to delate a Branch not merged
 
 gb -D branche-name
 ____________________________
+change name branch
 
+git branch -m old-name new-name
+gb -m old-name new-name
+
+____________________________
+to save change before commit if i want to move to other branch
+
+git stash (to save)
+ git stash show (to view)
+ git stash pop (to get what I saved)

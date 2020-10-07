@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import styles from "./orderForm.module.css";
 
 import OrderSummary from "../order-summary/order-summary";
+import {
+  addPersonalDataOrderActionDispacher,
+  addCommentaryOrderActionDispacher,
+} from "../../redux/shopping-cart-store";
 
 function OrderForm() {
+  const dispatch = useDispatch();
   const history = useHistory();
   const { register, handleSubmit, watch, errors } = useForm();
   const [commentary, setCommentary] = useState("");
@@ -31,6 +36,9 @@ function OrderForm() {
     };
   });
   const onSubmit = async (data) => {
+    dispatch(addPersonalDataOrderActionDispacher(data));
+    dispatch(addCommentaryOrderActionDispacher(commentary));
+
     setLoading(true);
     console.log("data", data);
     const dataPostBackend = {
@@ -45,6 +53,8 @@ function OrderForm() {
       deliveryCost: 0,
       products: productsArray,
     };
+
+    history.push("/succefull-Order");
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -65,19 +75,19 @@ function OrderForm() {
     //     setLoading(false);
     //   });
 
-    try {
-      const purchaseResponse = await fetch(
-        "https://breads-api.herokuapp.com/api/v1/purchases",
-        requestOptions
-      );
-      setLoading(false);
-      if (purchaseResponse.status === "success") {
-        history.push("/success-order");
-      }
-    } catch (e) {
-      console.log("err", e);
-      setLoading(false);
-    }
+    // try {
+    //   const purchaseResponse = await fetch(
+    //     "https://breads-api.herokuapp.com/api/v1/purchases",
+    //     requestOptions
+    //   );
+    //   setLoading(false);
+    //   if (purchaseResponse.status === "success") {
+    //     history.push("/success-order");
+    //   }
+    // } catch (e) {
+    //   console.log("err", e);
+    //   setLoading(false);
+    // }
   };
 
   // console.log(watch("name"));
@@ -161,6 +171,7 @@ function OrderForm() {
             </span>
           )}
         </div>
+        <div className={styles.titleOrderSummary}> Resumen de la Orden</div>
         <OrderSummary />
         <p className={styles.textCommentary}>Comentario:</p>
         <textarea

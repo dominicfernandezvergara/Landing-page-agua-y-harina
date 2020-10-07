@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
-import "./header.css";
 import cn from "classnames";
 import { useHistory } from "react-router-dom";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+
+import styles from "./header.module.css";
 import Logo from "../logo/logo";
 import Drawer from "./drawer";
 import ShoppingCart from "../shopping-cart";
@@ -15,38 +16,33 @@ export const dataButtonsList = [
   {
     name: "INICIO",
     path: "/home",
-    data: "",
     active: true,
     id: 1,
   },
   {
     name: "SOMOS",
     path: "/somos",
-    data: "",
     active: false,
     id: 2,
   },
   {
     name: "PRODUCTOS",
     path: "/products",
-    data: ["Pan de molde", "Pan Pita"],
     active: false,
     id: 3,
   },
   {
     name: "CONTACTO",
     path: "/contacto",
-    data: "",
     active: false,
     id: 4,
   },
-  {
-    name: "MI PEDIDO",
-    path: "/mi-pedido",
-    data: "",
-    active: false,
-    id: 5,
-  },
+  // {
+  //   name: "MI PEDIDO",
+  //   path: "/mi-pedido",
+  //   active: false,
+  //   id: 5,
+  // },
 ];
 
 function Header() {
@@ -68,11 +64,11 @@ function Header() {
 
   return (
     <Fragment>
-      <header className="header-responsive-small">
+      <header className={styles.headerResponsiveSmall}>
         <h1 className="header-title">PANADERIA AGUA Y HARINA</h1>
         <button
           type="button"
-          className="shoppingCartButton"
+          className={styles.shoppingCartButton}
           onClick={onClickOpenShoppingCart}
         >
           <ShoppingCartIcon style={{ fontSize: 30 }} />
@@ -89,16 +85,18 @@ function Header() {
         </ShoppingCart>
       </header>
 
-      <header className="header-responsive-large">
-        <Logo />
-        <div className="container-header-buttons">
+      <header className={styles.headerResponsiveLarge}>
+        <div className={styles.containerLogo}>
+          <Logo />
+        </div>
+        <div className={styles.containerHeaderButton}>
           {buttonHeaderData.map((item) => {
             return (
               <button
                 type="button"
                 className={cn(
-                  "header-buttons",
-                  item.active === true ? "active" : null
+                  styles.headerButton,
+                  item.active === true ? styles.active : null
                 )}
                 key={item.id}
                 onClick={() => onClickHeaderButton(item)}
@@ -108,6 +106,22 @@ function Header() {
             );
           })}
         </div>
+        <button
+          type="button"
+          className={styles.shoppingCartButton}
+          onClick={onClickOpenShoppingCart}
+        >
+          <ShoppingCartIcon style={{ fontSize: 30 }} />
+        </button>
+
+        <ShoppingCart
+          open={shoppingCartState}
+          close={() => setShoppingCartState(false)}
+          footer={false}
+          header={false}
+        >
+          <ContentShoppingCart close={() => setShoppingCartState(false)} />
+        </ShoppingCart>
       </header>
     </Fragment>
   );
