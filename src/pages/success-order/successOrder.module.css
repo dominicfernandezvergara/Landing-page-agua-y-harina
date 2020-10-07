@@ -1,0 +1,66 @@
+.containerSuccessOrder {
+  height: 100%;
+  background: #f5f5f5;
+}
+.successOrder {
+  background: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  padding-top: 60px;
+}
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.subtitle {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #a2a2a2;
+}
+
+.containerOrderData {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerUserData {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.containerCommentary {
+  padding: 10px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .successOrder {
+    margin: 0 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .successOrder {
+    margin: 0 200px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .successOrder {
+    margin: 0 400px;
+  }
+}

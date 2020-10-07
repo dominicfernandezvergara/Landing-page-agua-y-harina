@@ -1,0 +1,57 @@
+.headerResponsiveSmall {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: #ff9800;
+}
+.header-title {
+  padding-left: 10px;
+  font-size: 23px;
+  font-family: auto;
+  color: black;
+  text-align: center;
+  width: 160px;
+}
+
+.shoppingCartButton {
+  background-color: transparent;
+  border: none;
+}
+.headerResponsiveLarge {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .headerResponsiveLarge {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 3px solid #dbdbdb;
+    justify-content: space-between;
+  }
+  .containerLogo {
+    flex-grow: 1;
+  }
+  .containerHeaderButton {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .headerButton {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+  }
+  .active {
+    font-weight: bold;
+    border-bottom: 1px solid;
+  }
+  .shoppingCartButton {
+    flex-grow: 1;
+  }
+  .headerResponsiveSmall {
+    display: none;
+  }
+}

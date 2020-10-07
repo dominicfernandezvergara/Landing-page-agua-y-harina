@@ -42,6 +42,12 @@
   font-size: 16px;
   margin-bottom: 15px;
 }
+.titleOrderSummary {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .textCommentary {
   font-size: 18px;
   color: #a2a2a2;

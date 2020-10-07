@@ -6,6 +6,8 @@ const UPDATE_ADD_QUANTITY_PRODUCT_SHOPPING_CART =
   "UPDATE_ADD_QUANTITY_PRODUCT_SHOPPING_CART";
 const UPDATE_REMOVE_PRODUCT_SHOPPING_CART =
   "UPDATE_REMOVE_PRODUCT_SHOPPING_CART";
+const ADD_USER_INFORMATION = "ADD_USER_INFORMATION";
+const ADD_COMMENTARY = "ADD_COMMENTARY";
 
 const initialData = {
   shoppingCartProducts: [
@@ -28,6 +30,7 @@ const initialData = {
     phone: "", // optional
     email: "",
   },
+  commentary: "",
 };
 
 export default function ShoppingCartReducer(state = initialData, action) {
@@ -121,6 +124,18 @@ export default function ShoppingCartReducer(state = initialData, action) {
         }, 0),
       };
     }
+    case ADD_USER_INFORMATION: {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
+    case ADD_COMMENTARY: {
+      return {
+        ...state,
+        commentary: action.payload,
+      };
+    }
 
     default:
       return state;
@@ -165,5 +180,23 @@ export const updateShoppingRemoveOrderActionDispacher = (id) => async (
   dispatch({
     type: UPDATE_REMOVE_PRODUCT_SHOPPING_CART,
     payload: id,
+  });
+};
+
+export const addPersonalDataOrderActionDispacher = (userInformation) => async (
+  dispatch
+) => {
+  dispatch({
+    type: ADD_USER_INFORMATION,
+    payload: userInformation,
+  });
+};
+
+export const addCommentaryOrderActionDispacher = (commentary) => async (
+  dispatch
+) => {
+  dispatch({
+    type: ADD_COMMENTARY,
+    payload: commentary,
   });
 };

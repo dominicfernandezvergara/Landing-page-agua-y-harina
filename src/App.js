@@ -9,6 +9,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Products from "./pages/products";
 import Order from "./pages/order";
+import SuccessOrder from "./pages/success-order";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/order">
             <Order />
+          </Route>
+          <Route path="/succefull-Order">
+            <SuccessOrder />
           </Route>
         </Switch>
         <Footer />
