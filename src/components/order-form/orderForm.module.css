@@ -19,6 +19,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
 }
 .wrapperForm {
   display: flex;
@@ -40,4 +41,41 @@
   color: #c40e0e;
   font-size: 16px;
   margin-bottom: 15px;
+}
+.textCommentary {
+  font-size: 18px;
+  color: #a2a2a2;
+}
+.commentary {
+  height: 50px;
+  width: auto;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #bebebe;
+  font-size: 14px;
+  background: white;
+}
+.commentaryButton {
+  height: 20px;
+  width: 100px;
+  align-self: flex-end;
+  background-color: black;
+  color: white;
+  border: none;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.submitButton {
+  align-self: center;
+  height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border: none;
+  background-color: black;
+  color: white;
+  width: 300px;
 }

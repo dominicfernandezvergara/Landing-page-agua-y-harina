@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import DeleteIcon from "@material-ui/icons/Delete";
+import PropTypes from "prop-types";
 
 import styles from "./contentShoppingCart.module.css";
 import formatNumber from "../../../utils/numbers.js";
@@ -11,7 +12,7 @@ import {
   updateShoppingRemoveOrderActionDispacher,
 } from "../../../redux/shopping-cart-store";
 
-function ContentShoppingCart() {
+function ContentShoppingCart({ close }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const dataOrders = useSelector(
@@ -34,6 +35,7 @@ function ContentShoppingCart() {
   };
 
   const submitOrder = () => {
+    close();
     history.push("/order");
   };
   const ordersList = dataOrders.map((item) => {
@@ -122,4 +124,7 @@ function ContentShoppingCart() {
   );
 }
 
+ContentShoppingCart.propTypes = {
+  close: PropTypes.func.isRequired,
+};
 export default ContentShoppingCart;

@@ -33,7 +33,6 @@ const initialData = {
 export default function ShoppingCartReducer(state = initialData, action) {
   switch (action.type) {
     case CURRENT_SHOP_CAR_STATE: {
-      // console.log("action.payload", action.payload);
       return {
         ...state,
         shopCarState: action.payload,
@@ -53,8 +52,6 @@ export default function ShoppingCartReducer(state = initialData, action) {
       };
     }
     case UPDATE_SUBTRACT_QUANTITY_PRODUCT_SHOPPING_CART: {
-      console.log("action.payload", action.payload);
-
       const itemId = action.payload;
       const { shoppingCartProducts } = state;
 
@@ -82,8 +79,6 @@ export default function ShoppingCartReducer(state = initialData, action) {
       };
     }
     case UPDATE_ADD_QUANTITY_PRODUCT_SHOPPING_CART: {
-      console.log("action.payload", action.payload);
-
       const itemId = action.payload;
       const { shoppingCartProducts } = state;
 
@@ -116,7 +111,6 @@ export default function ShoppingCartReducer(state = initialData, action) {
       const newShoppingCartProducts = shoppingCartProducts.filter(
         (item) => !(item.id === idProduct)
       );
-      console.log("newShoppingCartProducts", newShoppingCartProducts);
 
       return {
         ...state,
