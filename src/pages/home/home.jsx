@@ -5,6 +5,7 @@ import OnlyImage from "../../components/only-image";
 import OnlyText from "../../components/only-text";
 import ProductsHome from "../../components/products-home";
 import SocialNetworks from "../../components/social-networks/social-networks";
+import FollowUs from "../../components/follow-us";
 
 function Home() {
   const imageHome1 =
@@ -16,6 +17,7 @@ function Home() {
       <OnlyText text={textHome1} />
       <OnlyImage image={imageHome1} />
       <ProductsHome />
+      <FollowUs />
       <SocialNetworks />
     </div>
   );
