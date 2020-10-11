@@ -65,16 +65,20 @@ function Header() {
   return (
     <Fragment>
       <header className={styles.headerResponsiveSmall}>
-        <h1 className="header-title">PANADERIA AGUA Y HARINA</h1>
-        <button
-          type="button"
-          className={styles.shoppingCartButton}
-          onClick={onClickOpenShoppingCart}
-        >
-          <ShoppingCartIcon style={{ fontSize: 30 }} />
-        </button>
+        <div className={styles.containerLogo}>
+          <Logo />
+        </div>
+        <div className={styles.containerButton}>
+          <button
+            type="button"
+            className={styles.shoppingCartButton}
+            onClick={onClickOpenShoppingCart}
+          >
+            <ShoppingCartIcon style={{ fontSize: 30 }} />
+          </button>
 
-        <Drawer />
+          <Drawer />
+        </div>
         <ShoppingCart
           open={shoppingCartState}
           close={() => setShoppingCartState(false)}
