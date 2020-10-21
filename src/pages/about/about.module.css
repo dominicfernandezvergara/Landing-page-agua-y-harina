@@ -1,0 +1,53 @@
+.titleAbout {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 30px 30px;
+  font-size: 70px;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 2px;
+}
+.descriptionAbout {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  font-size: 30px;
+  font-family: monospace;
+  padding: 30px 30px;
+}
+.containerBoxesAbout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .titleAbout {
+    font-size: 150px;
+  }
+  .descriptionAbout {
+    font-size: 60px;
+    padding: 70px 40px;
+    margin: 0px 10px;
+  }
+  .containerBoxesAbout {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .containerBoxesAbout {
+    margin-top: 50px;
+  }
+  .descriptionAbout {
+    padding: 70px 120px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .descriptionAbout {
+    padding: 70px 160px;
+  }
+}

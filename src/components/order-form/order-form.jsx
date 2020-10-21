@@ -93,7 +93,7 @@ function OrderForm() {
   // console.log(watch("name"));
 
   return (
-    <div className={styles.formOrderResposiveSmall}>
+    <div className={styles.containerFormOrder}>
       <p className={styles.title}>Finalizar Orden</p>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <p className={styles.subTitle}>Datos Personales</p>

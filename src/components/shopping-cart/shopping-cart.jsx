@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./shoppingCart.module.css";
+import useNoScroll from "../../hooks/use-no-scroll";
 
 const NOOP = () => {};
 
 function ShoppingCart({ open, children, close = NOOP }) {
+  useNoScroll(open);
+
   if (!open) {
     return null;
   }
+
   function handleClose() {
     close();
   }

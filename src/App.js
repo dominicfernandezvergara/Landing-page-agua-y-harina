@@ -10,6 +10,7 @@ import Footer from "./components/footer";
 import Products from "./pages/products";
 import Order from "./pages/order";
 import SuccessOrder from "./pages/success-order";
+import About from "./pages/about";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Switch>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/products">
             <Products />

@@ -13,6 +13,21 @@
   font-size: 38px;
   font-family: monospace;
 }
-.starsImage {
-  margin-bottom: 10px;
+
+@media screen and (min-width: 760px) {
+  .text {
+    font-size: 90px;
+    padding: 30px 80px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text {
+    font-size: 100px;
+    padding: 60px 80px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .text {
+    padding: 60px 190px;
+  }
 }

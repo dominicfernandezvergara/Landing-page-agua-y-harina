@@ -26,10 +26,6 @@ function ModalNewOrder({ data, close }) {
     close();
   };
 
-  const handleChange = (e) => {
-    setQuantity({ value: e.target.value });
-  };
-
   return (
     <div className={styles.containerModalNewOrder}>
       <div className={styles.newOrderProductTitle}>{data.title}</div>
@@ -45,14 +41,8 @@ function ModalNewOrder({ data, close }) {
         >
           -
         </button>
-        <form className={styles.quantityFormInput}>
-          <input
-            className={styles.quantityInput}
-            placeholder="0"
-            onChange={(e) => handleChange(e)}
-            value={quantity}
-          />
-        </form>
+        <div className={styles.quantityInput}>{quantity}</div>
+
         <button
           type="button"
           className={styles.buttonChange}

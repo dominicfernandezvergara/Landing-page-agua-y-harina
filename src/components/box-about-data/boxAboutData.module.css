@@ -1,0 +1,47 @@
+.boxAbout {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.imageboxAbout {
+  width: 80px;
+  height: auto;
+}
+.titleBoxAbout {
+  text-transform: uppercase;
+  font-family: "Staatliches", cursive;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+.textBoxAbout {
+  text-align: center;
+  color: #575454;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .boxAbout {
+    width: 200px;
+    height: 430px;
+    padding: 0px 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .boxAbout {
+    width: 250px;
+    height: 430px;
+    padding: 0px 15px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .boxAbout {
+    width: 330px;
+    height: 390px;
+  }
+}

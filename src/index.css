@@ -1,4 +1,10 @@
 body {
+  /* evitar que dobleClick haga zoom en Iphone  */
+  touch-action: manipulation;
+
+  /* evitar padre scroll en Iphone */
+  -webkit-overflow-scrolling: touch;
+
   margin: 0;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
