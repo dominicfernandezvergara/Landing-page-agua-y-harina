@@ -6,11 +6,6 @@ function OnlyText({ text }) {
   return (
     <div className={styles.containerOnlyText}>
       <h1 className={styles.text}>{text}</h1>
-      <img
-        className={styles.starsImage}
-        src="https://www.factorynine.cl/images/stars-home.png"
-        alt=""
-      />
     </div>
   );
 }

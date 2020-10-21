@@ -10,10 +10,12 @@ p {
   padding: 0px;
 }
 
-.containerProductsResponsiveSmall {
+.containerProducts {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  min-height: calc(100% - 100px);
 }
 .productImage {
   width: 100%;
@@ -25,8 +27,6 @@ p {
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 20px;
-  border-bottom: 1px solid grey;
-  width: 320px;
 }
 .containerProductsList {
   display: flex;
@@ -66,4 +66,46 @@ p {
   right: 0px;
   top: 100px;
   border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .containerProducts {
+    min-height: calc(100% - 200px);
+  }
+  .containerProduct {
+    height: 300px;
+    width: 200px;
+  }
+  .productImage {
+    height: 140px;
+  }
+  .productButton {
+    top: 120px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .containerProduct {
+    height: 320px;
+    width: 250px;
+  }
+  .productImage {
+    height: 160px;
+  }
+  .productButton {
+    top: 140px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .containerProduct {
+    height: 380px;
+    width: 300px;
+  }
+  .productImage {
+    height: 190px;
+  }
+  .productButton {
+    top: 170px;
+  }
 }

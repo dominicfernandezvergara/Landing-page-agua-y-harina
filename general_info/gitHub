@@ -64,3 +64,6 @@ to save change before commit if i want to move to other branch
 git stash (to save)
  git stash show (to view)
  git stash pop (to get what I saved)
+
+____________________________
+ git Fetch (to know if the branch is up date)

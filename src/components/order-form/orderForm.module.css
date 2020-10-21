@@ -1,4 +1,4 @@
-.formOrderResposiveSmall {
+.containerFormOrder {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -84,4 +84,12 @@
   background-color: black;
   color: white;
   width: 300px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1440px) {
 }

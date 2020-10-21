@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from "react";
 import cn from "classnames";
 import { useHistory } from "react-router-dom";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 import styles from "./header.module.css";
 import Logo from "../logo/logo";
 import Drawer from "./drawer";
-import ShoppingCart from "../shopping-cart";
-import ContentShoppingCart from "../shopping-cart/content-shopping-cart";
+import ShoppingCartDrawer from "../shopping-cart-drawer";
 
 // Github : https://github.com/akiran/react-slick
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
@@ -21,7 +19,7 @@ export const dataButtonsList = [
   },
   {
     name: "SOMOS",
-    path: "/somos",
+    path: "/about",
     active: false,
     id: 2,
   },
@@ -48,7 +46,6 @@ export const dataButtonsList = [
 function Header() {
   const history = useHistory();
   const [buttonHeaderData, setButtonHeaderData] = useState(dataButtonsList);
-  const [shoppingCartState, setShoppingCartState] = useState(false);
   const onClickHeaderButton = (itemSelected) => {
     const newHeaderData = buttonHeaderData.map((item) => ({
       ...item,
@@ -58,9 +55,6 @@ function Header() {
     setButtonHeaderData(newHeaderData);
     history.push(itemSelected.path);
   };
-  const onClickOpenShoppingCart = () => {
-    setShoppingCartState(true);
-  };
 
   return (
     <Fragment>
@@ -69,24 +63,9 @@ function Header() {
           <Logo />
         </div>
         <div className={styles.containerButton}>
-          <button
-            type="button"
-            className={styles.shoppingCartButton}
-            onClick={onClickOpenShoppingCart}
-          >
-            <ShoppingCartIcon style={{ fontSize: 30 }} />
-          </button>
-
+          <ShoppingCartDrawer />
           <Drawer />
         </div>
-        <ShoppingCart
-          open={shoppingCartState}
-          close={() => setShoppingCartState(false)}
-          footer={false}
-          header={false}
-        >
-          <ContentShoppingCart close={() => setShoppingCartState(false)} />
-        </ShoppingCart>
       </header>
 
       <header className={styles.headerResponsiveLarge}>
@@ -110,22 +89,7 @@ function Header() {
             );
           })}
         </div>
-        <button
-          type="button"
-          className={styles.shoppingCartButton}
-          onClick={onClickOpenShoppingCart}
-        >
-          <ShoppingCartIcon style={{ fontSize: 30 }} />
-        </button>
-
-        <ShoppingCart
-          open={shoppingCartState}
-          close={() => setShoppingCartState(false)}
-          footer={false}
-          header={false}
-        >
-          <ContentShoppingCart close={() => setShoppingCartState(false)} />
-        </ShoppingCart>
+        <ShoppingCartDrawer />
       </header>
     </Fragment>
   );

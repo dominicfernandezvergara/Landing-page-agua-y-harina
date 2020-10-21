@@ -3,6 +3,9 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import DeleteIcon from "@material-ui/icons/Delete";
 import PropTypes from "prop-types";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
 
 import styles from "./contentShoppingCart.module.css";
 import formatNumber from "../../../utils/numbers.js";
@@ -38,12 +41,26 @@ function ContentShoppingCart({ close }) {
     close();
     history.push("/order");
   };
-  const ordersList = dataOrders.map((item) => {
-    const preffix = item.quantity / 10 < 1 ? "0" : "";
 
+  const ordersList = dataOrders.map((item) => {
+    // To add a zero before a number
+    const preffix = item.quantity / 10 < 1 ? "0" : "";
     return (
       <div className={styles.containerOrder} key={item.id}>
         <div className={styles.containerQuantityChange}>
+          <button
+            type="button"
+            className={styles.buttonChange}
+            onClick={() => upDateShoppingCartAddQuantity(item.id)}
+          >
+            <AddIcon style={{ fontSize: 30 }} />
+          </button>
+          <div className={styles.containerProductQuantity}>
+            <div className={styles.preffix}>{preffix}</div>
+            <div className={styles.productQuantity} min="0">
+              {item.quantity}
+            </div>
+          </div>
           <button
             type="button"
             className={styles.buttonChange}
@@ -51,25 +68,7 @@ function ContentShoppingCart({ close }) {
               updateShoppingCartSubtractQuantity(item.quantity, item.id)
             }
           >
-            -
-          </button>
-          <form className={styles.quantityFormInput}>
-            <div className={styles.preffix}>{preffix}</div>
-            <input
-              type="number"
-              className={styles.quantityInput}
-              placeholder="0"
-              onChange={() => {}}
-              value={item.quantity}
-              min="0"
-            />
-          </form>
-          <button
-            type="button"
-            className={styles.buttonChange}
-            onClick={() => upDateShoppingCartAddQuantity(item.id)}
-          >
-            +
+            <RemoveIcon style={{ fontSize: 30 }} />
           </button>
         </div>
         <div className={styles.containerDataOrder}>
@@ -91,14 +90,17 @@ function ContentShoppingCart({ close }) {
       </div>
     );
   });
-  // const emptyState = (
-  //   <div className={styles.emptyState}>
-  //     No has agregado productos a tu orden
-  //   </div>
-  // );
+
   return (
     <div className={styles.responsiveSmall}>
       <div className={styles.containerHeaderOrders}>
+        <button
+          type="button"
+          className={styles.closeShoppingCartButton}
+          onClick={close}
+        >
+          <ArrowForwardIosIcon />
+        </button>
         <p className={styles.title}>Tu Orden</p>
         <p className={styles.subTitle}>Sub total a pagar:</p>
         <p className={styles.amount}>TOTAL: ${formatNumber(cartTotalAmount)}</p>

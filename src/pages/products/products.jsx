@@ -59,7 +59,7 @@ function Products() {
   });
   return (
     <>
-      <div className={styles.containerProductsResponsiveSmall}>
+      <div className={styles.containerProducts}>
         <p className={styles.productTitle}>PRODUCTOS</p>
         <ul className={styles.containerProductsList}>{productsList}</ul>
         <Modal
