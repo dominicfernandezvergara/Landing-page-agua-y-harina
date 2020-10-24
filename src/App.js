@@ -11,6 +11,7 @@ import Products from "./pages/products";
 import Order from "./pages/order";
 import SuccessOrder from "./pages/success-order";
 import About from "./pages/about";
+import ContactUs from "./pages/contact-us";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/order">
             <Order />
+          </Route>
+          <Route path="/contacto">
+            <ContactUs />
           </Route>
           <Route path="/succefull-Order">
             <SuccessOrder />
