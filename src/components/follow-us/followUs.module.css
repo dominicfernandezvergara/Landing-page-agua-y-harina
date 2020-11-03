@@ -10,7 +10,7 @@
   margin: 0;
   padding-bottom: 20px;
   padding-top: 40px;
-  font-size: 38px;
+  font-size: 48px;
 }
 .link {
   text-align: center;
@@ -20,15 +20,27 @@
   font-family: monospace;
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
 }
 .containerImages {
-  width: 230px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-bottom: 30px;
   margin-top: 30px;
 }
+.buttonImage {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 .image {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  position: relative;
   height: 50px;
   width: 50px;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),

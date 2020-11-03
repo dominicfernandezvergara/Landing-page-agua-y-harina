@@ -1,24 +1,32 @@
-.socialNetworksResponsiveSmall {
+.containerSocialNetworksSmallScreen {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
   background-color: black;
 }
-.containerIcon {
+.containerIconButton {
+  background-color: transparent;
+  border: none;
   margin: 10px;
 }
-.socialNetworksResponsiveLarge {
+.containerIconButton :hover {
+  background-color: grey;
+  cursor: pointer;
+}
+.containerSocialNetworksMediumScreen {
   display: none;
 }
 
-@media screen and (min-width: 1200px) {
-  .socialNetworksResponsiveSmall {
+@media screen and (min-width: 1024px) {
+  .containerSocialNetworksMediumScreen {
+    display: flex;
+    align-items: center;
+  }
+  .containerSocialNetworksSmallScreen {
     display: none;
   }
-
-  .socialNetworksResponsiveLarge {
-    display: flex;
-    justify-content: center;
+  .containerIcon {
+    margin: 30px;
   }
 }

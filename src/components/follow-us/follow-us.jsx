@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./followUs.module.css";
+import emptyStateImage from "../../images/empty-state/undraw_bug_fixing_oc7a.png";
 
 function FollowUs() {
   const openNewWindow = (event) => {
@@ -21,26 +22,30 @@ function FollowUs() {
         </Link>
       </div>
       <div className={styles.containerImages}>
-        <img
-          className={styles.image}
-          src="https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg"
-          alt=""
-        />
-        <img
-          className={styles.image}
-          src="https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg"
-          alt=""
-        />
-        <img
-          className={styles.image}
-          src="https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg"
-          alt=""
-        />
-        <img
-          className={styles.image}
-          src="https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg"
-          alt=""
-        />
+        <button type="button" className={styles.buttonImage}>
+          <img
+            className={styles.image}
+            src="https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg"
+            alt=""
+          />
+        </button>
+        <button type="button" className={styles.buttonImage}>
+          <img
+            className={styles.image}
+            src="https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg"
+            alt=""
+          />
+        </button>
+        <button type="button" className={styles.buttonImage}>
+          <img
+            className={styles.image}
+            src="https://www.recetasderechupete.com/wp-content/uploads/2018/01/Pan-casero-f%C3%A1cil.jpg"
+            alt=""
+          />
+        </button>
+        <button type="button" className={styles.buttonImage}>
+          <img className={styles.image} src={emptyStateImage} alt="" />
+        </button>
       </div>
     </div>
   );

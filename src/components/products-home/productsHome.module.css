@@ -9,21 +9,48 @@
   text-align: center;
   color: white;
   margin: 0;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  font-size: 38px;
-  font-family: monospace;
+  font-size: 48px;
+  font-family: "Staatliches";
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.buttonProductsHome {
-  width: 290px;
-  height: 80px;
-  font-size: 40px;
-  font-family: monospace;
+.containerProductsHome .buttonProductsHome {
+  width: 100%;
+  height: 120px;
+  background-color: #ff9801;
+  cursor: pointer;
+  font-size: 48px;
+  font-family: "Staatliches";
   font-weight: bold;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  border: none;
-  background-color: white;
-  color: black;
 }
+.containerProductsHome .buttonProductsHome:hover {
+  background-color: #ffac31;
+  height: 125px;
+  font-size: 50px;
+}
+
+/* .buttonProductsHome :global(.MuiButton-root) {
+  background-color: #ff9801;
+  color: black;
+} */
+@media screen and (min-width: 768px) {
+  .textProductsHome {
+    font-size: 70px;
+    padding: 50px 60px;
+  }
+  .containerProductsHome .buttonProductsHome {
+    width: 330px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .textProductsHome {
+    font-size: 90px;
+  }
+  .containerProductsHome .buttonProductsHome {
+    width: 430px;
+    font-size: 80px;
+  }
+}
+/* @media screen and (min-width: 1440px) {
+} */

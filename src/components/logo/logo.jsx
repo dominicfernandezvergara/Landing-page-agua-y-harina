@@ -1,23 +1,29 @@
 import React from "react";
 import "./logo.css";
-import cn from "classnames";
+import { useHistory } from "react-router-dom";
 
 // Github : https://github.com/akiran/react-slick
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
 
 function Logo() {
+  const history = useHistory();
+  const onClickButtonDrawerList = () => {
+    history.push("/home");
+  };
   return (
-    <div className="containerLogo">
+    <button
+      type="button"
+      className="containerLogo"
+      onClick={() => onClickButtonDrawerList()}
+    >
       <img
         className="logo-image-logo-small"
         src="https://aguayharinavalencia.com/wp-content/uploads/2019/10/logo-agua-y-harina-web.png"
         alt="logo"
-        width="60"
-        height="60"
+        width="80"
+        height="80"
       />
-      <div className={cn("logo-title")}>AGUA Y HARINA</div>
-      <div className={cn("logo-subtitle")}>Entre moldes y pan pitas</div>
-    </div>
+    </button>
   );
 }
 
