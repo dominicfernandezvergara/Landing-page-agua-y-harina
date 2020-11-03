@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import cn from "classnames";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import styles from "./header.module.css";
 import Logo from "../logo/logo";
@@ -45,6 +45,8 @@ export const dataButtonsList = [
 
 function Header() {
   const history = useHistory();
+  const location = useLocation();
+  const { pathname: currentPathname } = location;
   const [buttonHeaderData, setButtonHeaderData] = useState(dataButtonsList);
   const onClickHeaderButton = (itemSelected) => {
     const newHeaderData = buttonHeaderData.map((item) => ({
@@ -55,6 +57,16 @@ function Header() {
     setButtonHeaderData(newHeaderData);
     history.push(itemSelected.path);
   };
+
+  useEffect(() => {
+    const newHeaderData = buttonHeaderData.map((item) => ({
+      ...item,
+      active: item.path === currentPathname,
+    }));
+    setButtonHeaderData(newHeaderData);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Fragment>

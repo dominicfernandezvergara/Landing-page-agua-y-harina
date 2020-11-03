@@ -25,6 +25,11 @@ function ModalNewOrder({ data, close }) {
     dispatch(addNewProductShopCar(newProduct));
     close();
   };
+  const subtractQuantity = () => {
+    if (!(quantity === 0)) {
+      setQuantity(quantity - 1);
+    }
+  };
 
   return (
     <div className={styles.containerModalNewOrder}>
@@ -37,7 +42,7 @@ function ModalNewOrder({ data, close }) {
         <button
           type="button"
           className={styles.buttonChange}
-          onClick={() => setQuantity(quantity - 1)}
+          onClick={() => subtractQuantity()}
         >
           -
         </button>

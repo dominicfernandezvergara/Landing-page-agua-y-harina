@@ -4,7 +4,6 @@ import SimpleSlider from "../../components/slider/slider";
 import OnlyImage from "../../components/only-image";
 import OnlyText from "../../components/only-text";
 import ProductsHome from "../../components/products-home";
-import SocialNetworks from "../../components/social-networks/social-networks";
 import FollowUs from "../../components/follow-us";
 
 function Home() {
@@ -18,7 +17,6 @@ function Home() {
       <OnlyImage image={imageHome1} />
       <ProductsHome />
       <FollowUs />
-      <SocialNetworks />
     </div>
   );
 }

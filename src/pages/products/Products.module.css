@@ -17,11 +17,6 @@ p {
   height: auto;
   min-height: calc(100% - 100px);
 }
-.productImage {
-  width: 100%;
-  height: 120px;
-  border: 1px solid #e4e0e0;
-}
 .productTitle {
   font-size: 30px;
   font-weight: bold;
@@ -36,36 +31,54 @@ p {
 .containerProduct {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: auto;
   width: 150px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-right: 5px;
   margin-left: 5px;
   position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
-
+.productImage {
+  width: 90%;
+  height: 120px;
+  border-radius: 16px;
+  padding: 8px;
+  border: none;
+  margin-bottom: 10px;
+}
 .productName {
   color: black;
   font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  padding: 8px;
 }
 .productDescription {
   color: grey;
   font-size: 16px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  padding: 8px;
 }
 .productPrice {
   font-weight: bold;
+  padding: 8px;
 }
 .productButton {
   background: transparent;
   position: absolute;
   right: 0px;
-  top: 100px;
+  top: 106px;
   border: none;
+  cursor: pointer;
+}
+.iconImageProductButton {
+  width: 40px;
+  transition: width 100ms ease-out;
+}
+.iconImageProductButton:hover {
+  width: 50px;
+  transition: width 250ms ease-in;
 }
 
 @media screen and (min-width: 768px) {
@@ -73,7 +86,6 @@ p {
     min-height: calc(100% - 200px);
   }
   .containerProduct {
-    height: 300px;
     width: 200px;
   }
   .productImage {
@@ -85,27 +97,35 @@ p {
 }
 
 @media screen and (min-width: 1024px) {
-  .containerProduct {
-    height: 320px;
-    width: 250px;
-  }
   .productImage {
+    align-self: center;
     height: 160px;
   }
   .productButton {
-    top: 140px;
+    top: 146px;
+    right: 20px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .containerProduct {
-    height: 380px;
-    width: 300px;
+    margin-bottom: 30px;
+    flex: 0 0 20%;
   }
   .productImage {
     height: 190px;
   }
   .productButton {
-    top: 170px;
+    top: 176px;
+    right: 20px;
+  }
+  .productName {
+    padding: 5px 16px;
+  }
+  .productDescription {
+    padding: 5px 16px;
+  }
+  .productPrice {
+    padding: 5px 16px;
   }
 }

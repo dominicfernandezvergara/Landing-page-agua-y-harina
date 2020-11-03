@@ -18,6 +18,7 @@ export default function TemporaryDrawer() {
         <i className="material-icons reorder">reorder</i>
       </Button>
       <Drawer
+        className="some"
         anchor="right"
         open={drawerState}
         onClose={() => setDrawerState(false)}

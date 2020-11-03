@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -41,7 +41,7 @@ function ContentShoppingCart({ close }) {
     close();
     history.push("/order");
   };
-
+  // jh
   const ordersList = dataOrders.map((item) => {
     // To add a zero before a number
     const preffix = item.quantity / 10 < 1 ? "0" : "";
@@ -110,9 +110,8 @@ function ContentShoppingCart({ close }) {
           No has agregado productos a tu orden
         </div>
       ) : (
-        <div className={styles.containerOrdersData}>
+        <Fragment>
           <div className={styles.containerAllOrders}>{ordersList}</div>
-
           <button
             type="button"
             className={styles.buttonOrders}
@@ -120,7 +119,7 @@ function ContentShoppingCart({ close }) {
           >
             PROCEDER A ORDENAR
           </button>
-        </div>
+        </Fragment>
       )}
     </div>
   );

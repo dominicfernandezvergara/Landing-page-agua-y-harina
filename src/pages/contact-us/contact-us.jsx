@@ -68,7 +68,7 @@ function ContactUs() {
             />
           </div>
           <button className={styles.submitButton} type="submit">
-            Enviar
+            ENVIAR
           </button>
         </form>
       </div>

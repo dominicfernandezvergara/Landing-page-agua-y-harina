@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: space-between;
   /* height: 80px; */
+  /* background-color: black; */
+
   background-color: #ff9800;
 }
 
@@ -41,6 +43,11 @@
     background: transparent;
     border: none;
     font-size: 16px;
+    cursor: pointer;
+  }
+  .headerButton:hover {
+    font-size: 18px;
+    font-weight: bold;
   }
   .active {
     font-weight: bold;

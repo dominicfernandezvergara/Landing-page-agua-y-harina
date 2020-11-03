@@ -2,7 +2,6 @@ import React from "react";
 
 import styles from "./about.module.css";
 import FollowUs from "../../components/follow-us/follow-us";
-import SocialNetworks from "../../components/social-networks/social-networks";
 import { ReactComponent as BreadIcon } from "../../images/mi-coleccion-de-iconos/001-pan-de-molde.svg";
 import { ReactComponent as HeartIcon } from "../../images/mi-coleccion-de-iconos/002-corazon.svg";
 import { ReactComponent as GloveIcon } from "../../images/mi-coleccion-de-iconos/003-guante-de-cocina.svg";
@@ -49,7 +48,6 @@ function About() {
       </div>
       <hr />
       <FollowUs />
-      <SocialNetworks />
     </div>
   );
 }

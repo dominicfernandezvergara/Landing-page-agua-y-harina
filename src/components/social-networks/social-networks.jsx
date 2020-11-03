@@ -10,25 +10,33 @@ import styles from "./socialNetworks.module.css";
 function SocialNetworks() {
   return (
     <Fragment>
-      <div className={styles.socialNetworksResponsiveSmall}>
-        <div className={styles.containerIcon}>
+      <div className={styles.containerSocialNetworksSmallScreen}>
+        <button type="button" className={styles.containerIconButton}>
           <FacebookIcon style={{ fontSize: 40, color: "white" }} />
-        </div>
-        <div className={styles.containerIcon}>
+        </button>
+        <button type="button" className={styles.containerIconButton}>
           <WhatsAppIcon style={{ fontSize: 40, color: "white" }} />
-        </div>
-        <div className={styles.containerIcon}>
+        </button>
+        <button type="button" className={styles.containerIconButton}>
           <InstagramIcon style={{ fontSize: 40, color: "white" }} />
-        </div>
-        <div className={styles.containerIcon}>
+        </button>
+        <button type="button" className={styles.containerIconButton}>
           <EmailIcon style={{ fontSize: 40, color: "white" }} />
-        </div>
+        </button>
       </div>
-      <div className={styles.socialNetworksResponsiveLarge}>
-        <InstagramIcon />
-        <FacebookIcon />
-        <WhatsAppIcon />
-        <EmailIcon />
+      <div className={styles.containerSocialNetworksMediumScreen}>
+        <button type="button" className={styles.containerIconButton}>
+          <FacebookIcon style={{ fontSize: 60, color: "white" }} />
+        </button>
+        <button type="button" className={styles.containerIconButton}>
+          <WhatsAppIcon style={{ fontSize: 60, color: "white" }} />
+        </button>
+        <button type="button" className={styles.containerIconButton}>
+          <InstagramIcon style={{ fontSize: 60, color: "white" }} />
+        </button>
+        <button type="button" className={styles.containerIconButton}>
+          <EmailIcon style={{ fontSize: 60, color: "white" }} />
+        </button>
       </div>
     </Fragment>
   );
