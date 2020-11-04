@@ -6,7 +6,8 @@ body {
   -webkit-overflow-scrolling: touch;
 
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Staatliches";
+  /* font-family: "Roboto", sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;

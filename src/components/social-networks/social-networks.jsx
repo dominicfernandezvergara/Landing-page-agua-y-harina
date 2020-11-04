@@ -12,30 +12,54 @@ function SocialNetworks() {
     <Fragment>
       <div className={styles.containerSocialNetworksSmallScreen}>
         <button type="button" className={styles.containerIconButton}>
-          <FacebookIcon style={{ fontSize: 40, color: "white" }} />
+          <FacebookIcon
+            style={{ fontSize: 40, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
         <button type="button" className={styles.containerIconButton}>
-          <WhatsAppIcon style={{ fontSize: 40, color: "white" }} />
+          <WhatsAppIcon
+            style={{ fontSize: 40, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
         <button type="button" className={styles.containerIconButton}>
-          <InstagramIcon style={{ fontSize: 40, color: "white" }} />
+          <InstagramIcon
+            style={{ fontSize: 40, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
         <button type="button" className={styles.containerIconButton}>
-          <EmailIcon style={{ fontSize: 40, color: "white" }} />
+          <EmailIcon
+            style={{ fontSize: 40, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
       </div>
       <div className={styles.containerSocialNetworksMediumScreen}>
         <button type="button" className={styles.containerIconButton}>
-          <FacebookIcon style={{ fontSize: 60, color: "white" }} />
+          <FacebookIcon
+            style={{ fontSize: 60, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
         <button type="button" className={styles.containerIconButton}>
-          <WhatsAppIcon style={{ fontSize: 60, color: "white" }} />
+          <WhatsAppIcon
+            style={{ fontSize: 60, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
         <button type="button" className={styles.containerIconButton}>
-          <InstagramIcon style={{ fontSize: 60, color: "white" }} />
+          <InstagramIcon
+            style={{ fontSize: 60, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
         <button type="button" className={styles.containerIconButton}>
-          <EmailIcon style={{ fontSize: 60, color: "white" }} />
+          <EmailIcon
+            style={{ fontSize: 60, color: "white" }}
+            className={styles.iconface}
+          />
         </button>
       </div>
     </Fragment>

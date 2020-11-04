@@ -1,7 +1,7 @@
 .containerFormOrder {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
 }
 .title {
   font-size: 22px;
@@ -11,7 +11,6 @@
 }
 .subTitle {
   font-size: 18px;
-  font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
   padding-left: 30px;
@@ -19,52 +18,38 @@
 .form {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 .wrapperForm {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.input {
-  height: 40px;
+.inputBox {
   width: 250px;
-  border-radius: 50px;
-  padding: 5px 20px;
-  margin-bottom: 10px;
-  border: 1px solid #bebebe;
-  font-size: 14px;
-  background: transparent;
-  -webkit-appearance: none;
+  height: 60px;
 }
-
+.inputBoxDate {
+  width: 250px;
+  margin-top: 10px;
+}
+.input {
+  width: 100%;
+}
 .errorInput {
   color: #c40e0e;
   font-size: 16px;
   margin-bottom: 15px;
 }
+.commentaryBox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 250px;
+}
 .titleOrderSummary {
   font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 10px;
-}
-.textCommentary {
-  font-size: 16px;
-  color: #a2a2a2;
-  align-self: self-start;
-  margin-top: 20px;
-  margin-left: 40px;
-}
-.commentary {
-  height: 50px;
-  width: 250px;
-  border-radius: 10px;
-  padding: 5px 20px;
-  margin-bottom: 10px;
-  border: 1px solid #bebebe;
-  font-size: 14px;
-  background: white;
+  text-align: center;
 }
 .commentaryButton {
   height: 20px;
@@ -77,25 +62,26 @@
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
-.submitButton {
+.form .submitButton {
   align-self: center;
   height: 80px;
-  font-size: 24px;
-  font-weight: bold;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  border: none;
-  background-color: black;
+  font-size: 36px;
+  background: #ffa000;
   color: white;
   width: 300px;
   border-radius: 10px;
+  font-weight: bold;
+  font-family: "Staatliches";
+}
+.form .submitButton:hover {
+  background-color: #ffac31;
+  transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {
   .title {
     align-self: center;
   }
-
   .containerFlex {
     display: flex;
     flex-direction: row;

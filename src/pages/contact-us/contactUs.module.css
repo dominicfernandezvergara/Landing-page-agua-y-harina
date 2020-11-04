@@ -1,17 +1,17 @@
 .containerContactUs {
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
-.formContactUs {
+/* .formContactUs {
   display: flex;
   flex-direction: column;
   padding: 10px;
-}
+} */
 .title {
   width: 260px;
   text-align: center;
   font-size: 38px;
-  font-weight: bold;
   margin-bottom: 30px;
   margin-top: 20px;
   align-self: center;
@@ -21,56 +21,36 @@
   flex-direction: column;
   align-items: center;
 }
+.inputBox {
+  width: 250px;
+  height: 60px;
+}
 .input {
-  font-family: sans-serif;
-  height: 40px;
-  width: 260px;
-  border-radius: 20px;
-  padding: 5px 20px;
-  margin-bottom: 10px;
-  border: 1px solid #bebebe;
-  font-size: 14px;
-  background: white;
-  outline: none;
+  width: 100%;
 }
 .errorInput {
   color: #c40e0e;
   font-size: 16px;
   margin-bottom: 15px;
 }
-.textMessage {
-  margin-top: 14px;
-  color: grey;
-  padding-left: 20px;
-  font-size: 16px;
-}
-.commentary {
-  font-family: sans-serif;
-  height: 100px;
-  width: 260px;
-  border-radius: 20px;
-  padding: 5px 20px;
-  margin-bottom: 10px;
-  border: 1px solid #bebebe;
-  font-size: 14px;
-  background: white;
-  outline: none;
-}
-.submitButton {
-  align-self: center;
-  height: 80px;
-  border-radius: 25px;
-  font-size: 34px;
-  font-weight: bold;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  border: none;
-  background-color: black;
-  color: white;
-  width: 200px;
-  outline: none;
+.commentaryBox {
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 250px;
+}
+.form .submitButton {
+  align-self: center;
+  font-size: 36px;
+  background: #ffa000;
+  color: white;
+  width: 300px;
+  border-radius: 10px;
+  font-family: "Staatliches";
+  font-weight: bold;
+}
+.form .submitButton:hover {
+  background-color: #ffac31;
+  transform: scale(1.1);
 }
 .image {
   display: none;
@@ -86,31 +66,29 @@
     height: 370px;
     padding: 70px 20px;
   }
-  .formContactUs {
-    padding: 10px 50px;
-  }
 }
 @media screen and (min-width: 1024px) {
-  .title {
-    text-align: center;
+  .image {
+    padding: 70px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .formContactUs {
+    width: 500px;
+    text-align: -webkit-center;
+  }
+  .inputBox {
+    width: 300px;
+  }
+  .commentaryBox {
+    width: 300px;
   }
   .image {
-    width: 400px;
+    display: block;
+    width: 500px;
+    height: auto;
     height: 370px;
     padding: 70px 20px;
-  }
-  .formContactUs {
-    padding: 10px 50px;
-  }
-  .input {
-    height: 40px;
-    width: 360px;
-  }
-  .commentary {
-    height: 100px;
-    width: 360px;
-  }
-  .submitButton {
-    width: 360px;
+    padding-left: 100px;
   }
 }

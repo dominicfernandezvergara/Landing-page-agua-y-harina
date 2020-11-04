@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { ReactComponent as ContactUsImage } from "../../images/contact-us-image/undraw_Questions_re_1fy7.svg";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 import styles from "./contactUs.module.css";
+import { ReactComponent as ContactUsImage } from "../../images/contact-us-image/undraw_Questions_re_1fy7.svg";
 
 function ContactUs() {
   const [commentary, setCommentary] = useState("");
@@ -21,55 +23,77 @@ function ContactUs() {
       <div className={styles.formContactUs}>
         <h2 className={styles.title}>¿Tienes alguna Pregunta?</h2>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className={styles.input}
-            placeholder="Nombre"
-            name="name"
-            type="text"
-            ref={register({ required: true })}
-          />
+          <div className={styles.inputBox}>
+            <TextField
+              id="name"
+              label="Nombre"
+              type="text"
+              name="name"
+              className={styles.input}
+              inputRef={register({ required: true })}
+            />
+          </div>
           {errors.name && (
             <span className={styles.errorInput}>
               Nombre requerido para continuar
             </span>
           )}
-          <input
-            className={styles.input}
-            placeholder="Apellido"
-            name="lastName"
-            type="text"
-            ref={register({ required: true })}
-          />
+          <div className={styles.inputBox}>
+            <TextField
+              id="lastName"
+              label="Apellido"
+              type="text"
+              name="lastName"
+              className={styles.input}
+              inputRef={register({ required: true })}
+            />
+          </div>
           {errors.lastName && (
             <span className={styles.errorInput}>
               Apellido requerido para continuar
             </span>
           )}
-          <input
-            className={styles.input}
-            placeholder="Email"
-            name="email"
-            type="email"
-            ref={register({ required: true })}
-          />
+          <div className={styles.inputBox}>
+            <TextField
+              name="email"
+              id="Email"
+              label="Email"
+              type="text"
+              className={styles.input}
+              inputRef={register({
+                required: "Email requerido para continuar",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Email invalido",
+                },
+              })}
+            />
+          </div>
           {errors.email && (
-            <span className={styles.errorInput}>
-              Email requerido para continuar
-            </span>
+            <span className={styles.errorInput}>{errors.email.message}</span>
           )}
-          <div className={styles.containerMessage}>
-            <p className={styles.textMessage}>Mensaje</p>
-            <textarea
+          <div className={styles.commentaryBox}>
+            <TextField
               id="commentary"
-              className={styles.commentary}
+              label="Comentario"
+              multiline
+              rowsMax={4}
+              type="text"
+              className={styles.input}
               name="commentary"
+              inputRef={register({ required: true })}
               value={commentary}
               onChange={(e) => handleChangeCommentary(e)}
             />
           </div>
-          <button className={styles.submitButton} type="submit">
+          {errors.commentary && (
+            <span className={styles.errorInput}>
+              Comentario requerido para continuar
+            </span>
+          )}
+          <Button className={styles.submitButton} type="submit">
             ENVIAR
-          </button>
+          </Button>
         </form>
       </div>
       <ContactUsImage className={styles.image} />
