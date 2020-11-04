@@ -52,7 +52,6 @@ p {
 .productName {
   color: black;
   font-size: 18px;
-  font-weight: bold;
   padding: 8px;
 }
 .productDescription {
@@ -61,7 +60,6 @@ p {
   padding: 8px;
 }
 .productPrice {
-  font-weight: bold;
   padding: 8px;
 }
 .productButton {

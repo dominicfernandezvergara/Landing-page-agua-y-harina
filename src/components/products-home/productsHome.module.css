@@ -1,16 +1,15 @@
 .containerProductsHome {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background: #ffecb3;
   align-items: center;
   padding: 40px;
 }
 .textProductsHome {
+  color: #212121;
   text-align: center;
-  color: white;
   margin: 0;
   font-size: 48px;
-  font-family: "Staatliches";
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -18,6 +17,7 @@
 .containerProductsHome .buttonProductsHome {
   width: 100%;
   height: 120px;
+  color: white;
   background-color: #ff9801;
   cursor: pointer;
   font-size: 48px;
@@ -26,8 +26,7 @@
 }
 .containerProductsHome .buttonProductsHome:hover {
   background-color: #ffac31;
-  height: 125px;
-  font-size: 50px;
+  transform: scale(1.1);
 }
 
 /* .buttonProductsHome :global(.MuiButton-root) {

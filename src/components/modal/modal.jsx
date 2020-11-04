@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import useNoScroll from "../../hooks/use-no-scroll";
 import styles from "./modal.module.css";

@@ -1,17 +1,16 @@
 .containerOnlyText {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background: #ffecb3;
   align-items: center;
 }
 .text {
+  color: #212121;
   text-align: center;
-  color: white;
   margin: 0;
   padding: 50px 50px;
   font-size: 60px;
   font-weight: bold;
-  font-family: "Staatliches";
 }
 
 @media screen and (min-width: 760px) {

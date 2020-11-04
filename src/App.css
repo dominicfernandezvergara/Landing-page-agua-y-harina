@@ -10,19 +10,19 @@ button {
 }
 
 .dark-primary-color {
-  background: #c2185b;
+  background: #ffa000;
 }
 .default-primary-color {
-  background: #e91e63;
+  background: #ffc107;
 }
 .light-primary-color {
-  background: #f8bbd0;
+  background: #ffecb3;
 }
 .text-primary-color {
-  color: #ffffff;
+  color: #212121;
 }
 .accent-color {
-  background: #ff5252;
+  background: #ffc107;
 }
 .primary-text-color {
   color: #212121;

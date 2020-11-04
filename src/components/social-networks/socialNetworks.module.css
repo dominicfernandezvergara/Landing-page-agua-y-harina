@@ -2,22 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  background-color: black;
+  background: #ffa000;
 }
 .containerIconButton {
   background-color: transparent;
   border: none;
   margin: 10px;
 }
-.containerIconButton :hover {
-  background-color: grey;
-  cursor: pointer;
+.iconface:hover {
+  transform: scale(1.5);
+  transition: transform 300ms ease-in;
 }
 .containerSocialNetworksMediumScreen {
   display: none;
 }
-
 @media screen and (min-width: 1024px) {
   .containerSocialNetworksMediumScreen {
     display: flex;
