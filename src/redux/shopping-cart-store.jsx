@@ -44,11 +44,35 @@ export default function ShoppingCartReducer(state = initialData, action) {
     case ADD_NEW_PRODUCT_SHOP_CAR: {
       const { shoppingCartProducts } = state;
       const newProduct = action.payload;
+      let noRepeatedShoppingCartProduct;
+
+      if (shoppingCartProducts.length === 0) {
+        noRepeatedShoppingCartProduct = [...shoppingCartProducts, newProduct];
+      } else {
+        const repeatedProduct = shoppingCartProducts.find(
+          (item) => item.id === newProduct.id
+        );
+
+        if (repeatedProduct) {
+          noRepeatedShoppingCartProduct = shoppingCartProducts.map((item) => {
+            if (item.id === newProduct.id) {
+              return {
+                ...item,
+                quantity: item.quantity + newProduct.quantity,
+                totalAmount: item.totalAmount + newProduct.totalAmount,
+              };
+            }
+            return item;
+          });
+        } else {
+          noRepeatedShoppingCartProduct = [...shoppingCartProducts, newProduct];
+        }
+      }
 
       return {
         ...state,
-        shoppingCartProducts: [...shoppingCartProducts, newProduct],
-        amount: [...shoppingCartProducts, newProduct].reduce((number, item) => {
+        shoppingCartProducts: noRepeatedShoppingCartProduct,
+        amount: noRepeatedShoppingCartProduct.reduce((number, item) => {
           number += item.totalAmount;
           return number;
         }, 0),
@@ -71,10 +95,13 @@ export default function ShoppingCartReducer(state = initialData, action) {
 
         return item;
       });
+      const newShoppingCartProductsFilted = newShoppingCartProducts.filter(
+        (item) => !(item.quantity === 0)
+      );
 
       return {
         ...state,
-        shoppingCartProducts: newShoppingCartProducts,
+        shoppingCartProducts: newShoppingCartProductsFilted,
         amount: newShoppingCartProducts.reduce((number, item) => {
           number += item.totalAmount;
           return number;

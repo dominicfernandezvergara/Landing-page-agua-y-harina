@@ -3,18 +3,11 @@
   justify-content: center;
   padding: 20px;
 }
-/* .formContactUs {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-} */
 .title {
-  width: 260px;
   text-align: center;
   font-size: 38px;
   margin-bottom: 30px;
   margin-top: 20px;
-  align-self: center;
 }
 .form {
   display: flex;
@@ -57,9 +50,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .title {
-    text-align: center;
-  }
   .image {
     display: block;
     width: 400px;
@@ -75,7 +65,6 @@
 @media screen and (min-width: 1440px) {
   .formContactUs {
     width: 500px;
-    text-align: -webkit-center;
   }
   .inputBox {
     width: 300px;
