@@ -8,7 +8,7 @@ import { addNewProductShopCar } from "../../../redux/shopping-cart-store";
 function ModalNewOrder({ data, close }) {
   const dispatch = useDispatch();
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const totalAmount = quantity * data.price;
 
   const onClickAddProductShopCar = () => {
@@ -26,7 +26,7 @@ function ModalNewOrder({ data, close }) {
     close();
   };
   const subtractQuantity = () => {
-    if (!(quantity === 0)) {
+    if (!(quantity === 1)) {
       setQuantity(quantity - 1);
     }
   };

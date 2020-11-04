@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import useSWR from "swr";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
 
 import styles from "./Products.module.css";
 import Modal from "../../components/modal/modal";
@@ -48,11 +50,9 @@ function Products() {
           className={styles.productButton}
           onClick={() => onClickOpenModalNewOrder(item)}
         >
-          <img
-            className={styles.iconImageProductButton}
-            src="https://www.factorynine.cl/images/order-icon.svg"
-            alt=""
-          />
+          <Fab className={styles.iconImageProductButton} aria-label="add">
+            <AddIcon />
+          </Fab>
         </button>
       </li>
     );
