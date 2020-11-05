@@ -6,31 +6,50 @@ import styles from "./header.module.css";
 import Logo from "../logo/logo";
 import Drawer from "./drawer";
 import ShoppingCartDrawer from "../shopping-cart-drawer";
+import { ReactComponent as InicioIcon } from "../../images/mi-coleccion-de-iconos/casa.svg";
+import { ReactComponent as SomosIcon } from "../../images/mi-coleccion-de-iconos/grupo.svg";
+import { ReactComponent as ProductsIcon } from "../../images/mi-coleccion-de-iconos/un-pan.svg";
+import { ReactComponent as ContactoIcon } from "../../images/mi-coleccion-de-iconos/contacto.svg";
 
 // Github : https://github.com/akiran/react-slick
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
-
+const iconInicio = (
+  <InicioIcon className={styles.imageboxAbout} width="30" height="30" />
+);
+const iconSomos = (
+  <SomosIcon className={styles.imageboxAbout} width="30" height="30" />
+);
+const iconProductos = (
+  <ProductsIcon className={styles.imageboxAbout} width="30" height="30" />
+);
+const iconContacto = (
+  <ContactoIcon className={styles.imageboxAbout} width="30" height="30" />
+);
 export const dataButtonsList = [
   {
     name: "INICIO",
+    icon: iconInicio,
     path: "/home",
     active: true,
     id: 1,
   },
   {
     name: "SOMOS",
+    icon: iconSomos,
     path: "/about",
     active: false,
     id: 2,
   },
   {
     name: "PRODUCTOS",
+    icon: iconProductos,
     path: "/products",
     active: false,
     id: 3,
   },
   {
     name: "CONTACTO",
+    icon: iconContacto,
     path: "/contacto",
     active: false,
     id: 4,
@@ -72,7 +91,7 @@ function Header() {
     <Fragment>
       <header className={styles.headerResponsiveSmall}>
         <div className={styles.containerLogo}>
-          <Logo />
+          <Logo width={100} height={100} />
         </div>
         <div className={styles.containerButton}>
           <ShoppingCartDrawer />
@@ -82,7 +101,7 @@ function Header() {
 
       <header className={styles.headerResponsiveLarge}>
         <div className={styles.containerLogo}>
-          <Logo />
+          <Logo width={100} height={100} />
         </div>
         <div className={styles.containerHeaderButton}>
           {buttonHeaderData.map((item) => {

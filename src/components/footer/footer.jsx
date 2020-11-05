@@ -31,6 +31,19 @@ function Footer() {
         </div>
         <SocialNetworks />
       </div>
+      <div hidden>
+        Iconos diseñados por
+        <a
+          href="https://www.flaticon.es/autores/those-icons"
+          title="Those Icons"
+        >
+          Those Icons
+        </a>
+        from
+        <a href="https://www.flaticon.es/" title="Flaticon">
+          www.flaticon.es
+        </a>
+      </div>
     </Fragment>
   );
 }

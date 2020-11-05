@@ -1,9 +1,4 @@
-.containerLogo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.logoButton {
   border: none;
   background-color: transparent;
-  padding: 15px 0px;
-  margin-left: 20px;
 }

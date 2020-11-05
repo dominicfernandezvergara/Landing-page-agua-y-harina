@@ -1,51 +1,70 @@
-.container-drawer-list {
+.containerDrawerList {
+  background: #ffecb3;
   width: 200px;
   height: 100%;
-  background-color: white;
   display: flex;
   flex-direction: column;
 }
 
-.container-drawer-list ul {
+.containerDrawerList ul {
   margin: 0;
   padding: 0;
 }
 
-.container-drawer-list li {
+.containerDrawerList li {
   display: block;
 }
-
-.container-button-close-drawer {
-  display: flex;
-  justify-content: flex-end;
-  height: 50px;
+.headerDrawerList {
+  background: #ffa000;
+}
+.containerButtonCloseDrawer {
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  width: 50px;
 }
 
 .clear-icon {
   font-size: 50px;
 }
 
-.button-close-drawer {
+.buttonCloseDrawer {
   background-color: transparent;
   border: none;
   color: black;
 }
-
-.drawer-list {
+.containerLogoDrawerList {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.drawerList {
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin-left: 10px;
 }
 
-.button-drawer-list {
+.buttonDrawerList {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   border: none;
   width: 100%;
-  border-top: black 1px solid;
-  color: black;
-  text-align: start;
   height: 70px;
-  font-size: 20px;
+  font-size: 18px;
+}
+.icon {
+  height: 100%;
+  width: 50px;
+  border-radius: 10px 0px 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  padding-left: 10px;
 }
 
 .container-products-button {
