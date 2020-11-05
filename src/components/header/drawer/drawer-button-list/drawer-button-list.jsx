@@ -1,10 +1,12 @@
 import React from "react";
-import "./drawer-button-list.css";
 import cn from "classnames";
 import PropTypes from "prop-types";
-
 import { useHistory } from "react-router-dom";
+
+import styles from "./drawer-button-list.module.css";
+import Logo from "../../../logo/logo";
 import { dataButtonsList } from "../../header";
+import SocialNetworks from "../../../social-networks/social-networks";
 
 // Icon API = https://google.github.io/material-design-icons/
 
@@ -18,36 +20,41 @@ const DrawerButtonList = ({ toggleDrawer }) => {
   };
 
   return (
-    <div className="container-drawer-list">
-      <div className="container-button-close-drawer">
-        <button
-          type="button"
-          className="button-close-drawer"
-          onClick={() => toggleDrawer(false)}
-        >
-          <i className="material-icons md-36">clear</i>
-        </button>
+    <div className={styles.containerDrawerList}>
+      <div className={styles.headerDrawerList}>
+        <div className={styles.containerButtonCloseDrawer}>
+          <button
+            type="button"
+            className={styles.buttonCloseDrawer}
+            onClick={() => toggleDrawer(false)}
+          >
+            <i className="material-icons md-36">clear</i>
+          </button>
+        </div>
+        <div className={styles.containerLogoDrawerList}>
+          <Logo width={100} height={100} />
+        </div>
       </div>
-      <ul className="drawer-list">
+      <ul className={styles.drawerList}>
         {dataButtonsList.map((item, index) => {
-          const normalButtonDrawerList = (
-            <button
-              key={index.id}
-              type="button"
-              className="button-drawer-list"
-              onClick={() => onClickButtonDrawerList(item)}
-            >
-              {item.name}
-            </button>
-          );
-
+          console.log("item.icon", item.icon);
           return (
-            <li key={index.id} className={cn("button-drawer-list")}>
-              {normalButtonDrawerList}
+            <li key={index.id} className={cn(styles.buttonDrawerList)}>
+              <button
+                type="button"
+                className={styles.buttonDrawerList}
+                onClick={() => onClickButtonDrawerList(item)}
+              >
+                <div className={styles.icon}> {item.icon}</div>
+                <div className={styles.name}> {item.name}</div>
+              </button>
             </li>
           );
         })}
       </ul>
+      <div className={styles.footerDrawer}>
+        <SocialNetworks />
+      </div>
     </div>
   );
 };
