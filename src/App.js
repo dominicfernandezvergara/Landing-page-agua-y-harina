@@ -12,6 +12,7 @@ import Order from "./pages/order";
 import SuccessOrder from "./pages/success-order";
 import About from "./pages/about";
 import ContactUs from "./pages/contact-us";
+import Admin from "./pages/admin";
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/succefull-Order">
             <SuccessOrder />
+          </Route>
+          <Route path="/admin">
+            <Admin />
           </Route>
         </Switch>
         <Footer />
