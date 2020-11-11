@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useSWR from "swr";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 import styles from "./Products.module.css";
 import Modal from "../../components/modal/modal";
@@ -20,8 +21,30 @@ function Products() {
     // "https://warm-citadel-13428.herokuapp.com/api/v1/breads",
     fetcher
   );
+  // if (error) return <div>failed to load</div>;
+  // if (!data)
+  const skeletonTab = (
+    <div className={styles.loadingProduct}>
+      <Skeleton variant="rect" width={150} height={300} />
+    </div>
+  );
   if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (!data)
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loadingTitle}>
+          <Skeleton variant="rect" width={500} height={50} />
+        </div>
+        <div className={styles.loadingContainerProducts}>
+          {skeletonTab}
+          {skeletonTab}
+          {skeletonTab}
+          {skeletonTab}
+          {skeletonTab}
+          {skeletonTab}
+        </div>
+      </div>
+    );
 
   // ejemplo de como usar id para enviar informacion de una pagina a otra usando UseHistory
   // const onClickProductButton = (item) => {
