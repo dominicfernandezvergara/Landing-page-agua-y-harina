@@ -7,8 +7,6 @@ import { useHistory } from "react-router-dom";
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
 
 function Logo({ width, height }) {
-  console.log("width", width);
-  console.log("height", height);
   const history = useHistory();
   const onClickButtonDrawerList = () => {
     history.push("/home");
