@@ -9,6 +9,7 @@ function FollowUs() {
     event.preventDefault();
     window.open("https://www.w3schools.com");
   };
+  console.log("emptyStateImage", emptyStateImage);
   return (
     <div className={styles.containerFollowUs}>
       <div className={styles.containerLink}>
