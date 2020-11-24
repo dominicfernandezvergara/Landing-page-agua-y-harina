@@ -38,23 +38,23 @@
 @media screen and (min-width: 768px) {
   .containerModal {
     width: 50%;
-    height: 40%;
+    height: auto;
     left: 150px;
     right: 150px;
   }
 }
 @media screen and (min-width: 1024px) {
   .containerModal {
-    width: 50%;
-    height: 40%;
+    /* width: 50%;
+    height: 40%; */
     left: 250px;
     right: 250px;
   }
 }
 @media screen and (min-width: 1440px) {
   .containerModal {
-    width: 40%;
-    height: 40%;
+    /* width: 40%;
+    height: 40%; */
     left: 350px;
     right: 350px;
   }

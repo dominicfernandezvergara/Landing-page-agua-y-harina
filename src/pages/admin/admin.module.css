@@ -1,30 +1,8 @@
-.loadingProduct {
-  margin-bottom: 20px;
-  margin-left: 50px;
-}
-.loadingContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  min-height: calc(100% - 100px);
-}
-.loadingTitle {
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
-.loadingContainerProducts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
 .containerAdmin {
   padding: 10px;
 }
 .containerButtonAddProduct {
-  width: 100%;
-  padding: 10px;
+  margin-bottom: 10px;
 }
 .containerButtonAddProduct .buttonAddProduct {
   background: #ffa000;
@@ -36,7 +14,7 @@
 .containerProductsList {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
+  justify-content: space-evenly;
 }
 .containerProduct {
   display: flex;
@@ -47,11 +25,11 @@
   width: 100%;
   height: auto;
 }
+
 .productImage {
   flex: 1;
   border-radius: 16px;
   padding: 8px;
-  width: 100px;
   height: 100px;
 }
 .containerProductData {
@@ -111,22 +89,34 @@
   .containerAdmin {
     padding: 30px;
   }
+  .adminTitle {
+    font-size: 40px;
+  }
+  .containerButtonAddProduct .buttonAddProduct {
+    font-size: 22px;
+    padding: 30px;
+    margin: 20px;
+  }
+  .containerProduct {
+    margin-bottom: 30px;
+  }
   .productImage {
-    width: 150px;
-    height: 150px;
+    border-radius: 16px;
+    margin: 10px;
+    height: 120px;
   }
   .productName {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 5px;
   }
   .productDescription {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 5px;
     max-height: 40px;
     overflow-y: scroll;
   }
   .productPrice {
-    font-size: 18px;
+    font-size: 20px;
   }
   .containerButton .productButton {
     width: 60px;
@@ -144,4 +134,24 @@
   }
 }
 @media screen and (min-width: 1024px) {
+  .containerAdmin {
+    padding: 30px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerAdmin {
+    padding: 30px 100px;
+  }
+  .productImage {
+    height: 150px;
+  }
+  .productName {
+    font-size: 28px;
+  }
+  .productDescription {
+    font-size: 24px;
+  }
+  .productPrice {
+    font-size: 24px;
+  }
 }

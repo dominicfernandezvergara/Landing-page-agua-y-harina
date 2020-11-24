@@ -9,6 +9,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import styles from "./admin.module.css";
 import Modal from "../../components/modal";
 import ModalNewProduct from "../../components/modal/modal-new-product";
+import SkeletonAdmin from "../../components/skeleton-admin";
 
 function Admin() {
   const [modalState, setModalState] = useState(false);
@@ -16,35 +17,18 @@ function Admin() {
   const [currentItem, setCurrentItem] = useState({});
   const [active, setActive] = useState(true);
   const fetcher = (url) => fetch(url).then((res) => res.json());
-  const skeletonTab = (
-    <div className={styles.loadingProduct}>
-      <Skeleton variant="rect" width={150} height={300} />
-    </div>
-  );
+
   const { data, error } = useSWR(
     "https://breads-api.herokuapp.com/api/v1/breads",
     // "https://warm-citadel-13428.herokuapp.com/api/v1/breads",
     fetcher
   );
+  // if (error) return <SkeletonAdmin />;
+
   if (error) return <div>failed to load</div>;
 
   /* loading Skeleton */
-  if (!data)
-    return (
-      <div className={styles.loadingContainer}>
-        <div className={styles.loadingTitle}>
-          <Skeleton variant="rect" width={500} height={50} />
-        </div>
-        <div className={styles.loadingContainerProducts}>
-          {skeletonTab}
-          {skeletonTab}
-          {skeletonTab}
-          {skeletonTab}
-          {skeletonTab}
-          {skeletonTab}
-        </div>
-      </div>
-    );
+  if (!data) return <SkeletonAdmin />;
 
   const AddNewProduct = () => {
     setTitleModal("Crear un nuevo producto");
@@ -135,7 +119,7 @@ function Admin() {
   return (
     <React.Fragment>
       <div className={styles.containerAdmin}>
-        <h1>hola Administradora</h1>
+        <h1 className={styles.adminTitle}>hola Administradora</h1>
         <div className={styles.containerButtonAddProduct}>
           <Fab
             variant="extended"
