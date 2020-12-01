@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 import cn from "classnames";
-import Skeleton from "@material-ui/lab/Skeleton";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
@@ -10,6 +9,7 @@ import styles from "./admin.module.css";
 import Modal from "../../components/modal";
 import ModalNewProduct from "../../components/modal/modal-new-product";
 import SkeletonAdmin from "../../components/skeleton-admin";
+import ErrorLoadingData from "../../components/error-loading-data";
 
 function Admin() {
   const [modalState, setModalState] = useState(false);
@@ -25,7 +25,7 @@ function Admin() {
   );
   // if (error) return <SkeletonAdmin />;
 
-  if (error) return <div>failed to load</div>;
+  if (error) return <ErrorLoadingData />;
 
   /* loading Skeleton */
   if (!data) return <SkeletonAdmin />;

@@ -13,6 +13,7 @@ import SuccessOrder from "./pages/success-order";
 import About from "./pages/about";
 import ContactUs from "./pages/contact-us";
 import Admin from "./pages/admin";
+import Test from "./pages/test";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route path="/test">
+            <Test />
+          </Route>
           <Route path="/home">
             <Home />
           </Route>

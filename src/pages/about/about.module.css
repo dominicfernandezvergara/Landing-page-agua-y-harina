@@ -5,25 +5,33 @@
   font-size: 70px;
   letter-spacing: 2px;
 }
-.descriptionAbout {
+.containerDescriptionAbout {
   background: #ffecb3;
+  /* padding-bottom: 40px; */
+  /* padding-top: 40px; */
+  padding: 30px 30px;
+}
+.descriptionAbout {
   color: #212121;
   text-transform: uppercase;
   text-align: center;
-  padding-bottom: 40px;
-  padding-top: 40px;
   font-size: 30px;
   font-family: monospace;
-  padding: 30px 30px;
 }
-.containerBoxesAbout {
+.containerBoxesAboutSmall {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 30px 30px;
 }
+.containerBoxesAboutLarge {
+  display: none;
+}
 
 @media screen and (min-width: 768px) {
+  .animationSmall {
+    display: none;
+  }
   .titleAbout {
     font-size: 150px;
   }
@@ -31,13 +39,19 @@
     font-size: 60px;
     padding: 70px 40px;
   }
-  .containerBoxesAbout {
+  .containerBoxesAboutSmall {
+    display: none;
+  }
+  .containerBoxesAboutLarge {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    padding: 30px 30px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .containerBoxesAbout {
+  .containerBoxesAboutLarge {
     margin-top: 50px;
   }
   .descriptionAbout {

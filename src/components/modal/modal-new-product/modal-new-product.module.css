@@ -22,10 +22,12 @@
 .errorInput {
   color: #c40e0e;
   font-size: 16px;
-  /* margin-bottom: 15px; */
+  margin-bottom: 15px;
 }
 .form .submitButton {
+  min-height: 120px;
   margin-top: 20px;
+  margin-bottom: 20px;
   background: #ffa000;
   align-self: center;
   font-size: 24px;

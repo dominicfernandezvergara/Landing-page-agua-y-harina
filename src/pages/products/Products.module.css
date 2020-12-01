@@ -9,30 +9,14 @@ p {
   margin: 0px;
   padding: 0px;
 }
-.loadingContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  min-height: calc(100% - 100px);
-}
-.loadingTitle {
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
-.loadingContainerProducts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.loadingProduct {
-}
+
 .containerProducts {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: auto;
   min-height: calc(100% - 100px);
+  overflow: hidden;
 }
 .productTitle {
   font-size: 30px;
