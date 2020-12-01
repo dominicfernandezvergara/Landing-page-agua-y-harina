@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import cn from "classnames";
 import { useHistory, useLocation } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 import styles from "./header.module.css";
 import Logo from "../logo/logo";
@@ -87,40 +88,65 @@ function Header() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const itemDelay = (itemId) => {
+    let delay = 0;
+    if (itemId === 2) {
+      delay = 300;
+    }
+    if (itemId === 3) {
+      delay = 400;
+    }
+    if (itemId === 4) {
+      delay = 500;
+    }
+
+    return delay;
+  };
   return (
     <Fragment>
       <header className={styles.headerResponsiveSmall}>
-        <div className={styles.containerLogo}>
-          <Logo width={100} height={100} />
-        </div>
-        <div className={styles.containerButton}>
-          <ShoppingCartDrawer />
-          <Drawer />
-        </div>
+        <Fade>
+          <div className={styles.containerLogo}>
+            <Logo width={100} height={100} />
+          </div>
+
+          <div className={styles.containerButton}>
+            <ShoppingCartDrawer />
+            <Drawer />
+          </div>
+        </Fade>
       </header>
 
       <header className={styles.headerResponsiveLarge}>
         <div className={styles.containerLogo}>
-          <Logo width={100} height={100} />
+          <Fade>
+            <Logo width={100} height={100} />
+          </Fade>
         </div>
         <div className={styles.containerHeaderButton}>
           {buttonHeaderData.map((item) => {
+            const delayNumber = itemDelay(item.id);
+
             return (
-              <button
-                type="button"
-                className={cn(
-                  styles.headerButton,
-                  item.active === true ? styles.active : null
-                )}
-                key={item.id}
-                onClick={() => onClickHeaderButton(item)}
-              >
-                {item.name}
-              </button>
+              <Fade className={cn(styles.headerButton)} delay={delayNumber}>
+                <button
+                  className={cn(
+                    styles.headerButton,
+                    item.active === true ? styles.active : null
+                  )}
+                  type="button"
+                  key={item.id}
+                  onClick={() => onClickHeaderButton(item)}
+                >
+                  {item.name}
+                </button>
+              </Fade>
             );
           })}
         </div>
-        <ShoppingCartDrawer />
+        <Fade>
+          <ShoppingCartDrawer />
+        </Fade>
       </header>
     </Fragment>
   );
