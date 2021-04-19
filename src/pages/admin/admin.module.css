@@ -5,10 +5,10 @@
   margin-bottom: 10px;
 }
 .containerButtonAddProduct .buttonAddProduct {
-  background: #ffa000;
+  background: var(--button);
 }
 .containerButtonAddProduct .buttonAddProduct:hover {
-  background-color: #ffac31;
+  background-color: var(--buttonHover);
   transform: scale(1.1);
 }
 .containerProductsList {
@@ -21,7 +21,7 @@
   align-items: center;
   margin-bottom: 10px;
   border-radius: 10px;
-  background: #ffecb3;
+  background: var(--light);
   width: 100%;
   height: auto;
 }
@@ -42,7 +42,7 @@
   overflow-y: scroll;
 }
 .productDescription {
-  color: #757575;
+  color: var(--lightDark);
   max-height: 40px;
   overflow-y: scroll;
 }
@@ -54,30 +54,30 @@
   padding: 5px;
 }
 .containerButton .productButton {
-  background: #ffa000;
+  background: var(--button);
   width: 40px;
   height: 40px;
   margin-bottom: 10px;
 }
 .containerButton .productButton:hover {
-  background-color: #ffac31;
+  background-color: var(--buttonHover);
   transform: scale(1.1);
 }
 .containerButton .productButtonActive {
-  background: #ffa000;
+  background: var(--button);
   height: 30px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
 }
 .containerButton .productButtonActive:hover {
-  background-color: #ffac31;
+  background-color: var(--buttonHover);
   transform: scale(1.1);
 }
 .containerButton .productButtonDesactive {
   background-color: #bdbdbb;
   font-size: 12px;
   height: 30px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
 }
 .containerButton .productButtonDesactive:hover {

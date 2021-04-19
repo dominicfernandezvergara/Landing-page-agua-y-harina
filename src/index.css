@@ -1,3 +1,5 @@
+@import "./colors.css";
+
 body {
   /* evitar que dobleClick haga zoom en Iphone  */
   touch-action: manipulation;
@@ -6,9 +8,8 @@ body {
   -webkit-overflow-scrolling: touch;
 
   margin: 0;
-  font-family: "Staatliches";
   color: #212121;
-  /* font-family: "Roboto", sans-serif; */
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
@@ -30,3 +31,12 @@ html {
 .root {
   height: 100%;
 }
+
+/* padding screem side
+mobil: 40px
+screem 768px = 50px
+screem 1024px = 60px
+screem 1280px = 60px
+screem 1440px = 90px
+acreem 1920px = 90px 300px
+ */

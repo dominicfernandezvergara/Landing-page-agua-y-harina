@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useLayoutEffect } from "react";
 import cn from "classnames";
 import { useHistory, useLocation } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
@@ -102,25 +102,53 @@ function Header() {
 
     return delay;
   };
+
+  const [startScrolling, setStartScrolling] = useState(false);
+
+  useLayoutEffect(() => {
+    window.onscroll = function () {
+      if (window.pageYOffset === 0) {
+        setStartScrolling(false);
+      } else {
+        setStartScrolling(true);
+      }
+    };
+
+    return () => {
+      window.onscroll = null;
+    };
+  }, [startScrolling]);
   return (
     <Fragment>
-      <header className={styles.headerResponsiveSmall}>
-        <Fade>
-          <div className={styles.containerLogo}>
-            <Logo width={100} height={100} />
-          </div>
+      {/* Header Small */}
 
-          <div className={styles.containerButton}>
-            <ShoppingCartDrawer />
-            <Drawer />
-          </div>
-        </Fade>
+      <header
+        className={cn(styles.headerResponsiveSmall, {
+          [styles.headerTransparent]: startScrolling,
+        })}
+      >
+        <div className={styles.containerLogo}>
+          <Logo width={60} height={60} />
+        </div>
+
+        <div className={styles.containerButton}>
+          <ShoppingCartDrawer />
+        </div>
+        <div className={styles.containerButton}>
+          <Drawer />
+        </div>
       </header>
 
-      <header className={styles.headerResponsiveLarge}>
+      {/* Header Large */}
+
+      <header
+        className={cn(styles.headerResponsiveLarge, {
+          [styles.headerTransparent]: startScrolling,
+        })}
+      >
         <div className={styles.containerLogo}>
-          <Fade>
-            <Logo width={100} height={100} />
+          <Fade triggerOnce>
+            <Logo width={80} height={80} />
           </Fade>
         </div>
         <div className={styles.containerHeaderButton}>
@@ -128,7 +156,11 @@ function Header() {
             const delayNumber = itemDelay(item.id);
 
             return (
-              <Fade className={cn(styles.headerButton)} delay={delayNumber}>
+              <Fade
+                className={cn(styles.headerButton)}
+                delay={delayNumber}
+                triggerOnce
+              >
                 <button
                   className={cn(
                     styles.headerButton,
@@ -144,7 +176,7 @@ function Header() {
             );
           })}
         </div>
-        <Fade>
+        <Fade triggerOnce>
           <ShoppingCartDrawer />
         </Fade>
       </header>

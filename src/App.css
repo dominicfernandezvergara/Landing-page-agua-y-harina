@@ -5,31 +5,20 @@
 .switch-wrapper {
   height: 100%;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+}
+a {
+  text-decoration-line: none;
+}
 button {
   outline: none;
-}
-
-.dark-primary-color {
-  background: #ffa000;
-}
-.default-primary-color {
-  background: #ffc107;
-}
-.light-primary-color {
-  background: #ffecb3;
-}
-.text-primary-color {
-  color: #212121;
-}
-.accent-color {
-  background: #ffc107;
-}
-.primary-text-color {
-  color: #212121;
-}
-.secondary-text-color {
-  color: #757575;
-}
-.divider-color {
-  border-color: #bdbdbd;
 }

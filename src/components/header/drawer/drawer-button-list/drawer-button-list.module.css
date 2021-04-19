@@ -1,21 +1,23 @@
 .containerDrawerList {
-  background: #ffecb3;
   width: 200px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-
+.containerHeaderDrawerList {
+  background: var(--secondary);
+  display: flex;
+}
+.titleHeader {
+  text-align: center;
+  margin-top: 15px;
+}
 .containerDrawerList ul {
   margin: 0;
   padding: 0;
 }
-
 .containerDrawerList li {
   display: block;
-}
-.headerDrawerList {
-  background: #ffa000;
 }
 .containerButtonCloseDrawer {
   position: absolute;
@@ -23,15 +25,13 @@
   right: -15px;
   width: 50px;
 }
-
 .clear-icon {
   font-size: 50px;
 }
-
 .buttonCloseDrawer {
   background-color: transparent;
   border: none;
-  color: black;
+  color: var(--dark);
 }
 .containerLogoDrawerList {
   display: flex;
@@ -53,7 +53,7 @@
   border: none;
   width: 100%;
   height: 70px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .icon {
   height: 100%;
@@ -66,22 +66,20 @@
 .name {
   padding-left: 10px;
 }
-
 .container-products-button {
   display: flex;
   justify-content: space-between;
 }
-
 .button-drawer-list .button-drawer-list-products {
   display: flex;
   align-items: center;
 }
 
 .product-button-drawer {
-  background-color: white;
+  background-color: var(--white);
   border: none;
   font-size: 14px;
-  color: black;
+  color: var(--dark);
   height: 34px;
   width: 100%;
   border-top: 1px solid;
@@ -91,7 +89,7 @@
   background-color: transparent;
   border: none;
   font-size: 22px;
-  color: black;
+  color: var(--dark);
   height: 34px;
   width: 34px;
   border-top: 1px solid;

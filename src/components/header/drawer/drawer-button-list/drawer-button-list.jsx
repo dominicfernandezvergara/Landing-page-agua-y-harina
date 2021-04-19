@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 import styles from "./drawer-button-list.module.css";
 import Logo from "../../../logo/logo";
 import { dataButtonsList } from "../../header";
-import SocialNetworks from "../../../social-networks/social-networks";
 
 // Icon API = https://google.github.io/material-design-icons/
 
@@ -18,23 +17,36 @@ const DrawerButtonList = ({ toggleDrawer }) => {
     const pathItem = item.path;
     history.push(pathItem);
   };
-
+  //   <div className={styles.headerDrawerList}>
+  //   <div className={styles.containerButtonCloseDrawer}>
+  //     <button
+  //       type="button"
+  //       className={styles.buttonCloseDrawer}
+  //       onClick={() => toggleDrawer(false)}
+  //     >
+  //       <i className="material-icons md-36">clear</i>
+  //     </button>
+  //   </div>
+  //   <div className={styles.containerLogoDrawerList}>
+  //     <Logo width={50} height={50} />
+  //   </div>
+  // </div>
   return (
     <div className={styles.containerDrawerList}>
-      <div className={styles.headerDrawerList}>
-        <div className={styles.containerButtonCloseDrawer}>
-          <button
-            type="button"
-            className={styles.buttonCloseDrawer}
-            onClick={() => toggleDrawer(false)}
-          >
-            <i className="material-icons md-36">clear</i>
-          </button>
-        </div>
+      <div className={styles.containerHeaderDrawerList}>
         <div className={styles.containerLogoDrawerList}>
-          <Logo width={100} height={100} />
+          <Logo width={50} height={50} />
         </div>
+        <h3 className={styles.titleHeader}>Agua y Harina</h3>
+        <button
+          type="button"
+          className={styles.buttonCloseDrawer}
+          onClick={() => toggleDrawer(false)}
+        >
+          <i className="material-icons md-36">clear</i>
+        </button>
       </div>
+
       <ul className={styles.drawerList}>
         {dataButtonsList.map((item, index) => {
           console.log("item.icon", item.icon);
@@ -52,9 +64,6 @@ const DrawerButtonList = ({ toggleDrawer }) => {
           );
         })}
       </ul>
-      <div className={styles.footerDrawer}>
-        <SocialNetworks />
-      </div>
     </div>
   );
 };

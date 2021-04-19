@@ -76,12 +76,12 @@ p {
   cursor: pointer;
 }
 .productButton .iconImageProductButton {
-  background: #ffa000;
+  background: var(--button);
   width: 45px;
   height: 45px;
 }
 .productButton .iconImageProductButton:hover {
-  background-color: #ffac31;
+  background-color: var(--buttonHover);
   transform: scale(1.1);
 }
 
@@ -108,6 +108,11 @@ p {
   .productButton {
     top: 146px;
     right: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerProductsList {
+    padding: 0px 120px;
   }
 }
 

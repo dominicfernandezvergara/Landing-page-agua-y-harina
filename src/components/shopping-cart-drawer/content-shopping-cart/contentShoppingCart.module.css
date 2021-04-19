@@ -70,7 +70,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 40px; */
   padding-left: 16px;
   padding-right: 10px;
 }
@@ -82,7 +81,7 @@
   border-radius: 50px;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-  background-color: white;
+  background-color: var(--white);
   width: 35px;
   height: 35px;
 }
@@ -134,8 +133,7 @@
   background-color: transparent;
 }
 .buttonOrders {
-  font-family: "Staatliches";
-  background: #ffa000;
+  background: var(--button);
   margin-top: 30px;
   height: 100px;
   width: 210px;
@@ -147,7 +145,7 @@
   color: white;
 }
 .buttonOrders:hover {
-  background-color: #ffac31;
+  background-color: var(--buttonHover);
   transform: scale(1.1);
 }
 .emptyState {
@@ -169,8 +167,6 @@
   }
 }
 @media screen and (min-width: 1024px) {
-  .containerOrder {
-  }
   .containerDataOrder {
     width: 240px;
   }

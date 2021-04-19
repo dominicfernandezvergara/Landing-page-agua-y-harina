@@ -1,0 +1,44 @@
+.containerHomeMisionSection {
+  display: flex;
+  flex-direction: column;
+  background: var(--secondary);
+  align-items: center;
+  padding: 25px;
+}
+.title {
+  color: var(--dark);
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.text {
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.containerHomeMisionSection :global(.MuiButton-root) {
+  background: var(--button);
+  color: var(--white);
+}
+.containerHomeMisionSection :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
+
+@media screen and (min-width: 760px) {
+  .text {
+    font-size: 90px;
+    padding: 60px 80px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text {
+    padding: 90px 180px;
+    font-size: 130px;
+    line-height: 110%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .text {
+    padding: 120px 240px;
+  }
+}
