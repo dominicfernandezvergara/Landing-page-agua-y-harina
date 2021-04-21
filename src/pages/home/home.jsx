@@ -5,6 +5,7 @@ import ProductsHome from "../../components/products-home";
 import FollowUs from "../../components/follow-us";
 import Banner from "../../components/banner/banner";
 import HomeMisionSection from "../../components/home-mision-section/home-mision-section";
+import HowItWork from "../../components/how-it-work/how-it-work";
 
 function Home() {
   const imageHome1 =
@@ -16,6 +17,7 @@ function Home() {
       <HomeMisionSection />
       <OnlyImage image={imageHome1} />
       <ProductsHome />
+      <HowItWork />
       <FollowUs />
     </div>
   );
