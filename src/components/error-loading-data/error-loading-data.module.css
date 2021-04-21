@@ -1,0 +1,13 @@
+.contianerErrorLoadingData {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  height: calc(100% - 100px);
+}
+
+.errorLoadingDataimage {
+  margin-top: 50px;
+  align-self: center;
+  height: auto;
+  width: 100%;
+}

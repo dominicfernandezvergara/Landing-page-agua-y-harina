@@ -1,0 +1,7 @@
+ Agregar en el css del BODY
+
+  /* evitar que dobleClick haga zoom en Iphone  */
+  touch-action: manipulation;
+
+  /* evitar padre scroll en Iphone */
+  -webkit-overflow-scrolling: touch;

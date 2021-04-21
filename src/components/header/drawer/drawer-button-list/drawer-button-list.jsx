@@ -1,106 +1,65 @@
-import React, { useState, Fragment } from "react";
-import "./drawer-button-list.css";
+import React from "react";
 import cn from "classnames";
 import PropTypes from "prop-types";
-
 import { useHistory } from "react-router-dom";
+
+import styles from "./drawer-button-list.module.css";
+import Logo from "../../../logo/logo";
 import { dataButtonsList } from "../../header";
 
 // Icon API = https://google.github.io/material-design-icons/
 
 const DrawerButtonList = ({ toggleDrawer }) => {
   const history = useHistory();
-  const [plusMinusSing, setplusMinusSing] = useState("+");
-
-  const onClickViewProductsList = (e) => {
-    e.stopPropagation();
-    if (plusMinusSing === "+") {
-      setplusMinusSing("-");
-    } else {
-      setplusMinusSing("+");
-    }
-  };
-
-  // data: productSubList ==> renombrando la variable "data" en el destructuring
-  const ProductButtonDrawerList = ({ data: productSubList, name, path }) => {
-    const productsList = productSubList.map((item) => (
-      <button key={item.id} type="button" className="product-button-drawer">
-        {item}
-      </button>
-    ));
-    const onClickButtonProductDrawerList = () => {
-      history.push(path);
-    };
-    return (
-      <Fragment>
-        <div className="container-products-button">
-          <button
-            type="button"
-            className="button-drawer-list button-drawer-list-products"
-            onClick={() => onClickButtonProductDrawerList(path)}
-          >
-            {name}
-          </button>
-          <button
-            type="button"
-            className="button-products-list"
-            onClick={(e) => onClickViewProductsList(e)}
-          >
-            {plusMinusSing}
-          </button>
-        </div>
-        <div className="container-product-list">
-          {plusMinusSing === "-" ? productsList : null}
-        </div>
-      </Fragment>
-    );
-  };
-
-  ProductButtonDrawerList.propTypes = {
-    data: PropTypes.node.isRequired,
-    name: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-  };
 
   const onClickButtonDrawerList = (item) => {
+    toggleDrawer();
     const pathItem = item.path;
     history.push(pathItem);
   };
-
+  //   <div className={styles.headerDrawerList}>
+  //   <div className={styles.containerButtonCloseDrawer}>
+  //     <button
+  //       type="button"
+  //       className={styles.buttonCloseDrawer}
+  //       onClick={() => toggleDrawer(false)}
+  //     >
+  //       <i className="material-icons md-36">clear</i>
+  //     </button>
+  //   </div>
+  //   <div className={styles.containerLogoDrawerList}>
+  //     <Logo width={50} height={50} />
+  //   </div>
+  // </div>
   return (
-    <div className="container-drawer-list">
-      <div className="container-button-close-drawer">
+    <div className={styles.containerDrawerList}>
+      <div className={styles.containerHeaderDrawerList}>
+        <div className={styles.containerLogoDrawerList}>
+          <Logo width={50} height={50} />
+        </div>
+        <h3 className={styles.titleHeader}>Agua y Harina</h3>
         <button
           type="button"
-          className="button-close-drawer"
+          className={styles.buttonCloseDrawer}
           onClick={() => toggleDrawer(false)}
         >
           <i className="material-icons md-36">clear</i>
         </button>
       </div>
-      <ul className="drawer-list">
-        {dataButtonsList.map((item, index) => {
-          const normalButtonDrawerList = (
-            <button
-              type="button"
-              className="button-drawer-list"
-              onClick={() => onClickButtonDrawerList(item)}
-            >
-              {item.name}
-            </button>
-          );
 
+      <ul className={styles.drawerList}>
+        {dataButtonsList.map((item, index) => {
+          console.log("item.icon", item.icon);
           return (
-            <li
-              key={index.id}
-              className={cn("button-drawer-list", {
-                "button-drawer-list-open": plusMinusSing === "-",
-              })}
-            >
-              {item.data
-                ? // enviando la variable global "item" para que la funcion "productButtonDrawerList" la use
-                  ProductButtonDrawerList(item)
-                : normalButtonDrawerList}
+            <li key={index.id} className={cn(styles.buttonDrawerList)}>
+              <button
+                type="button"
+                className={styles.buttonDrawerList}
+                onClick={() => onClickButtonDrawerList(item)}
+              >
+                <div className={styles.icon}> {item.icon}</div>
+                <div className={styles.name}> {item.name}</div>
+              </button>
             </li>
           );
         })}

@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
-import "./slider.css";
+import { Link } from "react-router-dom";
+
+import styles from "./slider.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -23,21 +25,40 @@ function SimpleSlider() {
   };
   // ejemplo de como importar una imagen para usarla en html
   // const sliderItem = <img className="slider-img" src={image} alt="" />;
+  const openNewWindow = (event) => {
+    event.preventDefault();
+    window.open("https://www.w3schools.com");
+  };
 
-  const sliderItem2 = (
+  const firstImage = (
     <img
-      className="slider-img"
+      className={styles.sliderImg}
       src="https://d1kxxrc2vqy8oa.cloudfront.net/wp-content/uploads/2019/06/27112110/RFB-2006-1-pandeleche.jpg
           "
       alt=""
     />
   );
 
+  const secondImage = (
+    <div className={styles.containerFollowUsSlider}>
+      <h1 className={styles.followUstextSlider}>Follow Us!</h1>
+      <div className={styles.containerFollowUsLink}>
+        <Link
+          className={styles.followUsLinkSlider}
+          to="https://www.instagram.com/factorynine/"
+          onClick={openNewWindow}
+        >
+          @InstagramName
+        </Link>
+      </div>
+    </div>
+  );
+
   return (
-    <div className="slider">
+    <div className={styles.slider}>
       <Slider {...settings}>
-        {sliderItem2}
-        {sliderItem2}
+        {firstImage}
+        {secondImage}
       </Slider>
     </div>
   );

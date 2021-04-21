@@ -6,6 +6,8 @@ const UPDATE_ADD_QUANTITY_PRODUCT_SHOPPING_CART =
   "UPDATE_ADD_QUANTITY_PRODUCT_SHOPPING_CART";
 const UPDATE_REMOVE_PRODUCT_SHOPPING_CART =
   "UPDATE_REMOVE_PRODUCT_SHOPPING_CART";
+const ADD_USER_INFORMATION = "ADD_USER_INFORMATION";
+const ADD_COMMENTARY = "ADD_COMMENTARY";
 
 const initialData = {
   shoppingCartProducts: [
@@ -28,12 +30,12 @@ const initialData = {
     phone: "", // optional
     email: "",
   },
+  commentary: "",
 };
 
 export default function ShoppingCartReducer(state = initialData, action) {
   switch (action.type) {
     case CURRENT_SHOP_CAR_STATE: {
-      // console.log("action.payload", action.payload);
       return {
         ...state,
         shopCarState: action.payload,
@@ -42,19 +44,41 @@ export default function ShoppingCartReducer(state = initialData, action) {
     case ADD_NEW_PRODUCT_SHOP_CAR: {
       const { shoppingCartProducts } = state;
       const newProduct = action.payload;
+      let noRepeatedShoppingCartProduct;
+
+      if (shoppingCartProducts.length === 0) {
+        noRepeatedShoppingCartProduct = [...shoppingCartProducts, newProduct];
+      } else {
+        const repeatedProduct = shoppingCartProducts.find(
+          (item) => item.id === newProduct.id
+        );
+
+        if (repeatedProduct) {
+          noRepeatedShoppingCartProduct = shoppingCartProducts.map((item) => {
+            if (item.id === newProduct.id) {
+              return {
+                ...item,
+                quantity: item.quantity + newProduct.quantity,
+                totalAmount: item.totalAmount + newProduct.totalAmount,
+              };
+            }
+            return item;
+          });
+        } else {
+          noRepeatedShoppingCartProduct = [...shoppingCartProducts, newProduct];
+        }
+      }
 
       return {
         ...state,
-        shoppingCartProducts: [...shoppingCartProducts, newProduct],
-        amount: [...shoppingCartProducts, newProduct].reduce((number, item) => {
+        shoppingCartProducts: noRepeatedShoppingCartProduct,
+        amount: noRepeatedShoppingCartProduct.reduce((number, item) => {
           number += item.totalAmount;
           return number;
         }, 0),
       };
     }
     case UPDATE_SUBTRACT_QUANTITY_PRODUCT_SHOPPING_CART: {
-      console.log("action.payload", action.payload);
-
       const itemId = action.payload;
       const { shoppingCartProducts } = state;
 
@@ -71,10 +95,13 @@ export default function ShoppingCartReducer(state = initialData, action) {
 
         return item;
       });
+      const newShoppingCartProductsFilted = newShoppingCartProducts.filter(
+        (item) => !(item.quantity === 0)
+      );
 
       return {
         ...state,
-        shoppingCartProducts: newShoppingCartProducts,
+        shoppingCartProducts: newShoppingCartProductsFilted,
         amount: newShoppingCartProducts.reduce((number, item) => {
           number += item.totalAmount;
           return number;
@@ -82,8 +109,6 @@ export default function ShoppingCartReducer(state = initialData, action) {
       };
     }
     case UPDATE_ADD_QUANTITY_PRODUCT_SHOPPING_CART: {
-      console.log("action.payload", action.payload);
-
       const itemId = action.payload;
       const { shoppingCartProducts } = state;
 
@@ -116,7 +141,6 @@ export default function ShoppingCartReducer(state = initialData, action) {
       const newShoppingCartProducts = shoppingCartProducts.filter(
         (item) => !(item.id === idProduct)
       );
-      console.log("newShoppingCartProducts", newShoppingCartProducts);
 
       return {
         ...state,
@@ -125,6 +149,18 @@ export default function ShoppingCartReducer(state = initialData, action) {
           number += item.totalAmount;
           return number;
         }, 0),
+      };
+    }
+    case ADD_USER_INFORMATION: {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
+    case ADD_COMMENTARY: {
+      return {
+        ...state,
+        commentary: action.payload,
       };
     }
 
@@ -171,5 +207,23 @@ export const updateShoppingRemoveOrderActionDispacher = (id) => async (
   dispatch({
     type: UPDATE_REMOVE_PRODUCT_SHOPPING_CART,
     payload: id,
+  });
+};
+
+export const addPersonalDataOrderActionDispacher = (userInformation) => async (
+  dispatch
+) => {
+  dispatch({
+    type: ADD_USER_INFORMATION,
+    payload: userInformation,
+  });
+};
+
+export const addCommentaryOrderActionDispacher = (commentary) => async (
+  dispatch
+) => {
+  dispatch({
+    type: ADD_COMMENTARY,
+    payload: commentary,
   });
 };

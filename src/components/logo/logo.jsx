@@ -1,24 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./logo.css";
-import cn from "classnames";
+import { useHistory } from "react-router-dom";
 
 // Github : https://github.com/akiran/react-slick
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
 
-function Logo() {
+function Logo({ width, height }) {
+  const history = useHistory();
+  const onClickButtonDrawerList = () => {
+    history.push("/home");
+  };
   return (
-    <div className="containerLogo">
+    <button
+      type="button"
+      className="logoButton"
+      onClick={() => onClickButtonDrawerList()}
+    >
       <img
-        className="logo-image-logo-small"
         src="https://aguayharinavalencia.com/wp-content/uploads/2019/10/logo-agua-y-harina-web.png"
         alt="logo"
-        width="60"
-        height="60"
+        width={width}
+        height={height}
       />
-      <div className={cn("logo-title")}>AGUA Y HARINA</div>
-      <div className={cn("logo-subtitle")}>Entre moldes y pan pitas</div>
-    </div>
+    </button>
   );
 }
+
+Logo.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+};
+
+Logo.defaultProps = {
+  width: 50,
+  height: 50,
+};
 
 export default Logo;

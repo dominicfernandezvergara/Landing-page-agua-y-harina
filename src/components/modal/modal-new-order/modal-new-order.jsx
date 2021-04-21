@@ -6,10 +6,9 @@ import styles from "./modalNewOrder.module.css";
 import { addNewProductShopCar } from "../../../redux/shopping-cart-store";
 
 function ModalNewOrder({ data, close }) {
-  console.log("data", data);
   const dispatch = useDispatch();
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const totalAmount = quantity * data.price;
 
   const onClickAddProductShopCar = () => {
@@ -23,13 +22,13 @@ function ModalNewOrder({ data, close }) {
       price: data.price,
       type: data.type,
     };
-    console.log("newProduct", newProduct);
     dispatch(addNewProductShopCar(newProduct));
     close();
   };
-
-  const handleChange = (e) => {
-    setQuantity({ value: e.target.value });
+  const subtractQuantity = () => {
+    if (!(quantity === 1)) {
+      setQuantity(quantity - 1);
+    }
   };
 
   return (
@@ -43,18 +42,12 @@ function ModalNewOrder({ data, close }) {
         <button
           type="button"
           className={styles.buttonChange}
-          onClick={() => setQuantity(quantity - 1)}
+          onClick={() => subtractQuantity()}
         >
           -
         </button>
-        <form className={styles.quantityFormInput}>
-          <input
-            className={styles.quantityInput}
-            placeholder="0"
-            onChange={(e) => handleChange(e)}
-            value={quantity}
-          />
-        </form>
+        <div className={styles.quantityInput}>{quantity}</div>
+
         <button
           type="button"
           className={styles.buttonChange}

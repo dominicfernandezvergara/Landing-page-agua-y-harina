@@ -1,0 +1,77 @@
+.containerBanner {
+  width: 100%;
+  display: flex;
+  margin-top: 80px;
+  padding: 40px;
+  background-image: url(../../images/banner/uslero-y-harina.jpeg);
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerText {
+  box-sizing: border-box;
+  background-color: #ffffff94;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: fit-content;
+}
+.title {
+  color: var(--dark);
+  text-transform: uppercase;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.text {
+  color: var(--dark);
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.containerBanner :global(.MuiButton-root) {
+  background: var(--button);
+  color: var(--white);
+}
+.containerBanner :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
+@media screen and (min-width: 768px) {
+  .containerBanner {
+    height: 400px;
+  }
+  .containerText {
+    padding: 20px;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .text {
+    width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  .containerBanner :global(.MuiButton-root) {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerBanner {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  /* .containerBanner {
+    height: 500px;
+  } */
+}
+@media screen and (min-width: 1920px) {
+  .containerBanner {
+    height: 600px;
+  }
+}

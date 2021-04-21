@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import useNoScroll from "../../hooks/use-no-scroll";
 import styles from "./modal.module.css";
 
 function Modal({ open, children, close = null, footer = true, header = true }) {
-  if (!open) {
-    return null;
-  }
+  useNoScroll(open);
+
   function handleClose() {
     close();
+  }
+
+  if (!open) {
+    return null;
   }
 
   return (

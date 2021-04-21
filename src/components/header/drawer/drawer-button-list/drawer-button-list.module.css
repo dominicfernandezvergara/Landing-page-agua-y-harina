@@ -1,0 +1,109 @@
+.containerDrawerList {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.containerHeaderDrawerList {
+  background: var(--secondary);
+  display: flex;
+}
+.titleHeader {
+  text-align: center;
+  margin-top: 15px;
+}
+.containerDrawerList ul {
+  margin: 0;
+  padding: 0;
+}
+.containerDrawerList li {
+  display: block;
+}
+.containerButtonCloseDrawer {
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  width: 50px;
+}
+.clear-icon {
+  font-size: 50px;
+}
+.buttonCloseDrawer {
+  background-color: transparent;
+  border: none;
+  color: var(--dark);
+}
+.containerLogoDrawerList {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.drawerList {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 10px;
+}
+
+.buttonDrawerList {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 70px;
+  font-size: 16px;
+}
+.icon {
+  height: 100%;
+  width: 50px;
+  border-radius: 10px 0px 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  padding-left: 10px;
+}
+.container-products-button {
+  display: flex;
+  justify-content: space-between;
+}
+.button-drawer-list .button-drawer-list-products {
+  display: flex;
+  align-items: center;
+}
+
+.product-button-drawer {
+  background-color: var(--white);
+  border: none;
+  font-size: 14px;
+  color: var(--dark);
+  height: 34px;
+  width: 100%;
+  border-top: 1px solid;
+}
+
+.button-products-list {
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  color: var(--dark);
+  height: 34px;
+  width: 34px;
+  border-top: 1px solid;
+}
+
+.container-product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-drawer-list-open {
+  height: 100%;
+}
+
+.material-icons.md-36 {
+  font-size: 26px;
+}

@@ -1,0 +1,6 @@
+to view in the celphone:
+1. open a new console
+2. > ifconfig
+3. copy number IP
+4. paste number in url
+example http://192.168.2.110:3000/about

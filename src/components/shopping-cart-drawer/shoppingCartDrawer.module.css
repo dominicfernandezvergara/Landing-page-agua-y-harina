@@ -1,0 +1,26 @@
+/* .MuiButtonBase-root.responsiveButton {
+  align-items: unset;
+} */
+
+.shoppingCartDrawer :global(.MuiDrawer-paperAnchorRight) {
+  width: 90%;
+  color: #212121;
+}
+
+@media screen and (min-width: 768px) {
+  .shoppingCartDrawer :global(.MuiDrawer-paperAnchorRight) {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .shoppingCartDrawer :global(.MuiDrawer-paperAnchorRight) {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .shoppingCartDrawer :global(.MuiDrawer-paperAnchorRight) {
+    width: 30%;
+  }
+}

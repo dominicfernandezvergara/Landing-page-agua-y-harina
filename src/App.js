@@ -9,6 +9,11 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Products from "./pages/products";
 import Order from "./pages/order";
+import SuccessOrder from "./pages/success-order";
+import About from "./pages/about";
+import ContactUs from "./pages/contact-us";
+import Admin from "./pages/admin";
+import Test from "./pages/test";
 
 function App() {
   return (
@@ -16,8 +21,14 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route path="/test">
+            <Test />
+          </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/products">
             <Products />
@@ -27,6 +38,18 @@ function App() {
           </Route>
           <Route path="/order">
             <Order />
+          </Route>
+          <Route path="/contacto">
+            <ContactUs />
+          </Route>
+          <Route path="/succefull-Order">
+            <SuccessOrder />
+          </Route>
+          <Route path="/admin">
+            <Admin />
+          </Route>
+          <Route path="/*">
+            <Home />
           </Route>
         </Switch>
         <Footer />

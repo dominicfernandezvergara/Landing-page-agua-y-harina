@@ -46,21 +46,18 @@ const initialData = {
 export default function DrawerReducer(state = initialData, action) {
   switch (action.type) {
     case CURRENT_DRAWER_STATE: {
-      console.log("action.payload", action.payload);
       return {
         ...state,
         drawerState: action.payload,
       };
     }
     case CURRENT_BUTTON_STATE: {
-      console.log("action.payload", action.payload);
       return {
         ...state,
         drawerInfo: action.payload,
       };
     }
     case MENU_ITEM_ACTIVE: {
-      console.log("action.payload 2", action.payload);
       return {
         ...state,
         drawerInfo: action.payload,
@@ -72,7 +69,6 @@ export default function DrawerReducer(state = initialData, action) {
 }
 
 export const setDrawerState = (drawerState) => async (dispatch) => {
-  console.log("drawerState", drawerState);
   dispatch({
     type: CURRENT_DRAWER_STATE,
     payload: drawerState,
@@ -80,7 +76,6 @@ export const setDrawerState = (drawerState) => async (dispatch) => {
 };
 
 export const updateMenuItemsAction = (menuItemActive) => async (dispatch) => {
-  console.log("drawerState", menuItemActive);
   dispatch({
     type: MENU_ITEM_ACTIVE,
     payload: menuItemActive,

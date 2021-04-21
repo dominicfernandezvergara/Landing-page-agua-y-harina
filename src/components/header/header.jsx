@@ -1,58 +1,73 @@
-import React, { Fragment, useState } from "react";
-import "./header.css";
+import React, { Fragment, useState, useEffect, useLayoutEffect } from "react";
 import cn from "classnames";
-import { useHistory } from "react-router-dom";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { useHistory, useLocation } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
+
+import styles from "./header.module.css";
 import Logo from "../logo/logo";
 import Drawer from "./drawer";
-import ShoppingCart from "../shopping-cart";
-import ContentShoppingCart from "../shopping-cart/content-shopping-cart";
+import ShoppingCartDrawer from "../shopping-cart-drawer";
+import { ReactComponent as InicioIcon } from "../../images/mi-coleccion-de-iconos/casa.svg";
+import { ReactComponent as SomosIcon } from "../../images/mi-coleccion-de-iconos/grupo.svg";
+import { ReactComponent as ProductsIcon } from "../../images/mi-coleccion-de-iconos/un-pan.svg";
+import { ReactComponent as ContactoIcon } from "../../images/mi-coleccion-de-iconos/contacto.svg";
 
 // Github : https://github.com/akiran/react-slick
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
-
+const iconInicio = (
+  <InicioIcon className={styles.imageboxAbout} width="30" height="30" />
+);
+const iconSomos = (
+  <SomosIcon className={styles.imageboxAbout} width="30" height="30" />
+);
+const iconProductos = (
+  <ProductsIcon className={styles.imageboxAbout} width="30" height="30" />
+);
+const iconContacto = (
+  <ContactoIcon className={styles.imageboxAbout} width="30" height="30" />
+);
 export const dataButtonsList = [
   {
     name: "INICIO",
+    icon: iconInicio,
     path: "/home",
-    data: "",
     active: true,
     id: 1,
   },
   {
     name: "SOMOS",
-    path: "/somos",
-    data: "",
+    icon: iconSomos,
+    path: "/about",
     active: false,
     id: 2,
   },
   {
     name: "PRODUCTOS",
+    icon: iconProductos,
     path: "/products",
-    data: ["Pan de molde", "Pan Pita"],
     active: false,
     id: 3,
   },
   {
     name: "CONTACTO",
+    icon: iconContacto,
     path: "/contacto",
-    data: "",
     active: false,
     id: 4,
   },
-  {
-    name: "MI PEDIDO",
-    path: "/mi-pedido",
-    data: "",
-    active: false,
-    id: 5,
-  },
+  // {
+  //   name: "MI PEDIDO",
+  //   path: "/mi-pedido",
+  //   active: false,
+  //   id: 5,
+  // },
 ];
 
 function Header() {
   const history = useHistory();
+  const location = useLocation();
+  const { pathname: currentPathname } = location;
   const [buttonHeaderData, setButtonHeaderData] = useState(dataButtonsList);
-  const [shoppingCartState, setShoppingCartState] = useState(false);
   const onClickHeaderButton = (itemSelected) => {
     const newHeaderData = buttonHeaderData.map((item) => ({
       ...item,
@@ -62,52 +77,108 @@ function Header() {
     setButtonHeaderData(newHeaderData);
     history.push(itemSelected.path);
   };
-  const onClickOpenShoppingCart = () => {
-    setShoppingCartState(true);
+
+  useEffect(() => {
+    const newHeaderData = buttonHeaderData.map((item) => ({
+      ...item,
+      active: item.path === currentPathname,
+    }));
+    setButtonHeaderData(newHeaderData);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const itemDelay = (itemId) => {
+    let delay = 0;
+    if (itemId === 2) {
+      delay = 300;
+    }
+    if (itemId === 3) {
+      delay = 400;
+    }
+    if (itemId === 4) {
+      delay = 500;
+    }
+
+    return delay;
   };
 
+  const [startScrolling, setStartScrolling] = useState(false);
+
+  useLayoutEffect(() => {
+    window.onscroll = function () {
+      if (window.pageYOffset === 0) {
+        setStartScrolling(false);
+      } else {
+        setStartScrolling(true);
+      }
+    };
+
+    return () => {
+      window.onscroll = null;
+    };
+  }, [startScrolling]);
   return (
     <Fragment>
-      <header className="header-responsive-small">
-        <div className="header-title">PANADERIA AGUA Y HARINA</div>
-        <button
-          type="button"
-          className="shoppingCartButton"
-          onClick={onClickOpenShoppingCart}
-        >
-          <ShoppingCartIcon style={{ fontSize: 30 }} />
-        </button>
+      {/* Header Small */}
 
-        <Drawer />
-        <ShoppingCart
-          open={shoppingCartState}
-          close={() => setShoppingCartState(false)}
-          footer={false}
-          header={false}
-        >
-          <ContentShoppingCart />
-        </ShoppingCart>
+      <header
+        className={cn(styles.headerResponsiveSmall, {
+          [styles.headerTransparent]: startScrolling,
+        })}
+      >
+        <div className={styles.containerLogo}>
+          <Logo width={60} height={60} />
+        </div>
+
+        <div className={styles.containerButton}>
+          <ShoppingCartDrawer />
+        </div>
+        <div className={styles.containerButton}>
+          <Drawer />
+        </div>
       </header>
 
-      <header className="header-responsive-large">
-        <Logo />
-        <div className="container-header-buttons">
+      {/* Header Large */}
+
+      <header
+        className={cn(styles.headerResponsiveLarge, {
+          [styles.headerTransparent]: startScrolling,
+        })}
+      >
+        <div className={styles.containerLogo}>
+          <Fade triggerOnce>
+            <Logo width={80} height={80} />
+          </Fade>
+        </div>
+        <div className={styles.containerHeaderButton}>
           {buttonHeaderData.map((item) => {
+            const delayNumber = itemDelay(item.id);
+
             return (
-              <button
-                type="button"
-                className={cn(
-                  "header-buttons",
-                  item.active === true ? "active" : null
-                )}
-                key={item.id}
-                onClick={() => onClickHeaderButton(item)}
+              <Fade
+                className={cn(styles.headerButton)}
+                delay={delayNumber}
+                triggerOnce
               >
-                {item.name}
-              </button>
+                <button
+                  className={cn(
+                    styles.headerButton,
+                    item.active === true ? styles.active : null
+                  )}
+                  type="button"
+                  key={item.id}
+                  onClick={() => onClickHeaderButton(item)}
+                >
+                  {item.name}
+                </button>
+              </Fade>
             );
           })}
         </div>
+        <Fade triggerOnce>
+          <ShoppingCartDrawer />
+        </Fade>
       </header>
     </Fragment>
   );
