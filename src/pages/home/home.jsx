@@ -1,24 +1,23 @@
 import React from "react";
+
 import "./home.css";
-import OnlyImage from "../../components/only-image";
-import ProductsHome from "../../components/products-home";
-import FollowUs from "../../components/follow-us";
+import UseScrollToTop from "../../hooks/use-scroll-to-top";
+import HomeProductsSection from "../../components/home-products-section";
 import Banner from "../../components/banner/banner";
 import HomeMisionSection from "../../components/home-mision-section/home-mision-section";
 import HowItWork from "../../components/how-it-work/how-it-work";
+import HomeEmpathyMessage from "../../components/home-empathy-message";
 
 function Home() {
-  const imageHome1 =
-    "https://d1kxxrc2vqy8oa.cloudfront.net/wp-content/uploads/2019/06/27112110/RFB-2006-1-pandeleche.jpg";
+  UseScrollToTop();
 
   return (
     <div className="container-home">
       <Banner />
       <HomeMisionSection />
-      <OnlyImage image={imageHome1} />
-      <ProductsHome />
+      <HomeEmpathyMessage />
+      <HomeProductsSection />
       <HowItWork />
-      <FollowUs />
     </div>
   );
 }

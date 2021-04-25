@@ -1,17 +1,18 @@
 .containerHowItWork {
   text-align: center;
   padding: 25px;
-  background-color: var(--white);
+  background-color: var(--lightSecondary);
   box-sizing: border-box;
 }
 .title {
-  text-transform: uppercase;
-  text-align: center;
   color: var(--dark);
-  margin-bottom: 15px;
+  margin: 0px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-align: center;
 }
 .subtitle {
-  color: #585252;
+  color: var(--lightDark);
   padding: 0px 30px;
 }
 .containerButtonIcons {
@@ -42,11 +43,11 @@
   align-items: center;
 }
 .step {
-  font-size: 20px;
   color: var(--dark);
+  font-weight: 300;
 }
 .descriptionStep {
-  color: #585252;
+  color: var(--darkSecondary);
   box-sizing: border-box;
   width: 250px;
 }
@@ -93,13 +94,7 @@
 }
 @media screen and (min-width: 1024px) {
   .containerHowItWork {
-    margin: 20px 50px 10px;
-  }
-  .title {
-    font-size: 24px;
-  }
-  .subtitle {
-    font-size: 20px;
+    padding: 60px;
   }
   .containerIconsSection {
     display: flex;
@@ -111,36 +106,14 @@
     align-self: unset;
     padding: 0px 30px;
   }
-  .descriptionStep {
-    font-size: 18px;
-    width: 100%;
+  .step {
+    font-size: 30px;
   }
-  .containerHowItWork :global(.MuiButton-root) {
-    font-size: 70px;
+  .descriptionStep {
+    width: 100%;
   }
 }
 @media screen and (min-width: 1280px) {
-  .containerHowItWork {
-    margin: 40px 110px 0px;
-  }
-  .containerHowItWork {
-    padding: 40px 100px;
-  }
 }
 @media screen and (min-width: 1920px) {
-  .containerHowItWork {
-    margin: 40px 210px 0px;
-    /* padding: 40px 200px; */
-    padding-bottom: 50px;
-  }
-  .title {
-    font-size: 30px;
-    padding-top: 10px;
-  }
-  .subtitle {
-    font-size: 24px;
-  }
-  .descriptionStep {
-    font-size: 20px;
-  }
 }

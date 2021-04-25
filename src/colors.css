@@ -12,13 +12,28 @@
   --dark: #212121;
   --lightDark: #757575;
 } */
-:root {
+/* :root {
   --primary: #ffa000;
   --darkPrimary: #c67100;
   --lightPrimary: #ffd149;
   --secondary: #ffecb3;
   --darkSecondary: #cbba83;
   --lightSecondary: #ffffe5;
+  --button: #ffa000;
+  --buttonHover: #f7bc58;
+  --dark: #212121;
+  --white: rgba(255, 255, 255, 1);
+  --lightDark: #757575;
+  --success: rgba(21, 199, 88, 1);
+  --danger: rgba(255, 107, 54, 1);
+} */
+:root {
+  --primary: #ffa000;
+  --darkPrimary: #c67100;
+  --lightPrimary: #ffd149;
+  --secondary: #cfa073;
+  --darkSecondary: #9c7247;
+  --lightSecondary: #fdf5eb;
   --button: #ffa000;
   --buttonHover: #f7bc58;
   --dark: #212121;

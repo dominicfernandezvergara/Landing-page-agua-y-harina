@@ -1,51 +1,116 @@
-import React, { Fragment } from "react";
+import React from "react";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import PhoneIcon from "@material-ui/icons/Phone";
+import EmailIcon from "@material-ui/icons/Email";
+import cn from "classnames";
+import { useHistory } from "react-router-dom";
 
 import styles from "./footer.module.css";
-import SocialNetworks from "../social-networks/social-networks";
+import SocialMedia from "../social-media";
 
 function Footer() {
-  //   <div hidden>
-  //   Iconos diseñados por
-  //   <a
-  //     href="https://www.flaticon.es/autores/those-icons"
-  //     title="Those Icons"
-  //   >
-  //     Those Icons
-  //   </a>
-  //   from
-  //   <a href="https://www.flaticon.es/" title="Flaticon">
-  //     www.flaticon.es
-  //   </a>
-  // </div>
+  const history = useHistory();
+
+  const onClickButtonPeopleServices = () => {
+    history.push({
+      pathname: "/home",
+    });
+  };
+  const onClickButtonProfesionalServices = () => {
+    history.push({
+      pathname: "/about",
+    });
+  };
+  const onClickButtonCompanieServices = () => {
+    history.push({
+      pathname: "/products",
+    });
+  };
+  const onClickButtonTerapieServices = () => {
+    history.push({
+      pathname: "/contacto",
+    });
+  };
   return (
-    <Fragment>
-      <div className={styles.containerFooter}>
-        <div className={styles.containerContactData}>
-          <p className={styles.titleFooter}>Contacta con nosotros</p>
-          <a href="tel:5551234567" className={styles.dataFooter}>
-            Teléfono : +56222225473
-          </a>
-          <a href="mailto: abc@example.com" className={styles.dataFooter}>
-            E-mail : info@aguayharina
-          </a>
+    <div className={styles.containerFooter}>
+      <div className={styles.footerBody}>
+        <div className={cn(styles.data, styles.containerServices)}>
+          <h3 className={styles.title}>Menu</h3>
+          <div className={styles.containerText}>
+            <div className={styles.icon}>
+              <ArrowForwardIosIcon />
+            </div>
+            <button
+              type="button"
+              onClick={onClickButtonPeopleServices}
+              className={styles.button}
+            >
+              Inicio
+            </button>
+          </div>
+
+          <div className={styles.containerText}>
+            <div className={styles.icon}>
+              <ArrowForwardIosIcon />
+            </div>
+            <button
+              type="button"
+              onClick={onClickButtonProfesionalServices}
+              className={styles.button}
+            >
+              Somos
+            </button>
+          </div>
+          <div className={styles.containerText}>
+            <div className={styles.icon}>
+              <ArrowForwardIosIcon />
+            </div>
+            <button
+              type="button"
+              onClick={onClickButtonCompanieServices}
+              className={styles.button}
+            >
+              Productos
+            </button>
+          </div>
+          <div className={styles.containerText}>
+            <div className={styles.icon}>
+              <ArrowForwardIosIcon />
+            </div>
+            <button
+              type="button"
+              onClick={onClickButtonTerapieServices}
+              className={styles.button}
+            >
+              Contacto
+            </button>
+          </div>
         </div>
-        <SocialNetworks />
+        <div className={styles.data}>
+          <h3 className={styles.title}>Contacto</h3>
+          <div className={styles.containerText}>
+            <div className={styles.iconLink}>
+              <PhoneIcon />
+            </div>
+            <a href="tel:420776212480" className={styles.text}>
+              987862687
+            </a>
+          </div>
+          <div className={styles.containerText}>
+            <div className={styles.iconLink}>
+              <EmailIcon />
+            </div>
+            <a
+              href="mailto: asesorias.profesionales.holistic@gmail.com"
+              className={styles.text}
+            >
+              aguayharina@gmail.com
+            </a>
+          </div>
+          <SocialMedia />
+        </div>
       </div>
-      <div hidden>
-        Iconos diseñados por
-        <a
-          href="https://www.flaticon.es/autores/those-icons"
-          title="Those Icons"
-        >
-          Those Icons
-        </a>
-        from
-        <a href="https://www.flaticon.es/" title="Flaticon">
-          www.flaticon.es
-        </a>
-      </div>
-    </Fragment>
+    </div>
   );
 }
-
 export default Footer;

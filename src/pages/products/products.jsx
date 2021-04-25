@@ -5,9 +5,9 @@ import AddIcon from "@material-ui/icons/Add";
 import { Fade, Slide } from "react-awesome-reveal";
 
 import styles from "./Products.module.css";
+import UseScrollToTop from "../../hooks/use-scroll-to-top";
 import Modal from "../../components/modal/modal";
 import ModalNewOrder from "../../components/modal/modal-new-order";
-import UseScrollToTop from "../../hooks/use-scroll-to-top";
 import SkeletonProducts from "../../components/skeleton-products";
 import ErrorLoadingData from "../../components/error-loading-data";
 
@@ -16,10 +16,10 @@ import ErrorLoadingData from "../../components/error-loading-data";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Products() {
+  UseScrollToTop();
+
   const [modalState, setModalState] = useState(false);
   const [currentItem, setCurrentItem] = useState("");
-
-  UseScrollToTop();
 
   const { data, error } = useSWR(
     "https://breads-api.herokuapp.com/api/v1/breads",

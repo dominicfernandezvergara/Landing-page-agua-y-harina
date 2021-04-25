@@ -3,7 +3,7 @@
   display: flex;
   margin-top: 80px;
   padding: 40px;
-  background-image: url(../../images/banner/uslero-y-harina.jpeg);
+  background-image: url(../../images/home/ImagehomeEmpathyMessage2.jpeg);
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
@@ -23,15 +23,15 @@
 }
 .title {
   color: var(--dark);
-  text-transform: uppercase;
   margin: 0px;
   margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 40px;
+  font-family: cursive;
 }
 .text {
   color: var(--dark);
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 20px;
+  margin-bottom: 20px;
 }
 .containerBanner :global(.MuiButton-root) {
   background: var(--button);
@@ -43,21 +43,17 @@
 @media screen and (min-width: 768px) {
   .containerBanner {
     height: 400px;
+    margin-top: 105px;
+  }
+  .title {
+    font-weight: lighter;
+    font-size: 96px;
   }
   .containerText {
     padding: 20px;
   }
-  .title {
-    font-size: 50px;
-  }
-  .text {
-    width: 300px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    font-size: 30px;
-  }
   .containerBanner :global(.MuiButton-root) {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -66,9 +62,6 @@
   }
 }
 @media screen and (min-width: 1440px) {
-  /* .containerBanner {
-    height: 500px;
-  } */
 }
 @media screen and (min-width: 1920px) {
   .containerBanner {

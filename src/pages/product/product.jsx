@@ -2,8 +2,11 @@ import React, { Fragment } from "react";
 import { useParams, useLocation } from "react-router-dom";
 
 import styles from "./product.module.css";
+import UseScrollToTop from "../../hooks/use-scroll-to-top";
 
 function Product() {
+  UseScrollToTop();
+
   const { id } = useParams();
   const { state } = useLocation();
   console.log("item", state.item);

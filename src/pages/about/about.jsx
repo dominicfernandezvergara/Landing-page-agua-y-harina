@@ -3,6 +3,8 @@ import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 import styles from "./about.module.css";
 import FollowUs from "../../components/follow-us/follow-us";
+import UseScrollToTop from "../../hooks/use-scroll-to-top";
+
 import { ReactComponent as BreadIcon } from "../../images/mi-coleccion-de-iconos/001-pan-de-molde.svg";
 import { ReactComponent as HeartIcon } from "../../images/mi-coleccion-de-iconos/002-corazon.svg";
 import { ReactComponent as GloveIcon } from "../../images/mi-coleccion-de-iconos/003-guante-de-cocina.svg";
@@ -12,6 +14,8 @@ import { ReactComponent as HatIcon } from "../../images/mi-coleccion-de-iconos/0
 import BoxAboutData from "../../components/box-about-data/box-about-data";
 
 function About() {
+  UseScrollToTop();
+
   const icon1 = (
     <BreadIcon className={styles.imageboxAbout} width="80" height="80" />
   );

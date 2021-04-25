@@ -1,38 +1,105 @@
 .containerFooter {
-  background: var(--primary);
-}
-.containerContactData {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 40px;
+  background-color: whitesmoke;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
-.titleFooter {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 10px;
-  margin-top: 15px;
+.footerBody {
+  display: flex;
+  flex-direction: column;
 }
-.dataFooter {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  margin-top: 5px;
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.title {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  color: var(--darkPrimaryColor);
+}
+.titleSocialMedia {
+  text-transform: uppercase;
+  padding-top: 30px;
+  color: var(--darkPrimaryColor);
 }
 
+.icon :global(.MuiSvgIcon-root) {
+  font-size: 12px;
+}
+.iconLink :global(.MuiSvgIcon-root) {
+  font-size: 20px;
+  padding-right: 5px;
+  display: flex;
+}
+.containerText {
+  align-items: center;
+  display: flex;
+}
+.button {
+  padding: 3px;
+  color: var(--primaryColor);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.text {
+  color: var(--primaryColor);
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .containerFooter {
+    padding: 45px;
+  }
+  .footerBody {
+    flex-direction: unset;
+  }
+  .data {
+    align-self: start;
+    padding-left: 20px;
+  }
+  .title {
+    padding-top: 0px;
+    font-size: 16px;
+  }
+  .titleSocialMedia {
+    padding-top: 10px;
+    font-size: 16px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .containerFooter {
-    display: flex;
-    justify-content: center;
+    display: block;
+    place-content: space-between;
   }
-  .containerContactData {
-    margin-right: 130px;
-    margin-bottom: 30px;
+  .containerServices {
+    padding-left: 50px;
   }
-  .titleFooter {
-    font-size: 20px;
-  }
-  .dataFooter {
+  .text {
     font-size: 18px;
+  }
+  .button {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerFooter {
+    padding: 50px 80px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerFooter {
+    padding: 50px 90px;
+  }
+  .containerServices {
+    width: 650px;
+    padding-left: 60px;
+    padding-right: 90px;
   }
 }
