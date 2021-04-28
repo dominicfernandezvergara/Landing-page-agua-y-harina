@@ -1,57 +1,40 @@
-.titleAbout {
+.containerAbout {
+  margin-top: 80px;
+}
+.title {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
-  text-align: center;
-  padding: 30px 30px;
-  font-size: 70px;
-  letter-spacing: 2px;
+  font-weight: 500;
+  background-color: var(--darkPrimary);
+  color: var(--lightSecondary);
 }
-.containerDescriptionAbout {
-  background: #ffecb3;
-  /* padding-bottom: 40px; */
-  /* padding-top: 40px; */
-  padding: 30px 30px;
-}
-.descriptionAbout {
-  color: #212121;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 30px;
-  font-family: monospace;
-}
-.containerBoxesAboutSmall {
+.containerBoxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 30px 30px;
 }
-.containerBoxesAboutLarge {
-  display: none;
-}
 
 @media screen and (min-width: 768px) {
+  .containerAbout {
+    margin-top: 105px;
+  }
   .animationSmall {
     display: none;
   }
-  .titleAbout {
-    font-size: 150px;
-  }
+
   .descriptionAbout {
     font-size: 60px;
     padding: 70px 40px;
   }
-  .containerBoxesAboutSmall {
-    display: none;
-  }
-  .containerBoxesAboutLarge {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px 30px;
-  }
 }
 
 @media screen and (min-width: 1024px) {
-  .containerBoxesAboutLarge {
+  .containerBoxes {
     margin-top: 50px;
   }
   .descriptionAbout {

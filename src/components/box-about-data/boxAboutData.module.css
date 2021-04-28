@@ -1,22 +1,24 @@
-.boxAbout {
+.box {
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  background: var(--lightSecondary);
+  padding: 20px;
 }
-.imageboxAbout {
+.icon {
   width: 80px;
   height: auto;
 }
-.titleBoxAbout {
+.title {
   text-transform: uppercase;
-  font-size: 30px;
   letter-spacing: 2px;
+  font-weight: bold;
 }
-.textBoxAbout {
+.text {
   text-align: center;
-  color: #575454;
+  color: var(--darkSecondary);
   font-size: 18px;
   font-weight: normal;
   line-height: 30px;
@@ -24,7 +26,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .boxAbout {
+  .box {
     width: 200px;
     height: 430px;
     padding: 0px 15px;
@@ -32,14 +34,14 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .boxAbout {
+  .box {
     width: 290px;
     height: 430px;
     padding: 0px 15px;
   }
 }
 @media screen and (min-width: 1440px) {
-  .boxAbout {
+  .box {
     width: 330px;
     height: 390px;
   }

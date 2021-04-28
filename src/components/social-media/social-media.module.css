@@ -1,0 +1,30 @@
+.containerSocialMedia {
+  display: flex;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+.containerIcon {
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.iconSocialMedia {
+  width: 30px;
+  height: 30px;
+}
+.iconSocialMedia:hover {
+  transform: scale(1.1);
+}
+@media screen and (min-width: 768px) {
+  .iconSocialMedia {
+    margin-top: 0px;
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .iconSocialMedia {
+    width: 30px;
+    height: 30px;
+  }
+}

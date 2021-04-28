@@ -1,0 +1,84 @@
+.containerList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  align-items: center;
+}
+.wrapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 0px 15px;
+  padding: 20px 15px;
+  width: 100%;
+  background-color: var(--lightSecondary);
+  box-sizing: border-box;
+  border-radius: 60px;
+}
+.containerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  background: var(--darkPrimary);
+}
+
+.containerIcon :global(.MuiSvgIcon-root) {
+  font-size: 90px;
+  color: var(--lightSecondary);
+}
+.title {
+  color: var(--dark);
+  text-transform: uppercase;
+}
+.line {
+  height: 5px;
+  width: 50px;
+  border: 0;
+  background-color: var(--secondary);
+}
+.textIcon {
+  text-align: center;
+  color: var(--darkPrimary);
+}
+@media screen and (min-width: 768px) {
+  .containerList {
+    display: flex;
+    flex-direction: inherit;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wrapp {
+    width: 200px;
+    height: 340px;
+    margin: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .wrapp {
+    width: 275px;
+    height: 360px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapp {
+    width: 275px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapp {
+    width: 290px;
+    margin: 20px 30px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .wrapp {
+    width: 310px;
+  }
+}

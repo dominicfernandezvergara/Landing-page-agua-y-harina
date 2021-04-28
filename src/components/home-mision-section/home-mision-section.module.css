@@ -1,44 +1,113 @@
 .containerHomeMisionSection {
   display: flex;
   flex-direction: column;
-  background: var(--secondary);
   align-items: center;
   padding: 25px;
+  background-color: var(--lightSecondary);
 }
 .title {
   color: var(--dark);
-  text-align: center;
-  margin: 0px;
   margin-bottom: 20px;
+  text-align: center;
+}
+.titleSmall {
+  display: none;
 }
 .text {
-  color: var(--dark);
+  color: var(--darkPrimary);
   text-align: center;
   margin-bottom: 20px;
+  font-weight: normal;
+}
+.containerText {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
 }
 .containerHomeMisionSection :global(.MuiButton-root) {
-  background: var(--button);
+  background: var(--primary);
   color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
 }
 .containerHomeMisionSection :global(.MuiButton-root:hover) {
   background: var(--buttonHover);
 }
-
+.image {
+  display: none;
+}
 @media screen and (min-width: 760px) {
+  .containerHomeMisionSection {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: space-between;
+  }
+
+  .image {
+    display: block;
+    width: 45%;
+    height: auto;
+  }
+  .containerText {
+    width: 350px;
+  }
+  .titleSmall {
+    color: var(--dark);
+    margin-bottom: 20px;
+    display: block;
+    text-align: start;
+  }
+  .title {
+    display: none;
+  }
   .text {
-    font-size: 90px;
-    padding: 60px 80px;
+    text-align: start;
+  }
+  .containerHomeMisionSection :global(.MuiButton-root) {
+    align-self: initial;
   }
 }
 @media screen and (min-width: 1024px) {
-  .text {
-    padding: 90px 180px;
-    font-size: 130px;
-    line-height: 110%;
+  .containerHomeMisionSection {
+    padding: 90px;
+  }
+  .containerText {
+    align-self: baseline;
+    width: 400px;
+  }
+
+  .titleSmall {
+    display: none;
+  }
+  .title {
+    display: block;
+    text-align: start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerHomeMisionSection {
+    padding: 90px 130px;
+    justify-content: space-between;
+  }
+  .image {
+    width: 40%;
+  }
+  .containerText {
+    width: 500px;
   }
 }
 @media screen and (min-width: 1440px) {
-  .text {
-    padding: 120px 240px;
+  .containerHomeMisionSection {
+    padding: 90px 200px;
+  }
+  .containerText {
+    width: 550px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerHomeMisionSection {
+    padding: 90px 400px;
   }
 }

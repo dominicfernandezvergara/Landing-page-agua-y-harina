@@ -1,0 +1,34 @@
+.containerThirdSection {
+  width: 100%;
+  background: var(--white);
+  padding: 40px;
+  box-sizing: border-box;
+}
+.title {
+  color: var(--dark);
+  margin: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .containerThirdSection {
+    box-sizing: border-box;
+    padding: 45px 45px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerThirdSection {
+    padding: 45px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerThirdSection {
+    padding: 70px 90px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerThirdSection {
+    padding: 90px 300px;
+  }
+}

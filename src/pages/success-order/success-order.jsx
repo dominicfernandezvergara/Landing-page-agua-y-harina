@@ -2,9 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./successOrder.module.css";
+import UseScrollToTop from "../../hooks/use-scroll-to-top";
+
 import OrderSummary from "../../components/order-summary/order-summary";
 
 function SuccessOrder() {
+  UseScrollToTop();
+
   const userData = useSelector((state) => state.shoppingCart.user);
   const commentaryData = useSelector((state) => state.shoppingCart.commentary);
 

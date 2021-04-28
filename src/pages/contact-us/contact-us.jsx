@@ -4,9 +4,12 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
 import styles from "./contactUs.module.css";
+import UseScrollToTop from "../../hooks/use-scroll-to-top";
 import { ReactComponent as ContactUsImage } from "../../images/contact-us-image/undraw_Questions_re_1fy7.svg";
 
 function ContactUs() {
+  UseScrollToTop();
+
   const [commentary, setCommentary] = useState("");
 
   const { register, handleSubmit, watch, errors } = useForm();

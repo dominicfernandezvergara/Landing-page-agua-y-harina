@@ -1,54 +1,112 @@
 .containerProductsHome {
   display: flex;
   flex-direction: column;
-  background: #ffecb3;
   align-items: center;
-  padding: 40px;
+  padding: 25px;
+  background-color: var(--lightSecondary);
 }
-.textProductsHome {
-  color: #212121;
+.title {
+  color: var(--dark);
+  margin-bottom: 20px;
   text-align: center;
-  margin: 0;
-  font-size: 48px;
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
-
-.containerProductsHome .buttonProductsHome {
-  width: 100%;
-  height: 120px;
-  color: white;
-  background-color: #ff9801;
-  cursor: pointer;
-  font-size: 48px;
-  font-weight: bold;
+.titleSmall {
+  display: none;
 }
-.containerProductsHome .buttonProductsHome:hover {
-  background-color: #ffac31;
-  transform: scale(1.1);
+.text {
+  color: var(--darkPrimary);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: normal;
 }
-
-/* .buttonProductsHome :global(.MuiButton-root) {
-  background-color: #ff9801;
-  color: black;
-} */
-@media screen and (min-width: 768px) {
-  .textProductsHome {
-    font-size: 70px;
-    padding: 50px 60px;
+.containerText {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+}
+.containerProductsHome :global(.MuiButton-root) {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+}
+.containerProductsHome :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
+.image {
+  display: none;
+}
+@media screen and (min-width: 760px) {
+  .containerProductsHome {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: space-between;
   }
-  .containerProductsHome .buttonProductsHome {
-    width: 330px;
+
+  .image {
+    display: block;
+    width: 45%;
+    height: auto;
+  }
+  .containerText {
+    width: 350px;
+  }
+  .titleSmall {
+    color: var(--dark);
+    margin-bottom: 20px;
+    display: block;
+    text-align: start;
+  }
+  .title {
+    display: none;
+  }
+  .text {
+    text-align: start;
+  }
+  .containerProductsHome :global(.MuiButton-root) {
+    align-self: initial;
   }
 }
 @media screen and (min-width: 1024px) {
-  .textProductsHome {
-    font-size: 90px;
+  .containerProductsHome {
+    padding: 90px;
   }
-  .containerProductsHome .buttonProductsHome {
-    width: 430px;
-    font-size: 80px;
+  .containerText {
+    align-self: baseline;
+    width: 400px;
+  }
+  .titleSmall {
+    display: none;
+  }
+  .title {
+    display: block;
+    text-align: start;
   }
 }
-/* @media screen and (min-width: 1440px) {
-} */
+@media screen and (min-width: 1280px) {
+  .containerProductsHome {
+    padding: 90px 130px;
+    justify-content: space-between;
+  }
+  .image {
+    width: 40%;
+  }
+  .containerText {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerProductsHome {
+    padding: 90px 200px;
+  }
+  .containerText {
+    width: 550px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerProductsHome {
+    padding: 90px 400px;
+  }
+}

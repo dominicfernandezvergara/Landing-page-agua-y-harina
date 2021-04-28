@@ -5,13 +5,14 @@
   box-sizing: border-box;
 }
 .title {
-  text-transform: uppercase;
-  text-align: center;
   color: var(--dark);
-  margin-bottom: 15px;
+  margin: 0px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-align: center;
 }
 .subtitle {
-  color: #585252;
+  color: var(--lightDark);
   padding: 0px 30px;
 }
 .containerButtonIcons {
@@ -42,33 +43,34 @@
   align-items: center;
 }
 .step {
-  font-size: 20px;
   color: var(--dark);
+  font-weight: 300;
 }
 .descriptionStep {
-  color: #585252;
+  color: var(--darkSecondary);
   box-sizing: border-box;
   width: 250px;
 }
 .containerHowItWork :global(.MuiButton-root) {
-  font-size: 16px;
-  color: var(--secondary);
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid;
-  border-radius: 30px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+  margin-top: 20px;
 }
-.containerHowItWork :global(.MuiButton-root):hover {
-  color: var(--darkSecondaryColor);
+.containerHowItWork :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
 }
 @media screen and (min-width: 768px) {
-  .containerIconsSection {
-    flex-direction: unset;
-    margin-top: 20px;
+  .containerHowItWork {
+    padding: 50px;
   }
   .containerIconsSection {
     display: flex;
+    flex-direction: unset;
     justify-content: center;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
   .iconsSection {
@@ -81,7 +83,7 @@
   }
   .subtitle {
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
   }
   .descriptionStep {
     margin-top: 10px;
@@ -93,13 +95,7 @@
 }
 @media screen and (min-width: 1024px) {
   .containerHowItWork {
-    margin: 20px 50px 10px;
-  }
-  .title {
-    font-size: 24px;
-  }
-  .subtitle {
-    font-size: 20px;
+    padding: 90px;
   }
   .containerIconsSection {
     display: flex;
@@ -112,35 +108,22 @@
     padding: 0px 30px;
   }
   .descriptionStep {
-    font-size: 18px;
     width: 100%;
-  }
-  .containerHowItWork :global(.MuiButton-root) {
-    font-size: 70px;
   }
 }
 @media screen and (min-width: 1280px) {
   .containerHowItWork {
-    margin: 40px 110px 0px;
+    padding: 90px 130px;
+    justify-content: space-between;
   }
+}
+@media screen and (min-width: 1440px) {
   .containerHowItWork {
-    padding: 40px 100px;
+    padding: 90px 200px;
   }
 }
 @media screen and (min-width: 1920px) {
   .containerHowItWork {
-    margin: 40px 210px 0px;
-    /* padding: 40px 200px; */
-    padding-bottom: 50px;
-  }
-  .title {
-    font-size: 30px;
-    padding-top: 10px;
-  }
-  .subtitle {
-    font-size: 24px;
-  }
-  .descriptionStep {
-    font-size: 20px;
+    padding: 90px 400px;
   }
 }
