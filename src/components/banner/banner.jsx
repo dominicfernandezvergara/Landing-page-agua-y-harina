@@ -13,10 +13,10 @@ function Banner() {
   return (
     <div className={styles.containerBanner}>
       <div className={styles.containerText}>
-        <h1 className={styles.title}>Agua & Harina</h1>
-        <h4 className={styles.text}>Venta de Pan Pitas 100% integrales</h4>
+        <h1 className={styles.title}>Agua & Harina Bakery</h1>
+        <h4 className={styles.text}>Pan Pitas 100% integrales</h4>
         <Button variant="contained" onClick={handleClick}>
-          Conocelas Aquí
+          Hacer un pedido
         </Button>
       </div>
     </div>

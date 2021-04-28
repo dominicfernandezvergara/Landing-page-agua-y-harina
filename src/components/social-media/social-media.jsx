@@ -9,7 +9,7 @@ function SocialMedia() {
     <div className={styles.containerSocialMedia}>
       <div className={styles.containerIcon}>
         <a
-          href="https://api.whatsapp.com/send?phone=420776212480"
+          href="https://api.whatsapp.com/send?phone=569 75967218"
           className={styles.iconSocialMedia}
         >
           <img src={WhatsAppIcon} className={styles.iconSocialMedia} alt="" />

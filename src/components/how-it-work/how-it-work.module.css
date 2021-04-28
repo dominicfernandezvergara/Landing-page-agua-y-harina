@@ -1,7 +1,7 @@
 .containerHowItWork {
   text-align: center;
   padding: 25px;
-  background-color: var(--lightSecondary);
+  background-color: var(--white);
   box-sizing: border-box;
 }
 .title {
@@ -52,24 +52,25 @@
   width: 250px;
 }
 .containerHowItWork :global(.MuiButton-root) {
-  font-size: 16px;
-  color: var(--secondary);
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid;
-  border-radius: 30px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+  margin-top: 20px;
 }
-.containerHowItWork :global(.MuiButton-root):hover {
-  color: var(--darkSecondaryColor);
+.containerHowItWork :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
 }
 @media screen and (min-width: 768px) {
-  .containerIconsSection {
-    flex-direction: unset;
-    margin-top: 20px;
+  .containerHowItWork {
+    padding: 50px;
   }
   .containerIconsSection {
     display: flex;
+    flex-direction: unset;
     justify-content: center;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
   .iconsSection {
@@ -82,7 +83,7 @@
   }
   .subtitle {
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
   }
   .descriptionStep {
     margin-top: 10px;
@@ -94,7 +95,7 @@
 }
 @media screen and (min-width: 1024px) {
   .containerHowItWork {
-    padding: 60px;
+    padding: 90px;
   }
   .containerIconsSection {
     display: flex;
@@ -106,14 +107,23 @@
     align-self: unset;
     padding: 0px 30px;
   }
-  .step {
-    font-size: 30px;
-  }
   .descriptionStep {
     width: 100%;
   }
 }
 @media screen and (min-width: 1280px) {
+  .containerHowItWork {
+    padding: 90px 130px;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerHowItWork {
+    padding: 90px 200px;
+  }
 }
 @media screen and (min-width: 1920px) {
+  .containerHowItWork {
+    padding: 90px 400px;
+  }
 }

@@ -1,27 +1,34 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
-import EmailIcon from "@material-ui/icons/Email";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 
 import styles from "./how-it-work.module.css";
 
 function HowItWork() {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/products");
+  };
   return (
     <div className={styles.containerHowItWork}>
       <h3 className={styles.title}>¿Cómo funciona?</h3>
       <p className={styles.subtitle}>
-        3 sencillos pasos para empezar tu proceso de cambio
+        3 sencillos pasos para conseguir tus Pan Pitas
       </p>
       <div className={styles.containerIconsSection}>
         <div className={styles.iconsSection}>
           <div className={styles.icon}>
-            <EmailIcon />
+            <ShoppingCartIcon />
           </div>
           <div className={styles.textIcon}>
-            <h3 className={styles.step}>Paso Uno</h3>
+            <h4 className={styles.step}>Paso Uno</h4>
             <p className={styles.descriptionStep}>
-              Dinos qué servicio te interesa a través de nuestra página de
-              contacto.
+              Selecciona y agrega tus Pan Pitas al carrito de compras.
             </p>
           </div>
         </div>
@@ -30,10 +37,9 @@ function HowItWork() {
             <EventAvailableIcon />
           </div>
           <div className={styles.textIcon}>
-            <h3 className={styles.step}>Paso Dos</h3>
+            <h4 className={styles.step}>Paso Dos</h4>
             <p className={styles.descriptionStep}>
-              Nos pondremos en contacto contigo, y te daremos los detalles que
-              necesites saber
+              Ingresa tus datos y envianos tu pedido.
             </p>
           </div>
         </div>
@@ -42,13 +48,16 @@ function HowItWork() {
             <DirectionsBikeIcon />
           </div>
           <div className={styles.textIcon}>
-            <h3 className={styles.step}>Paso tres</h3>
+            <h4 className={styles.step}>Paso tres</h4>
             <p className={styles.descriptionStep}>
-              Comienza con tus sesiones y alcanza tu bienestar
+              Recibe tus Pan Pitas frescas en la puerta de tu hogar.
             </p>
           </div>
         </div>
       </div>
+      <Button variant="contained" onClick={handleClick}>
+        Hacer un pedido
+      </Button>
     </div>
   );
 }

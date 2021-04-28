@@ -83,9 +83,19 @@
 }
 @media screen and (min-width: 1280px) {
   .headerResponsiveLarge {
-    padding: 0px 60px;
+    padding: 0px 90px;
   }
   .headerButton {
     font-size: 18px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .headerResponsiveLarge {
+    padding: 0px 120px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .headerResponsiveLarge {
+    padding: 0px 300px;
   }
 }

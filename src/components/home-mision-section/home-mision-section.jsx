@@ -14,19 +14,21 @@ function HomeMisionSection() {
   };
   return (
     <div className={styles.containerHomeMisionSection}>
-      <div className={styles.containerImage}>
-        <img
-          alt="imageHomeMisionSection"
-          className={styles.image}
-          src={image1}
-        />
-      </div>
+      <img alt="imageHomeMisionSection" className={styles.image} src={image1} />
       <div className={styles.containerText}>
-        <h3 className={styles.title}>Horneamos pensando en tu bienestar</h3>
+        <h4 className={styles.titleSmall}>
+          Horneamos pensando en tu bienestar
+        </h4>
 
+        <h3 className={styles.title}>Horneamos pensando en tu bienestar</h3>
         <p className={styles.text}>
-          Todos los productos que utilizamos para elaborar nuestras pampitas son
-          100% naturales
+          En agua y harina ofrecemos Pan pitas artesanales y de variedades de
+          las cuales solo trabajamos harinas integrales o multigranos.
+        </p>
+        <p className={styles.text}>
+          Seleccionamos los ingredientes más naturales posibles, orgánicos y con
+          nuestro proceso artesanal creamos nuestras pan pita único e
+          inconfundible.
         </p>
         <Button variant="contained" onClick={handleClick}>
           Pruebalos hoy

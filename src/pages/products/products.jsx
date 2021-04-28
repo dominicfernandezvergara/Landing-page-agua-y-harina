@@ -51,8 +51,8 @@ function Products() {
 
   const productsList = data.data.map((item) => {
     return (
-      <Fade>
-        <li key={item.id} className={styles.containerProduct}>
+      <Fade key={item.id}>
+        <li className={styles.containerProduct}>
           <img className={styles.productImage} src={item.image} alt="" />
           <p className={styles.productName}>{item.title}</p>
           <p className={styles.productDescription}>{item.description}</p>

@@ -35,8 +35,8 @@ html {
 /* padding screem side
 mobil: 40px
 screem 768px = 50px
-screem 1024px = 60px
-screem 1280px = 90px
-screem 1440px = 90px
+screem 1024px = 90px
+screem 1280px = 90px 120px;
+screem 1440px = 90px 120px;
 acreem 1920px = 90px 300px
  */

@@ -36,6 +36,7 @@
 .containerBanner :global(.MuiButton-root) {
   background: var(--button);
   color: var(--white);
+  border-radius: 0px;
 }
 .containerBanner :global(.MuiButton-root:hover) {
   background: var(--buttonHover);
@@ -47,9 +48,10 @@
   }
   .title {
     font-weight: lighter;
-    font-size: 96px;
+    font-size: 66px;
   }
   .containerText {
+    width: 500px;
     padding: 20px;
   }
   .containerBanner :global(.MuiButton-root) {
@@ -61,7 +63,14 @@
     height: 500px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
+  .title {
+    font-weight: lighter;
+    font-size: 76px;
+  }
+  .containerText {
+    width: 550px;
+  }
 }
 @media screen and (min-width: 1920px) {
   .containerBanner {

@@ -3,42 +3,37 @@
   flex-direction: column;
   align-items: center;
   padding: 25px;
-  background-color: var(--secondary);
-}
-.containerText {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--secondary);
-  width: 100%;
-  height: 100%;
+  background-color: var(--lightSecondary);
 }
 .title {
   color: var(--dark);
-  margin: 0px;
   margin-bottom: 20px;
-  font-weight: 300;
-  /* font-size: 28px; */
   text-align: center;
 }
+.titleSmall {
+  display: none;
+}
 .text {
-  color: var(--lightSecondary);
+  color: var(--darkPrimary);
   text-align: center;
   margin-bottom: 20px;
   font-weight: normal;
 }
-
+.containerText {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+}
 .containerProductsHome :global(.MuiButton-root) {
   background: var(--primary);
   color: var(--white);
   border-radius: 0px;
   width: fit-content;
+  align-self: center;
 }
 .containerProductsHome :global(.MuiButton-root:hover) {
   background: var(--buttonHover);
 }
-/* .containerImage {
-} */
 .image {
   display: none;
 }
@@ -46,49 +41,72 @@
   .containerProductsHome {
     display: flex;
     flex-direction: row;
-    padding: 0px;
+    padding: 50px;
+    justify-content: space-between;
   }
-  /* .containerImage {
-    display: block;
-    width: 50%;
-    height: 100%;
-  } */
+
   .image {
     display: block;
-    width: 50%;
-    height: 100%;
+    width: 45%;
+    height: auto;
   }
   .containerText {
-    box-sizing: border-box;
-    padding: 50px;
-    align-items: flex-end;
-    width: 50%;
+    width: 350px;
+  }
+  .titleSmall {
+    color: var(--dark);
+    margin-bottom: 20px;
+    display: block;
+    text-align: start;
+  }
+  .title {
+    display: none;
   }
   .text {
-    text-align: end;
+    text-align: start;
+  }
+  .containerProductsHome :global(.MuiButton-root) {
+    align-self: initial;
   }
 }
 @media screen and (min-width: 1024px) {
+  .containerProductsHome {
+    padding: 90px;
+  }
   .containerText {
-    padding: 60px;
+    align-self: baseline;
+    width: 400px;
+  }
+  .titleSmall {
+    display: none;
+  }
+  .title {
+    display: block;
+    text-align: start;
   }
 }
 @media screen and (min-width: 1280px) {
+  .containerProductsHome {
+    padding: 90px 130px;
+    justify-content: space-between;
+  }
   .image {
     width: 40%;
   }
   .containerText {
-    width: 60%;
-    padding: 90px;
+    width: 500px;
   }
-  .text {
-    width: 600px;
+}
+@media screen and (min-width: 1440px) {
+  .containerProductsHome {
+    padding: 90px 200px;
+  }
+  .containerText {
+    width: 550px;
   }
 }
 @media screen and (min-width: 1920px) {
   .containerProductsHome {
-    padding: 90px 300px;
-  }
-  .text {
+    padding: 90px 400px;
   }
 }

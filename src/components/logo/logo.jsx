@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./logo.css";
 import { useHistory } from "react-router-dom";
+import logo from "../../images/logo/logo Agua y Harina small.png";
 
 // Github : https://github.com/akiran/react-slick
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
@@ -17,12 +18,7 @@ function Logo({ width, height }) {
       className="logoButton"
       onClick={() => onClickButtonDrawerList()}
     >
-      <img
-        src="https://aguayharinavalencia.com/wp-content/uploads/2019/10/logo-agua-y-harina-web.png"
-        alt="logo"
-        width={width}
-        height={height}
-      />
+      <img src={logo} alt="logo" width={width} height={height} />
     </button>
   );
 }
