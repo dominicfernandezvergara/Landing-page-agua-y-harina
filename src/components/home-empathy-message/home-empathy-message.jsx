@@ -1,25 +1,41 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Parallax } from "react-parallax";
 
 import styles from "./home-empathy-message.module.css";
 
-const image = require("../../images/home/ImagehomeEmpathyMessage2.jpeg");
+const imageSmall = require("../../images/banner/logoConFondo.jpeg");
+const imageLarge = require("../../images/logo/logoConFondo.jpeg");
 
 function HomeEmpathyMessage() {
   return (
-    <Parallax
-      bgImage={image}
-      bgImageAlt="the dog"
-      strength={-100}
-      bgClassName="containerParallax"
-    >
-      <div className={styles.containerHomeEmpathyMessage}>
-        <p className={styles.text}>
-          Buscamos crear un producto que sea amigable entre lo nutritivo y que
-          cuide tu alimentación.
-        </p>
-      </div>
-    </Parallax>
+    <Fragment>
+      <Parallax
+        bgImage={imageSmall}
+        bgImageAlt="empathyImage"
+        strength={-100}
+        className={styles.parallaxSmall}
+      >
+        <div className={styles.containerHomeEmpathyMessage}>
+          <h3 className={styles.text}>
+            Buscamos crear un producto que sea amigable entre lo nutritivo y que
+            cuide tu alimentación.
+          </h3>
+        </div>
+      </Parallax>
+      <Parallax
+        bgImage={imageLarge}
+        bgImageAlt="empathyImage"
+        strength={-100}
+        className={styles.parallaxLarge}
+      >
+        <div className={styles.containerHomeEmpathyMessage}>
+          <h3 className={styles.text}>
+            Buscamos crear un producto que sea amigable entre lo nutritivo y que
+            cuide tu alimentación.
+          </h3>
+        </div>
+      </Parallax>
+    </Fragment>
   );
 }
 

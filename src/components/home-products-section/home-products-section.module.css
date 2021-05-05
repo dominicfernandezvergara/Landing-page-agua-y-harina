@@ -67,6 +67,7 @@
   }
   .containerProductsHome :global(.MuiButton-root) {
     align-self: initial;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -83,6 +84,9 @@
   .title {
     display: block;
     text-align: start;
+  }
+  .containerProductsHome :global(.MuiButton-root) {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1280px) {

@@ -1,0 +1,99 @@
+.containerForm {
+  padding: 25px;
+  background-color: var(--lightSecondary);
+}
+.title {
+  color: var(--dark);
+  margin: 0px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+.containerBody {
+  display: flex;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputBox {
+  width: 250px;
+  height: 60px;
+}
+.input {
+  width: 100%;
+}
+.errorInput {
+  color: var(--danger);
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.commentaryBox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 250px;
+}
+.containerForm :global(.MuiButton-root) {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+}
+.containerForm :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
+.image {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .containerForm {
+    padding: 50px;
+  }
+  .containerBody {
+    justify-content: space-between;
+  }
+  .inputBox {
+    width: 280px;
+  }
+  .commentaryBox {
+    width: 280px;
+  }
+  .image {
+    display: block;
+    width: 300px;
+    height: fit-content;
+  }
+  .containerForm :global(.MuiButton-root) {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerForm {
+    padding: 90px;
+  }
+  .containerBody {
+    justify-content: center;
+  }
+  .image {
+    width: 400px;
+    margin-left: 90px;
+  }
+  .containerForm :global(.MuiButton-root) {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerForm {
+    padding: 90px 130px;
+  }
+  .inputBox {
+    width: 300px;
+  }
+  .commentaryBox {
+    width: 300px;
+  }
+}

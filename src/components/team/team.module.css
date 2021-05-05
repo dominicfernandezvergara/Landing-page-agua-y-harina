@@ -1,0 +1,127 @@
+.containerTeam {
+  padding: 45px;
+  background-color: var(--lightSecondary);
+}
+.wrapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+.marginTop {
+  margin-top: 25px;
+}
+.image {
+  width: 100%;
+  height: auto;
+  background-color: var(--buttonHover);
+}
+.smallView {
+  display: block;
+}
+.largeView {
+  display: none;
+}
+.name {
+  color: var(--dark);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: cursive;
+}
+.titleSmall {
+  display: none;
+}
+.text {
+  color: var(--darkPrimary);
+  text-align: center;
+  font-weight: normal;
+  text-align: justify;
+}
+.containerText {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+}
+
+@media screen and (min-width: 760px) {
+  .containerTeam {
+    padding: 50px;
+  }
+  .wrapp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .marginTop {
+    margin-top: 50px;
+  }
+
+  .image {
+    width: 45%;
+    height: auto;
+  }
+  .smallView {
+    display: none;
+  }
+  .largeView {
+    display: block;
+  }
+  .containerText {
+    width: 320px;
+  }
+  .paddingLeft {
+    padding-left: 50px;
+  }
+  .paddingRigth {
+    padding-right: 50px;
+  }
+  .titleSmall {
+    color: var(--dark);
+    margin-bottom: 20px;
+    display: block;
+    text-align: start;
+  }
+  .name {
+    margin-top: 0px;
+    align-self: start;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerTeam {
+    padding: 90px;
+  }
+
+  .containerText {
+    align-self: baseline;
+    width: 400px;
+  }
+  .image {
+    width: 350px;
+  }
+
+  .titleSmall {
+    display: none;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerTeam {
+    padding: 90px 130px;
+  }
+  .paddingLeft {
+    padding-left: 70px;
+  }
+  .paddingRigth {
+    padding-right: 70px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerTeam {
+    padding: 90px 200px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerTeam {
+    padding: 90px 400px;
+  }
+}

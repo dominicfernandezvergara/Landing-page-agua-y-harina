@@ -9,7 +9,8 @@ function Order() {
   UseScrollToTop();
 
   return (
-    <div className={styles.formOrderResposiveSmall}>
+    <div className={styles.containeOrder}>
+      <h3 className={styles.title}>Finalizar Pedido</h3>
       <OrderForm />
     </div>
   );

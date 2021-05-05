@@ -132,7 +132,7 @@
   border: none;
   background-color: transparent;
 }
-.buttonOrders {
+/* .buttonOrders {
   background: var(--button);
   margin-top: 30px;
   height: 100px;
@@ -147,7 +147,7 @@
 .buttonOrders:hover {
   background-color: var(--buttonHover);
   transform: scale(1.1);
-}
+} */
 .emptyState {
   display: flex;
   flex-direction: column;
@@ -159,7 +159,20 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
-
+.responsiveSmall :global(.MuiButton-root) {
+  font-size: 18px;
+  margin-top: 20px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%),
+    0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+}
+.responsiveSmall :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
 @media screen and (min-width: 768px) {
   .containerAllOrders {
     height: auto;
@@ -172,6 +185,9 @@
   }
   .orderImage {
     width: 90px;
+  }
+  .responsiveSmall :global(.MuiButton-root) {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1440px) {

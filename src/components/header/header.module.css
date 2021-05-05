@@ -32,6 +32,13 @@
 .headerTransparent {
   background: #fdf5eba3;
 }
+.headerResponsiveSmall :global(.MuiBadge-anchorOriginTopRightRectangle) {
+  top: 30px;
+  right: 15px;
+}
+.headerResponsiveSmall :global(.MuiBadge-colorPrimary) {
+  background-color: var(--button);
+}
 @media screen and (min-width: 768px) {
   .headerResponsiveLarge {
     display: flex;
@@ -79,6 +86,13 @@
   }
   .headerTransparent {
     background: #fdf5eba3;
+  }
+  .headerResponsiveLarge :global(.MuiBadge-anchorOriginTopRightRectangle) {
+    top: 30px;
+    right: 15px;
+  }
+  .headerResponsiveLarge :global(.MuiBadge-colorPrimary) {
+    background-color: var(--button);
   }
 }
 @media screen and (min-width: 1280px) {

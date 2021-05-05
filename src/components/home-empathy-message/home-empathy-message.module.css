@@ -1,5 +1,5 @@
 .containerHomeEmpathyMessage {
-  background-color: #0000006b;
+  background-color: #c67100ba;
   height: 250px;
 }
 .text {
@@ -11,6 +11,10 @@
   height: 100%;
   text-align: center;
   padding: 25px;
+  font-weight: 500;
+}
+.parallaxLarge {
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .containerHomeEmpathyMessage {
@@ -19,10 +23,15 @@
     justify-content: center;
   }
   .text {
-    width: 400px;
-    font-size: 20px;
+    width: 500px;
     font-weight: bold;
     letter-spacing: 1px;
+  }
+  .parallaxSmall {
+    display: none;
+  }
+  .parallaxLarge {
+    display: block;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -30,7 +39,7 @@
     height: 350px;
   }
   .text {
-    width: 500px;
+    width: 700px;
   }
 }
 @media screen and (min-width: 1280px) {

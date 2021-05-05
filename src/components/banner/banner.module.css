@@ -55,12 +55,15 @@
     padding: 20px;
   }
   .containerBanner :global(.MuiButton-root) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
   .containerBanner {
     height: 500px;
+  }
+  .containerBanner :global(.MuiButton-root) {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1280px) {

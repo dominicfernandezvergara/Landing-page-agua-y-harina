@@ -12,37 +12,14 @@
   background-color: var(--darkPrimary);
   color: var(--lightSecondary);
 }
-.containerBoxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 30px 30px;
-}
 
 @media screen and (min-width: 768px) {
   .containerAbout {
     margin-top: 105px;
   }
-  .animationSmall {
-    display: none;
-  }
-
-  .descriptionAbout {
-    font-size: 60px;
-    padding: 70px 40px;
-  }
 }
 
 @media screen and (min-width: 1024px) {
-  .containerBoxes {
-    margin-top: 50px;
-  }
-  .descriptionAbout {
-    padding: 70px 120px;
-  }
 }
-@media screen and (min-width: 1440px) {
-  .descriptionAbout {
-    padding: 70px 160px;
-  }
+@media screen and (min-width: 1280px) {
 }
