@@ -1,19 +1,13 @@
 .containerFormOrder {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 25px;
+  background-color: var(--lightSecondary);
 }
 .title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-.subTitle {
-  font-size: 18px;
-  margin-top: 20px;
+  color: var(--darkPrimary);
   margin-bottom: 20px;
-  padding-left: 30px;
+  text-align: center;
 }
 .form {
   display: flex;
@@ -23,8 +17,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 .inputBox {
+  width: 250px;
+  height: 60px;
+}
+.inputBox:global(.MuiFormControl-root) {
   width: 250px;
   height: 60px;
 }
@@ -61,33 +64,39 @@
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
+.containerSummary {
+  margin-top: 20px;
+}
 
-.form .submitButton {
-  align-self: center;
-  height: 80px;
-  font-size: 36px;
+.form :global(.MuiButton-root) {
   background: var(--primary);
   color: var(--white);
-  width: 300px;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
 }
-.form .submitButton:hover {
-  background-color: var(--buttonHover);
-  transform: scale(1.1);
+.form :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
 }
 
 @media screen and (min-width: 768px) {
+  .containerFormOrder {
+    background-color: var(--white);
+    padding: 50px;
+  }
   .title {
     align-self: center;
   }
   .containerFlex {
     display: flex;
     flex-direction: row;
-    align-self: center;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   .wrapperForm {
-    padding: 0px 20px;
+    background-color: var(--lightSecondary);
+    width: 50%;
+    margin-right: 20px;
   }
   .titleOrderSummary {
     margin-top: 20px;
@@ -95,29 +104,42 @@
   .textCommentary {
     margin-left: 10px;
   }
+  .containerSummary {
+    background-color: var(--lightSecondary);
+    margin-top: 0px;
+    width: 50%;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  }
+  .form :global(.MuiButton-root) {
+    font-size: 18px;
+    border-radius: 10px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .input {
-    width: 290px;
-    border-radius: 10px;
+  .containerFormOrder {
+    padding: 30px 90px;
   }
-  .containerFlex {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
+  .form :global(.MuiButton-root) {
+    font-size: 20px;
   }
-  .containerSummary {
-    margin-left: 80px;
-  }
-  .submitButton {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    cursor: pointer;
-  }
-  .commentary {
-    width: 290px;
+}
+@media screen and (min-width: 1280px) {
+  .containerFormOrder {
+    padding: 30px 130px;
   }
 }
 @media screen and (min-width: 1440px) {
+  .containerFormOrder {
+    padding: 30px 200px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerFormOrder {
+    padding: 30px 400px;
+  }
 }

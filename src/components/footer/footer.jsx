@@ -5,6 +5,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import styles from "./footer.module.css";
 import image from "../../images/imageWebPay.png";
 import InstagramIcon from "../../images/social-media/instagramIcon.svg";
+import WhatsAppIcon from "../../images/social-media/whatsappIcon.svg";
 
 function Footer() {
   return (
@@ -39,17 +40,31 @@ function Footer() {
           <h3 className={styles.title}>Redes Sociales</h3>
           <hr className={styles.line} />
         </div>
-        <div className={styles.containerText}>
-          <a
-            href="https://www.instagram.com/awareness.consultant/"
-            className={styles.iconSocialMedia}
-          >
-            <img
-              src={InstagramIcon}
+        <div className={styles.containerIconsMedia}>
+          <div className={styles.containerText}>
+            <a
+              href="https://www.instagram.com/awareness.consultant/"
               className={styles.iconSocialMedia}
-              alt=""
-            />
-          </a>
+            >
+              <img
+                src={InstagramIcon}
+                className={styles.iconSocialMedia}
+                alt="instagramIcon"
+              />
+            </a>
+          </div>
+          <div className={styles.containerText}>
+            <a
+              href="https://api.whatsapp.com/send?phone=569 75967218"
+              className={styles.iconSocialMedia}
+            >
+              <img
+                src={WhatsAppIcon}
+                className={styles.iconSocialMedia}
+                alt="whatsappIcon"
+              />
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.Body}>

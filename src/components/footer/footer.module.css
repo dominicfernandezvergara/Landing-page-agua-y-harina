@@ -33,6 +33,11 @@
   display: flex;
   margin-bottom: 10px;
 }
+.containerIconsMedia {
+  display: flex;
+  width: 75px;
+  justify-content: space-between;
+}
 .iconLink :global(.MuiSvgIcon-root) {
   font-size: 20px;
   padding-right: 5px;

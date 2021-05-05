@@ -15,17 +15,17 @@ function SuccessOrder() {
   return (
     <div className={styles.containerSuccessOrder}>
       <div className={styles.successOrder}>
-        <p className={styles.title}> Pedido realizado con exito!</p>
+        <h3 className={styles.title}> Pedido realizado con exito!</h3>
         <div className={styles.containerOrderData}>
           <p className={styles.subtitle}>Datos Personales:</p>
           <div className={styles.containerUserData}>
-            <p>
+            <p className={styles.text}>
               Nombre: {userData.name} {userData.lastName}
             </p>
-            <p>Email: {userData.email} </p>
-            <p>Telefono: {userData.telephone} </p>
-            <p>Direccion: {userData.address} </p>
-            <p>Fecha de entrega: {userData.date}</p>
+            <p className={styles.text}>Email: {userData.email} </p>
+            <p className={styles.text}>Telefono: {userData.telephone} </p>
+            <p className={styles.text}>Direccion: {userData.address} </p>
+            <p className={styles.text}>Fecha de entrega: {userData.date}</p>
           </div>
           <div className={styles.containerProductsData}>
             <OrderSummary />
@@ -38,7 +38,7 @@ function SuccessOrder() {
               </div>
             </div>
           ) : null}
-          <p>Nº de Orden : 12345</p>
+          <p className={styles.text}>Nº de Orden : 12345</p>
         </div>
       </div>
     </div>

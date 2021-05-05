@@ -160,6 +160,7 @@ function Header() {
                 className={cn(styles.headerButton)}
                 delay={delayNumber}
                 triggerOnce
+                key={item.name}
               >
                 <button
                   className={cn(

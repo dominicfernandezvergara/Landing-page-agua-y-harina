@@ -15,7 +15,7 @@ import {
 function OrderForm() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const [commentary, setCommentary] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -96,7 +96,6 @@ function OrderForm() {
   console.log("errors", errors);
   return (
     <div className={styles.containerFormOrder}>
-      <p className={styles.title}>Finalizar Orden</p>
       <form
         className={styles.form}
         onSubmit={handleSubmit(onSubmit)}
@@ -104,7 +103,7 @@ function OrderForm() {
       >
         <div className={styles.containerFlex}>
           <div className={styles.wrapperForm}>
-            <p className={styles.subTitle}>Datos Personales</p>
+            <h4 className={styles.title}>Datos Personales</h4>
             <div className={styles.inputBox}>
               <TextField
                 id="name"
@@ -201,16 +200,13 @@ function OrderForm() {
             </div>
           </div>
           <div className={styles.containerSummary}>
-            <div className={styles.titleOrderSummary}> Resumen de la Orden</div>
+            <h4 className={styles.title}> Resumen de la Orden</h4>
             <OrderSummary />
           </div>
         </div>
-        <Button
-          type="submit"
-          variant="contained"
-          className={styles.submitButton}
-        >
-          ENVIAR
+
+        <Button type="submit" variant="contained">
+          Enviar pedido
         </Button>
       </form>
     </div>

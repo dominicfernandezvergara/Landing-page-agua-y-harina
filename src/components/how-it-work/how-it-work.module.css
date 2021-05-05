@@ -92,6 +92,9 @@
   .icon :global(.MuiSvgIcon-root) {
     font-size: 60px;
   }
+  .containerHowItWork :global(.MuiButton-root) {
+    font-size: 18px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .containerHowItWork {
@@ -109,6 +112,9 @@
   }
   .descriptionStep {
     width: 100%;
+  }
+  .containerHowItWork :global(.MuiButton-root) {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1280px) {

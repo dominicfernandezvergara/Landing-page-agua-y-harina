@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import Button from "@material-ui/core/Button";
 
 import styles from "./contentShoppingCart.module.css";
 import formatNumber from "../../../utils/numbers.js";
@@ -112,13 +113,13 @@ function ContentShoppingCart({ close }) {
       ) : (
         <Fragment>
           <div className={styles.containerAllOrders}>{ordersList}</div>
-          <button
+          <Button
             type="button"
             className={styles.buttonOrders}
             onClick={() => submitOrder()}
           >
             PROCEDER A ORDENAR
-          </button>
+          </Button>
         </Fragment>
       )}
     </div>
