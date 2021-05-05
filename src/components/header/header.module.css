@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--darkPrimary);
+  background: var(--lightSecondary);
   box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%),
     0 1px 10px 0 rgb(0 0 0 / 12%);
   padding: 0px 20px;
@@ -30,7 +30,14 @@
   display: none;
 }
 .headerTransparent {
-  background: #c67100c9;
+  background: #fdf5eba3;
+}
+.headerResponsiveSmall :global(.MuiBadge-anchorOriginTopRightRectangle) {
+  top: 30px;
+  right: 15px;
+}
+.headerResponsiveSmall :global(.MuiBadge-colorPrimary) {
+  background-color: var(--button);
 }
 @media screen and (min-width: 768px) {
   .headerResponsiveLarge {
@@ -40,7 +47,7 @@
     justify-content: space-between;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
       0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-    background: var(--darkPrimary);
+    background: var(--lightSecondary);
     position: fixed;
     top: 0;
     left: 0;
@@ -61,6 +68,8 @@
     border: none;
     font-size: 16px;
     cursor: pointer;
+    color: var(--darkPrimary);
+    font-weight: bold;
   }
   .headerButton:hover {
     font-weight: bold;
@@ -76,14 +85,31 @@
     display: none;
   }
   .headerTransparent {
-    background: #c67100c9;
+    background: #fdf5eba3;
+  }
+  .headerResponsiveLarge :global(.MuiBadge-anchorOriginTopRightRectangle) {
+    top: 30px;
+    right: 15px;
+  }
+  .headerResponsiveLarge :global(.MuiBadge-colorPrimary) {
+    background-color: var(--button);
   }
 }
 @media screen and (min-width: 1280px) {
   .headerResponsiveLarge {
-    padding: 0px 60px;
+    padding: 0px 90px;
   }
   .headerButton {
     font-size: 18px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .headerResponsiveLarge {
+    padding: 0px 120px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .headerResponsiveLarge {
+    padding: 0px 300px;
   }
 }

@@ -7,7 +7,7 @@ import Home from "./pages/home";
 import Product from "./pages/product";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Products from "./pages/products";
+import Products from "./pages/products/products";
 import Order from "./pages/order";
 import SuccessOrder from "./pages/success-order";
 import About from "./pages/about";

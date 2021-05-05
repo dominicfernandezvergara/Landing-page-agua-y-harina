@@ -1,38 +1,113 @@
 .containerFooter {
-  background: var(--primary);
-}
-.containerContactData {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 40px;
+  background-color: var(--dark);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
-.titleFooter {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 10px;
-  margin-top: 15px;
+.Body {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
-.dataFooter {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
+.containerTitle {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+.title {
+  font-weight: bold;
+  color: var(--lightSecondary);
+}
+.line {
+  height: 2px;
+  width: 60px;
+  margin: 0px;
   margin-top: 5px;
+  margin-bottom: 10px;
+  border: 0;
+  background-color: var(--lightPrimary);
+}
+.containerText {
+  display: flex;
+  margin-bottom: 10px;
+}
+.containerIconsMedia {
+  display: flex;
+  width: 75px;
+  justify-content: space-between;
+}
+.iconLink :global(.MuiSvgIcon-root) {
+  font-size: 20px;
+  padding-right: 5px;
+  display: flex;
+  color: var(--lightSecondary);
+}
+.iconSocialMedia {
+  width: 30px;
+  height: 30px;
+}
+.text {
+  color: #aeaeae;
+  font-size: 16px;
+}
+.link {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+}
+.link:hover {
+  border-bottom: 1px solid white;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .containerFooter {
-    display: flex;
-    justify-content: center;
+    flex-direction: row;
+    padding: 50px;
+    flex-wrap: wrap;
   }
-  .containerContactData {
-    margin-right: 130px;
-    margin-bottom: 30px;
+  .Body {
+    width: 320px;
   }
-  .titleFooter {
+  .title {
     font-size: 20px;
   }
-  .dataFooter {
-    font-size: 18px;
+  .text {
+    width: 270px;
+  }
+  .imageWebPay {
+    width: 120px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerFooter {
+    padding: 90px;
+  }
+  .Body {
+    width: 280px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerFooter {
+    padding: 90px 130px;
+    justify-content: space-between;
+  }
+  .Body {
+    width: auto;
+    margin-bottom: 0px;
+  }
+  .text {
+    width: 230px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerFooter {
+    padding: 90px 200px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerFooter {
+    padding: 90px 400px;
   }
 }

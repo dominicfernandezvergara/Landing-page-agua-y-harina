@@ -9,7 +9,7 @@ import styles from "./modal-new-product.module.css";
 function ModalNewProduct({ editData, close, onFormSubmit, title }) {
   console.log("editData", editData);
 
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     const idProduct = editData.id;
     console.log("data", data);
@@ -25,7 +25,6 @@ function ModalNewProduct({ editData, close, onFormSubmit, title }) {
     onFormSubmit(newProduct, httpMethod, idProduct);
     close();
   };
-  // console.log(watch("name"));
 
   return (
     <div className={styles.containerModalNewProduct}>

@@ -5,12 +5,14 @@
   flex-direction: column;
 }
 .containerHeaderDrawerList {
-  background: var(--secondary);
+  background: var(--darkPrimary);
+  justify-content: space-between;
   display: flex;
 }
 .titleHeader {
   text-align: center;
   margin-top: 15px;
+  color: var(--lightSecondary);
 }
 .containerDrawerList ul {
   margin: 0;
@@ -44,6 +46,7 @@
   flex-direction: column;
   height: 100%;
   margin-left: 10px;
+  color: var(--lightSecondary);
 }
 
 .buttonDrawerList {
@@ -65,6 +68,7 @@
 }
 .name {
   padding-left: 10px;
+  color: var(--darkSecondary);
 }
 .container-products-button {
   display: flex;

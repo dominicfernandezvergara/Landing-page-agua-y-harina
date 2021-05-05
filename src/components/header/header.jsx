@@ -128,7 +128,7 @@ function Header() {
         })}
       >
         <div className={styles.containerLogo}>
-          <Logo width={60} height={60} />
+          <Logo width={110} height={60} />
         </div>
 
         <div className={styles.containerButton}>
@@ -148,7 +148,7 @@ function Header() {
       >
         <div className={styles.containerLogo}>
           <Fade triggerOnce>
-            <Logo width={80} height={80} />
+            <Logo width={150} height={80} />
           </Fade>
         </div>
         <div className={styles.containerHeaderButton}>
@@ -160,6 +160,7 @@ function Header() {
                 className={cn(styles.headerButton)}
                 delay={delayNumber}
                 triggerOnce
+                key={item.name}
               >
                 <button
                   className={cn(

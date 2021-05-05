@@ -13,7 +13,7 @@
   padding: 30px 10px;
   border: 1px solid #dfdfdf;
   position: fixed;
-  top: 40px;
+  top: 100px;
   left: 15px;
   right: 15px;
   border-radius: 10px;
@@ -38,6 +38,7 @@
   .containerModal {
     width: 50%;
     height: auto;
+    top: 130px;
     left: 150px;
     right: 150px;
   }

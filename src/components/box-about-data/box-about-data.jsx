@@ -1,21 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import styles from "./boxAboutData.module.css";
+import { dataBoxAbout } from "./data";
 
-function BoxAboutData({ title, icon, text }) {
+function BoxAboutData() {
   return (
-    <div className={styles.boxAbout}>
-      <div className={styles.imageboxAbout}> {icon}</div>
-      <h3 className={styles.titleBoxAbout}>{title}</h3>
-      <p className={styles.textBoxAbout}>{text}</p>
+    <div className={styles.containerBoxAboutData}>
+      <h3 className={styles.title}>Sobre Nosotros</h3>
+      <div className={styles.containerBoxs}>
+        {dataBoxAbout.map((item) => (
+          <div className={styles.box} key={item.title}>
+            <div className={styles.icon}> {item.icon}</div>
+            <h3 className={styles.subTitle}>{item.title}</h3>
+            <p className={styles.text}>{item.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-BoxAboutData.propTypes = {
-  icon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-};
 export default BoxAboutData;

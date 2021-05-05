@@ -35,9 +35,8 @@ const DrawerButtonList = ({ toggleDrawer }) => {
     <div className={styles.containerDrawerList}>
       <div className={styles.containerHeaderDrawerList}>
         <div className={styles.containerLogoDrawerList}>
-          <Logo width={50} height={50} />
+          <Logo width={100} height={65} />
         </div>
-        <h3 className={styles.titleHeader}>Agua y Harina</h3>
         <button
           type="button"
           className={styles.buttonCloseDrawer}
