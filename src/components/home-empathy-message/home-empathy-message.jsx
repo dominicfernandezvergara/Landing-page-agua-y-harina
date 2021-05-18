@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
 import { Parallax } from "react-parallax";
+import PropTypes from "prop-types";
 
 import styles from "./home-empathy-message.module.css";
 
-const imageSmall = require("../../images/banner/logoConFondo.jpeg");
-const imageLarge = require("../../images/logo/logoConFondo.jpeg");
-
-function HomeEmpathyMessage() {
+function HomeEmpathyMessage({ imageSmall, imageLarge, text }) {
+  console.log(`object`, imageSmall);
   return (
     <Fragment>
       <Parallax
@@ -16,10 +15,7 @@ function HomeEmpathyMessage() {
         className={styles.parallaxSmall}
       >
         <div className={styles.containerHomeEmpathyMessage}>
-          <h3 className={styles.text}>
-            Buscamos crear un producto que sea amigable entre lo nutritivo y que
-            cuide tu alimentación.
-          </h3>
+          <h3 className={styles.text}>{text}</h3>
         </div>
       </Parallax>
       <Parallax
@@ -29,14 +25,15 @@ function HomeEmpathyMessage() {
         className={styles.parallaxLarge}
       >
         <div className={styles.containerHomeEmpathyMessage}>
-          <h3 className={styles.text}>
-            Buscamos crear un producto que sea amigable entre lo nutritivo y que
-            cuide tu alimentación.
-          </h3>
+          <h3 className={styles.text}>{text}</h3>
         </div>
       </Parallax>
     </Fragment>
   );
 }
-
+HomeEmpathyMessage.propTypes = {
+  imageSmall: PropTypes.string.isRequired,
+  imageLarge: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
 export default HomeEmpathyMessage;

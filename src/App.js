@@ -14,6 +14,8 @@ import About from "./pages/about";
 import ContactUs from "./pages/contact-us";
 import Admin from "./pages/admin";
 import Test from "./pages/test";
+import SuccessfullPayment from "./pages/successful-payment";
+import ErrorPayment from "./pages/error-payment/error-payment";
 
 function App() {
   return (
@@ -44,6 +46,12 @@ function App() {
           </Route>
           <Route path="/succefull-Order">
             <SuccessOrder />
+          </Route>
+          <Route path="/successfull-payment">
+            <SuccessfullPayment />
+          </Route>
+          <Route path="/error-payment">
+            <ErrorPayment />
           </Route>
           <Route path="/admin">
             <Admin />

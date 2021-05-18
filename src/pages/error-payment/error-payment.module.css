@@ -1,0 +1,98 @@
+.containerErrorPayment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 85px;
+  padding: 25px;
+}
+.containerIcon {
+  background-color: var(--danger);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.containerIcon :global(.MuiSvgIcon-root) {
+  font-size: 40px;
+}
+.title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.text {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.containerErrorPayment :global(.MuiButton-root) {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+  margin-bottom: 10px;
+}
+.containerErrorPayment :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
+.containerButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 760px) {
+  .containerErrorPayment {
+    margin-top: 105px;
+    padding: 50px;
+  }
+  .text {
+    width: 500px;
+  }
+  .containerErrorPayment :global(.MuiButton-root) {
+    align-self: initial;
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+  }
+  .containerButtons {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerErrorPayment {
+    padding: 50px 90px;
+  }
+  .text {
+    width: 700px;
+  }
+  .subtitle {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerErrorPayment {
+    padding: 50px 130px;
+  }
+  .containerIcon {
+    margin-bottom: 30px;
+  }
+  .title {
+    margin-bottom: 50px;
+  }
+  .text {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerErrorPayment {
+    padding: 50px 200px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerErrorPayment {
+    padding: 50px 400px;
+  }
+}

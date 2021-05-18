@@ -68,7 +68,7 @@ ul {
 .boxName {
   color: var(--darkPrimary);
   font-weight: bold;
-  width: 136px;
+  width: 140px;
 }
 
 .addButton .iconImageProductButton {
@@ -105,6 +105,20 @@ ul {
   height: 25px;
   width: 25px;
 }
+.containerCloseIcon {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.closeIcon {
+  background: transparent;
+  color: var(--lightSecondary);
+  border: none;
+  padding: 10px 10px 10px 10px;
+}
+.closeIcon:hover {
+  background-color: var(--buttonHover);
+}
 .containerInfoProduct {
   position: absolute;
   /* top: 28; */
@@ -120,7 +134,9 @@ ul {
   position: relative;
 }
 .textIngredients {
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
+
+  text-align: center;
 }
 @media screen and (min-width: 768px) {
   .containerProduct {
@@ -136,7 +152,7 @@ ul {
     height: 160px;
   }
   .infoButton {
-    bottom: 140px;
+    bottom: 90px;
   }
   .boxRight {
     font-size: 16px;

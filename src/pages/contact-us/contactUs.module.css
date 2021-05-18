@@ -16,4 +16,16 @@
   .containerContactUs {
     margin-top: 105px;
   }
+  .WrapperDirection {
+    display: flex;
+    padding: 50px 20px;
+    background-color: var(--lightSecondary);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .WrapperDirection {
+    padding: 50px 90px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import styles from "./order-form.module.css";
 import OrderSummary from "../order-summary/order-summary";
@@ -18,6 +21,7 @@ function OrderForm() {
   const { register, handleSubmit, errors } = useForm();
   const [commentary, setCommentary] = useState("");
   const [loading, setLoading] = useState(false);
+  const [openError, setOpenError] = useState(false);
 
   const dataOrders = useSelector(
     (state) => state.shoppingCart.shoppingCartProducts
@@ -55,7 +59,7 @@ function OrderForm() {
       products: productsArray,
     };
 
-    history.push("/succefull-Order");
+    // history.push("/succefull-Order");
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -76,23 +80,31 @@ function OrderForm() {
     //     setLoading(false);
     //   });
 
-    // try {
-    //   const purchaseResponse = await fetch(
-    //     "https://breads-api.herokuapp.com/api/v1/purchases",
-    //     requestOptions
-    //   );
-    //   setLoading(false);
-    //   if (purchaseResponse.status === "success") {
-    //     history.push("/success-order");
-    //   }
-    // } catch (e) {
-    //   console.log("err", e);
-    //   setLoading(false);
-    // }
+    try {
+      const purchaseResponse = await fetch(
+        "https://breads-api.herokuapp.com/api/v1/purchases",
+        requestOptions
+      );
+      setLoading(false);
+      if (purchaseResponse.status === "success") {
+        history.push("/success-order");
+      }
+    } catch (e) {
+      console.log("err", e);
+      setLoading(false);
+      setOpenError(true);
+    }
   };
 
-  // console.log(watch("name"));
-
+  function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenError(false);
+  };
   console.log("errors", errors);
   return (
     <div className={styles.containerFormOrder}>
@@ -206,76 +218,20 @@ function OrderForm() {
         </div>
 
         <Button type="submit" variant="contained">
-          Enviar pedido
+          {loading ? <CircularProgress color="primary" /> : "Enviar pedido"}
         </Button>
+        <Snackbar
+          open={openError}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
+          <Alert severity="error">
+            Lo sentimos, algo salio mal. Por favor, vuelve a intentarlo.
+          </Alert>
+        </Snackbar>
       </form>
     </div>
   );
 }
 
 export default OrderForm;
-
-// <input
-//   className={styles.input}
-//   type="text"
-//   name="name"
-//   placeholder="Nombre"
-//   ref={register({ required: true })}
-// />
-// {errors.name && (
-//   <span className={styles.errorInput}>
-//     Nombre requerido para continuar
-//   </span>
-// )}
-// <input
-//   className={styles.input}
-//   type="text"
-//   name="lastName"
-//   placeholder="Apellido"
-//   ref={register({ required: true })}
-// />
-// {errors.lastName && (
-//   <span className={styles.errorInput}>
-//     Apellido requerido para continuar
-//   </span>
-// )}
-// <input
-//   className={styles.input}
-//   type="email"
-//   name="email"
-//   placeholder="Email"
-//   ref={register({
-//     required: "Email requerido para continuar",
-//     pattern: {
-//       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-//       message: "Email invalido",
-//     },
-//   })}
-// />
-// {errors.email && (
-//   <span className={styles.errorInput}>{errors.email.message}</span>
-// )}
-// <input
-//   className={styles.input}
-//   type="number"
-//   name="telephone"
-//   placeholder="Telefono"
-//   ref={register({ required: true })}
-// />
-
-// <input
-//   className={styles.input}
-//   type="text"
-//   name="address"
-//   placeholder="Direccion"
-//   ref={register({ required: true })}
-// />
-
-// <p className={styles.textCommentary}>Comentario (opcional):</p>
-// <textarea
-//   id="commentary"
-//   className={styles.commentary}
-//   name="commentary"
-//   value={commentary}
-//   onChange={(e) => handleChangeCommentary(e)}
-// />

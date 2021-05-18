@@ -1,4 +1,10 @@
-.containerForm {
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%),
+    0 1px 10px 0 rgb(0 0 0 / 12%);
+  padding: 10px;
   padding: 25px;
   background-color: var(--lightSecondary);
 }
@@ -9,18 +15,10 @@
   font-weight: 300;
   text-align: center;
 }
-.containerBody {
-  display: flex;
-  justify-content: center;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .inputBox {
-  width: 250px;
+  width: 100%;
   height: 60px;
+  margin-bottom: 10px;
 }
 .input {
   width: 100%;
@@ -33,67 +31,34 @@
 .commentaryBox {
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 250px;
+  width: 100%;
 }
-.containerForm :global(.MuiButton-root) {
+.form :global(.MuiButton-root) {
   background: var(--primary);
   color: var(--white);
   border-radius: 0px;
   width: fit-content;
   align-self: center;
 }
-.containerForm :global(.MuiButton-root:hover) {
+.form :global(.MuiButton-root:hover) {
   background: var(--buttonHover);
-}
-.image {
-  display: none;
 }
 
 @media screen and (min-width: 768px) {
-  .containerForm {
-    padding: 50px;
+  .form {
+    background-color: var(--white);
+    margin: 10px;
   }
-  .containerBody {
-    justify-content: space-between;
-  }
-  .inputBox {
-    width: 280px;
-  }
-  .commentaryBox {
-    width: 280px;
-  }
-  .image {
-    display: block;
-    width: 300px;
-    height: fit-content;
-  }
-  .containerForm :global(.MuiButton-root) {
+  .form :global(.MuiButton-root) {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .containerForm {
-    padding: 90px;
+  .form {
+    padding: 50px;
+    width: 50%;
   }
-  .containerBody {
-    justify-content: center;
-  }
-  .image {
-    width: 400px;
-    margin-left: 90px;
-  }
-  .containerForm :global(.MuiButton-root) {
+  .form :global(.MuiButton-root) {
     font-size: 20px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .containerForm {
-    padding: 90px 130px;
-  }
-  .inputBox {
-    width: 300px;
-  }
-  .commentaryBox {
-    width: 300px;
   }
 }
