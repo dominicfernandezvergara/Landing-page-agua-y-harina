@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import Home from "./pages/home";
-import Product from "./pages/product";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Products from "./pages/products/products";
@@ -34,9 +33,6 @@ function App() {
           </Route>
           <Route path="/products">
             <Products />
-          </Route>
-          <Route path="/product/:id">
-            <Product />
           </Route>
           <Route path="/order">
             <Order />
