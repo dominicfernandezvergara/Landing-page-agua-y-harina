@@ -1,0 +1,123 @@
+.containerSuccessfullPayment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 85px;
+  padding: 25px;
+}
+.shadowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  background-color: rgb(21 199 88 / 26%);
+}
+.containerIcon {
+  background-color: var(--success);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.text {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.subtitle {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.containerSuccessfullPayment :global(.MuiButton-root) {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+  margin-bottom: 10px;
+}
+.containerSuccessfullPayment :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
+.containerButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 760px) {
+  .containerSuccessfullPayment {
+    margin-top: 105px;
+    padding: 50px;
+  }
+  .shadowIcon {
+    width: 90px;
+    height: 90px;
+  }
+  .containerIcon {
+    width: 40px;
+    height: 40px;
+  }
+  .containerIcon :global(.MuiSvgIcon-root) {
+    font-size: 40px;
+  }
+  .text {
+    width: 500px;
+  }
+  .containerSuccessfullPayment :global(.MuiButton-root) {
+    align-self: initial;
+    margin-bottom: 0px;
+    margin-right: 10px;
+  }
+  .containerButtons {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerSuccessfullPayment {
+    padding: 50px 90px;
+  }
+  .text {
+    width: 700px;
+  }
+  .subtitle {
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+  .containerSuccessfullPayment :global(.MuiButton-root) {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .containerSuccessfullPayment {
+    padding: 50px 130px;
+  }
+  .shadowIcon {
+    margin-bottom: 30px;
+  }
+  .title {
+    margin-bottom: 30px;
+  }
+  .text {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .containerSuccessfullPayment {
+    padding: 50px 200px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .containerSuccessfullPayment {
+    padding: 50px 400px;
+  }
+}

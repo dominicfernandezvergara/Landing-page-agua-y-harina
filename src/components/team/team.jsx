@@ -4,7 +4,8 @@ import cn from "classnames";
 import styles from "./team.module.css";
 import UseScrollToTop from "../../hooks/use-scroll-to-top";
 
-import image1 from "../../images/team/imageTeamCarolina 2.png";
+import imageEli from "../../images/team/eli.jpeg";
+import imageRaul from "../../images/team/raul.jpeg";
 
 function Team() {
   UseScrollToTop();
@@ -15,7 +16,7 @@ function Team() {
         <img
           alt="imageHomeMisionSection"
           className={styles.image}
-          src={image1}
+          src={imageEli}
         />
         <div className={cn(styles.containerText, styles.paddingLeft)}>
           <h3 className={styles.name}>Eliana más conocida como Eli</h3>
@@ -34,7 +35,7 @@ function Team() {
         <img
           alt="imageHomeMisionSection"
           className={cn(styles.image, styles.smallView)}
-          src={image1}
+          src={imageRaul}
         />
         <div className={cn(styles.containerText, styles.paddingRigth)}>
           <h3 className={styles.name}>Raúl conocido también como Rulo</h3>
@@ -53,7 +54,7 @@ function Team() {
         <img
           alt="imageHomeMisionSection"
           className={cn(styles.image, styles.largeView)}
-          src={image1}
+          src={imageRaul}
         />
       </div>
     </div>

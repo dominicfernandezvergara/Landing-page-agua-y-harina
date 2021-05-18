@@ -1,0 +1,71 @@
+.contactData {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: var(--white);
+  padding: 25px;
+  align-items: center;
+}
+.title {
+  font-weight: bold;
+  margin: 0px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+.text {
+  color: var(--darkSecondary);
+  text-align: justify;
+  width: 300px;
+  margin-bottom: 10px;
+}
+.wrappData {
+  width: 300px;
+}
+.subWrappData {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+.subtitle {
+  font-weight: 300;
+}
+.containerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconLink :global(.MuiSvgIcon-root) {
+  font-size: 30px;
+  padding-right: 5px;
+  color: var(--darkSecondary);
+}
+.textContactData {
+  color: var(--darkSecondary);
+}
+@media screen and (min-width: 768px) {
+  .contactData {
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%),
+      0 1px 10px 0 rgb(0 0 0 / 12%);
+    margin: 10px;
+    width: 50%;
+  }
+  .wrappData {
+    width: auto;
+  }
+  .text {
+    width: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contactData {
+    padding: 50px;
+    align-items: flex-start;
+  }
+  .iconLink :global(.MuiSvgIcon-root) {
+    font-size: 40px;
+  }
+  .title {
+    width: 100%;
+  }
+}

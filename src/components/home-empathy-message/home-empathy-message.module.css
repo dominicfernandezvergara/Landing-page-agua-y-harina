@@ -12,6 +12,7 @@
   text-align: center;
   padding: 25px;
   font-weight: 500;
+  justify-content: center;
 }
 .parallaxLarge {
   display: none;

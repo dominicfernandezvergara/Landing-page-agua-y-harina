@@ -1,7 +1,7 @@
 .containerBoxAboutData {
   display: flex;
   flex-direction: column;
-  padding: 0px 45px 45px 45px;
+  padding: 45px;
   background: var(--lightSecondary);
 }
 .title {
@@ -43,24 +43,16 @@
 
 @media screen and (min-width: 768px) {
   .containerBoxAboutData {
-    padding: 0px 50px 50px 50px;
-    /* background-image: url(../../images/banner/uslero-y-harina.jpeg); */
-    /* background-size: cover; */
+    padding: 50px;
   }
   .text {
     width: 300px;
   }
-  /* .box {
-    width: 200px;
-    height: 430px;
-    padding: 20px;
-    margin: 20px;
-  } */
 }
 
 @media screen and (min-width: 1024px) {
   .containerBoxAboutData {
-    padding: 0px 90px 90px 90px;
+    padding: 90px;
   }
   .containerBoxs {
     flex-direction: unset;
@@ -70,19 +62,9 @@
     width: 320px;
     margin: 20px;
   }
-  /* .box {
-    width: 290px;
-    height: 430px;
-    padding: 0px 15px;
-  } */
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1920px) {
   .containerBoxAboutData {
-    padding: 50px;
-  }
-  .box {
-    /* width: 330px;
-    height: 390px;
-  } */
+    padding: 90px 400px;
   }
 }
