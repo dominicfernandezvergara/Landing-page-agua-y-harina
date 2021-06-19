@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 25px;
   background-color: var(--lightSecondary);
 }
@@ -24,16 +25,6 @@
   flex-direction: column;
   align-items: initial;
 }
-.containerProductsHome :global(.MuiButton-root) {
-  background: var(--primary);
-  color: var(--white);
-  border-radius: 0px;
-  width: fit-content;
-  align-self: center;
-}
-.containerProductsHome :global(.MuiButton-root:hover) {
-  background: var(--buttonHover);
-}
 .image {
   display: none;
 }
@@ -43,12 +34,13 @@
     flex-direction: row;
     padding: 50px;
     justify-content: space-between;
+    text-align: inherit;
   }
-
   .image {
     display: block;
     width: 45%;
     height: auto;
+    border-radius: 5px;
   }
   .containerText {
     width: 350px;
@@ -67,7 +59,6 @@
   }
   .containerProductsHome :global(.MuiButton-root) {
     align-self: initial;
-    font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -84,9 +75,6 @@
   .title {
     display: block;
     text-align: start;
-  }
-  .containerProductsHome :global(.MuiButton-root) {
-    font-size: 20px;
   }
 }
 @media screen and (min-width: 1280px) {

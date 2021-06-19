@@ -1,0 +1,23 @@
+.containerButton :global(.MuiButton-root) {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0px;
+  width: fit-content;
+  align-self: center;
+  font-family: "IBM Plex Sans", sans-serif;
+  border-radius: 5px;
+}
+
+.containerButton :global(.MuiButton-root:hover) {
+  background: var(--buttonHover);
+}
+@media screen and (min-width: 760px) {
+  .containerButton :global(.MuiButton-root) {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .containerButton :global(.MuiButton-root) {
+    font-size: 20px;
+  }
+}

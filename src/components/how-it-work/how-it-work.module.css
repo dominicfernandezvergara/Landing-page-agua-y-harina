@@ -51,17 +51,7 @@
   box-sizing: border-box;
   width: 250px;
 }
-.containerHowItWork :global(.MuiButton-root) {
-  background: var(--primary);
-  color: var(--white);
-  border-radius: 0px;
-  width: fit-content;
-  align-self: center;
-  margin-top: 20px;
-}
-.containerHowItWork :global(.MuiButton-root:hover) {
-  background: var(--buttonHover);
-}
+
 @media screen and (min-width: 768px) {
   .containerHowItWork {
     padding: 50px;

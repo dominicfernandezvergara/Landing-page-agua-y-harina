@@ -20,6 +20,10 @@
   align-items: center;
   text-align: center;
   height: fit-content;
+  border-radius: 5px;
+}
+.image {
+  width: 100%;
 }
 .title {
   color: var(--dark);
@@ -33,14 +37,7 @@
   color: var(--dark);
   margin-bottom: 20px;
 }
-.containerBanner :global(.MuiButton-root) {
-  background: var(--button);
-  color: var(--white);
-  border-radius: 0px;
-}
-.containerBanner :global(.MuiButton-root:hover) {
-  background: var(--buttonHover);
-}
+
 @media screen and (min-width: 768px) {
   .containerBanner {
     height: 400px;
@@ -54,16 +51,10 @@
     width: 500px;
     padding: 20px;
   }
-  .containerBanner :global(.MuiButton-root) {
-    font-size: 18px;
-  }
 }
 @media screen and (min-width: 1024px) {
   .containerBanner {
     height: 500px;
-  }
-  .containerBanner :global(.MuiButton-root) {
-    font-size: 20px;
   }
 }
 @media screen and (min-width: 1280px) {

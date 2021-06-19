@@ -23,26 +23,31 @@ button {
   outline: none;
 }
 h1 {
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: lighter;
   font-size: 76px;
   letter-spacing: -1.5px;
 }
 h2 {
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: lighter;
   font-size: 34px;
   letter-spacing: -0.5px;
 }
 h3 {
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: normal;
   font-size: 24px;
   letter-spacing: 0px;
 }
 h4 {
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: normal;
   font-size: 20px;
   letter-spacing: 0.25px;
 }
 p {
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: normal;
   font-size: 16px;
   letter-spacing: 0.5px;

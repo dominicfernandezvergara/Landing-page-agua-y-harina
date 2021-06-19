@@ -66,10 +66,12 @@
     flex-grow: 1;
     background: transparent;
     border: none;
-    font-size: 16px;
+    font-size: 30px;
     cursor: pointer;
     color: var(--darkPrimary);
     font-weight: bold;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 100;
   }
   .headerButton:hover {
     font-weight: bold;
@@ -100,7 +102,7 @@
     padding: 0px 90px;
   }
   .headerButton {
-    font-size: 18px;
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 1440px) {

@@ -1,19 +1,13 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import Button from "@material-ui/core/Button";
 
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 
 import styles from "./how-it-work.module.css";
+import ProductsButton from "../products-button/products-button";
 
 function HowItWork() {
-  const history = useHistory();
-
-  const handleClick = () => {
-    history.push("/products");
-  };
   return (
     <div className={styles.containerHowItWork}>
       <h3 className={styles.title}>¿Cómo funciona?</h3>
@@ -55,9 +49,7 @@ function HowItWork() {
           </div>
         </div>
       </div>
-      <Button variant="contained" onClick={handleClick}>
-        Hacer un pedido
-      </Button>
+      <ProductsButton text="Hacer un pedido" />
     </div>
   );
 }

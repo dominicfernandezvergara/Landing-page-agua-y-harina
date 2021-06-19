@@ -32,7 +32,7 @@ const products = [
     description:
       "agua, harina integral, levadura natural, aceite de oliva, sal de mar y aceitunas de selección.",
     price: "2500",
-    gramos: "70g c/u",
+    gramos: "60g c/u",
     image: imageBread,
   },
   {
@@ -40,8 +40,8 @@ const products = [
     title: "Pan pita aceitunas integral",
     description:
       "agua, harina integral, levadura natural, aceite de oliva, sal de mar, ajo y orégano de huerta orgánica.",
-    price: "2500",
-    gramos: "70g c/u",
+    price: "3000",
+    gramos: "60g c/u",
     image: imageBread,
   },
   {
@@ -49,8 +49,8 @@ const products = [
     title: "Pan pita ajo orégano integral",
     description:
       "agua, harina integral, levadura natural, aceite de oliva, sal de mar, espinaca de la huerta orgánica.",
-    price: "2500",
-    gramos: "70g c/u",
+    price: "3000",
+    gramos: "60g c/u",
     image: imageBread,
   },
   {
@@ -58,8 +58,8 @@ const products = [
     title: "Pan pita espinaca integral",
     description:
       "agua, harina integral, levadura natural, aceite de oliva, sal de mar, linaza de selección.",
-    price: "2500",
-    gramos: "70g c/u",
+    price: "3000",
+    gramos: "60g c/u",
     image: imageBread,
   },
   {
@@ -67,8 +67,8 @@ const products = [
     title: "Pan pita linaza integral",
     description:
       "agua, harina integral, levadura natural, aceite de oliva, sal de mar, cúrcuma o curry de selección.",
-    price: "2500",
-    gramos: "70g c/u",
+    price: "3000",
+    gramos: "60g c/u",
     image: imageBread,
   },
   {
@@ -76,8 +76,8 @@ const products = [
     title: "Pan pita cúrcuma o curry integral",
     description:
       "agua, harina integral, levadura natural, aceite de oliva, sal de mar",
-    price: "2500",
-    gramos: "70g c/u",
+    price: "3000",
+    gramos: "60g c/u",
     image: imageBread,
   },
 ];
