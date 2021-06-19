@@ -59,7 +59,7 @@ function OrderForm() {
       products: productsArray,
     };
 
-    // history.push("/succefull-Order");
+    history.push("/succefull-Order");
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

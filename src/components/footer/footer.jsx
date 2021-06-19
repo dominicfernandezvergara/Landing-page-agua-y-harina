@@ -43,7 +43,7 @@ function Footer() {
         <div className={styles.containerIconsMedia}>
           <div className={styles.containerText}>
             <a
-              href="https://www.instagram.com/awareness.consultant/"
+              href="https://www.instagram.com/aguayharina.bakery/"
               className={styles.iconSocialMedia}
             >
               <img

@@ -1,16 +1,10 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import Button from "@material-ui/core/Button";
 
 import styles from "./home-products-section.module.css";
+import ProductsButton from "../products-button/products-button";
 import image1 from "../../images/home/ImagePackPanPita.jpeg";
 
 function HomeProductsSection() {
-  const history = useHistory();
-  const onClickButtonProductsHome = () => {
-    history.push("/products");
-  };
-
   return (
     <div className={styles.containerProductsHome}>
       <div className={styles.containerText}>
@@ -28,9 +22,7 @@ function HomeProductsSection() {
           Conoce toda nuestra variedad de Pan Pitas: integrales, linaza,
           aceituna, espinaca, curcuma y oregano con ajo.
         </p>
-        <Button variant="contained" onClick={onClickButtonProductsHome}>
-          Escoge tus pan pitas aquí
-        </Button>
+        <ProductsButton text=" Escoge tus pan pitas aquí" />
       </div>
       <img
         alt="imageHomeProductsSection"

@@ -22,18 +22,9 @@
 .containerText {
   display: flex;
   flex-direction: column;
-  align-items: initial;
+  align-items: center;
 }
-.containerHomeMisionSection :global(.MuiButton-root) {
-  background: var(--primary);
-  color: var(--white);
-  border-radius: 0px;
-  width: fit-content;
-  align-self: center;
-}
-.containerHomeMisionSection :global(.MuiButton-root:hover) {
-  background: var(--buttonHover);
-}
+
 .image {
   display: none;
 }
@@ -49,8 +40,10 @@
     display: block;
     width: 45%;
     height: auto;
+    border-radius: 5px;
   }
   .containerText {
+    align-items: initial;
     width: 350px;
   }
   .titleSmall {
@@ -67,7 +60,6 @@
   }
   .containerHomeMisionSection :global(.MuiButton-root) {
     align-self: initial;
-    font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -85,9 +77,6 @@
   .title {
     display: block;
     text-align: start;
-  }
-  .containerHomeMisionSection :global(.MuiButton-root) {
-    font-size: 20px;
   }
 }
 @media screen and (min-width: 1280px) {

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./logo.css";
 import { useHistory } from "react-router-dom";
-import logo from "../../images/logo/logo Agua y Harina small.png";
+import logo from "../../images/logo/300x150 01 Artboard 1.png";
 
 // Github : https://github.com/akiran/react-slick
 // Slick carousel API : https://react-slick.neostack.com/docs/api/#centerPadding
